@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iterable on The Python Corner</title>
+    <link>https://mastro35.github.io/tpc/tags/iterable/</link>
+    <description>Recent content in iterable on The Python Corner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Davide Mastromatteo</copyright>
+    <lastBuildDate>Tue, 22 Nov 2016 00:00:49 +0100</lastBuildDate><atom:link href="https://mastro35.github.io/tpc/tags/iterable/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iterators and Generators in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-11-22-iterators-generators-python/</link>
+      <pubDate>Tue, 22 Nov 2016 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-11-22-iterators-generators-python/</guid>
+      <description>If you have written some code in Python, something more than the simple &amp;ldquo;Hello World&amp;rdquo; program, you have probably used iterable objects. Iterable objects are objects that conform to the Iteration Protocol and can hence be used in a loop.
+For example:
+1for i in range(50): 2 print(i) In this example, the range(50) is an iterable object that provides, at each iteration, a different value that is assigned to the i variable.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on The Python Corner</title>
+    <link>https://mastro35.github.io/tpc/tags/python/</link>
+    <description>Recent content in python on The Python Corner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Davide Mastromatteo</copyright>
+    <lastBuildDate>Mon, 30 Aug 2021 16:00:47 +0100</lastBuildDate><atom:link href="https://mastro35.github.io/tpc/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to create a computer virus in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/</link>
+      <pubDate>Mon, 30 Aug 2021 16:00:47 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/</guid>
+      <description>I was relaxing on a beach during my summer leave when I received a mail from a reader that asked me if it is technically possible to write a virus using Python.
+The short answer: YES.
+The longer answer: yes, BUT&amp;hellip;
+Let&amp;rsquo;s start by saying that viruses are a little bit anachronistic in 2021&amp;hellip; nowadays other kinds of malware (like worms for example) are far more common than viruses. Moreover, modern operative systems are more secure and less prone to be infected than MS-DOS or Windows 95 were (sorry Microsoft&amp;hellip;) and people are more aware of the risk of malware in general.</description>
+    </item>
+    
+    <item>
+      <title>How to create a telegram bot with Python in minutes</title>
+      <link>https://mastro35.github.io/tpc/posts/2021-01-16-how-create-telegram-bot-in-python/</link>
+      <pubDate>Sat, 16 Jan 2021 16:00:47 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2021-01-16-how-create-telegram-bot-in-python/</guid>
+      <description>Creating a telegram bot with Python in minutes may seem like a clickbait title for a post, but trust me, it&amp;rsquo;s possible. If you&amp;rsquo;re going through a boring afternoon or you&amp;rsquo;re locked down due to COVID restriction and you want to do something different, keep reading and let&amp;rsquo;s create our first Python Telegram bot! :)
+For this project, all you will have to use is the python-telegram-bot package that&amp;rsquo;s basically a wrapper around telegram APIs.</description>
+    </item>
+    
+    <item>
+      <title>Working with decorators in Python - The Basics</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-12-30-working-with-decorators-python-basics/</link>
+      <pubDate>Wed, 30 Dec 2020 12:55:36 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-12-30-working-with-decorators-python-basics/</guid>
+      <description>Hi Guys, in today’s article, we will discuss Python decorators.
+Decorators are not a python-only feature, they exist in many other languages and are important if you aim to write clean, professional, and reusable code.
+A decorator is a function that extends other functions that are passed as a parameter, adding new features without the need of changing their code.
+This can seem a little magical to a beginner&amp;rsquo;s eye, but it&amp;rsquo;s really easy actually because all you have to do is to create a function (the so-called &amp;ldquo;decorator function&amp;quot;) that takes another function as an argument (the &amp;ldquo;decorated function&amp;quot;) and returns a completely new function that simply modify the behavior of your decorated function.</description>
+    </item>
+    
+    <item>
+      <title>Formatting strings in Python: the easyway by using f-strings</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-12-02-formatting-strings-in-python/</link>
+      <pubDate>Wed, 02 Dec 2020 22:09:35 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-12-02-formatting-strings-in-python/</guid>
+      <description>Concatenating and formatting strings in Python is a trivial operation that almost any developer should be able to do, right? And yet, many devs keep using old stuff to format strings, like the % operator or the .format() method.
+But that&amp;rsquo;s the last-century way to format strings! I mean&amp;hellip; the % method is something prehistoric that was used in Python 2 and the .format() method is so&amp;hellip; 2008&amp;hellip; :)
+If you are using at least Python 3.</description>
+    </item>
+    
+    <item>
+      <title>Python Hash Tables: Understanding Dictionaries</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-08-21-hash-tables-understanding-dictionaries/</link>
+      <pubDate>Fri, 21 Aug 2020 06:59:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-08-21-hash-tables-understanding-dictionaries/</guid>
+      <description>Hi guys, have you ever wondered how can Python dictionaries be so fast and reliable? The answer is that they are built on top of another technology: hash tables.
+Knowing how Python hash tables work will give you a deeper understanding of how dictionaries work and this could be a great advantage for your Python understanding because dictionaries are almost everywhere in Python.
+Hash Functions Before introducing hash tables and their Python implementation you have to know what is a hash function and how it works.</description>
+    </item>
+    
+    <item>
+      <title>Manning Publications</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-05-07-friends-manning-publication/</link>
+      <pubDate>Thu, 07 May 2020 00:18:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-05-07-friends-manning-publication/</guid>
+      <description>Hey guys, today I&amp;rsquo;m very thrilled to announce that people at Manning Publications have made a wonderful gift to our beloved visitors of The Python Corner: the 40% off to ANY single Python book of their catalog. Just use the code nlcorner40 during the check out process and enjoy your 40% off!
+Manning Publications has a great catalog of books about Python, both printed or ebook and what I love most is that they have a modern idea about what a book is.</description>
+    </item>
+    
+    <item>
+      <title>Working with EBCDIC in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-04-30-working-with-ebcdic-python/</link>
+      <pubDate>Thu, 30 Apr 2020 00:18:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-04-30-working-with-ebcdic-python/</guid>
+      <description>A couple of months ago I had to rewrite a program that used to be executed on a IBM System Z9. For those of you who don&amp;rsquo;t know what I&amp;rsquo;m talking about&amp;hellip; &amp;ldquo;it&amp;rsquo;s a mainframe, kiddo&amp;rdquo;!
+However, even if I do know what a mainframe is, when I looked at the input files I was having to work with, I was like&amp;hellip; &amp;ldquo;oh my gosh, what is this stuff?!?!&amp;rdquo;
+It took me a while to understand that what I was seeing wasn&amp;rsquo;t a set of standard ASCII files but a set of weird EBCDIC files.</description>
+    </item>
+    
+    <item>
+      <title>Representing geographic data in Python - feat. Coronavirus</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-03-02-python-geographical-maps-coronavirus/</link>
+      <pubDate>Mon, 02 Mar 2020 00:18:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-03-02-python-geographical-maps-coronavirus/</guid>
+      <description>As you may know, I live in Italy, a beautiful country made famous by style, fashion, and food. But in the last days, we&amp;rsquo;ve become famous also for something a little less cool: the Coronavirus.
+At the end of February, in fact, we have become overnight the third country with more infections in the world, after China and South Korea. And Milan (the city I live in) is one of the most affected Italian cities.</description>
+    </item>
+    
+    <item>
+      <title>Serialization in Python with JSON</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-02-20-serialization-python-json/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-02-20-serialization-python-json/</guid>
+      <description>In 2016 I wrote a post about serialization in Python by using the pickle Python module.
+In this article, we will try to serialize Python objects by using another module: json.
+According to Wikipedia &amp;ldquo;JSON is an open-standard file format or data interchange format that uses human-readable text to transmit data objects consisting of attribute-value pairs and array data types (or any other serializable value)&amp;rdquo;.
+But why you should use to use JSON instead of the official pickle module?</description>
+    </item>
+    
+    <item>
+      <title>The Detailed Guide on Sending Emails from your Python App</title>
+      <link>https://mastro35.github.io/tpc/posts/2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app/</link>
+      <pubDate>Tue, 22 Oct 2019 00:00:45 +0200</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app/</guid>
+      <description>Hey there! Now you are reading a quick but detailed guide on adding the essential functionality to your web app built with Python: email sending. From this post, you will learn about the capabilities of the native Python modules for email sending and then get the practical steps for creating a message with images and attachments. With plenty of code examples, you will be able to craft and send your own emails using an SMTP server.</description>
+    </item>
+    
+    <item>
+      <title>How to create a watchdog in Python to look for filesystem changes</title>
+      <link>https://mastro35.github.io/tpc/posts/2019-01-13-how-to-create-a-watchdog-in-python-to-look-for-filesystem-changes/</link>
+      <pubDate>Sun, 13 Jan 2019 19:08:55 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2019-01-13-how-to-create-a-watchdog-in-python-to-look-for-filesystem-changes/</guid>
+      <description>Hey guys, today&amp;rsquo;s post is about how to create a watchdog in Python. But what is a &amp;ldquo;watchdog&amp;rdquo;?
+A watchdog is a little piece of software that monitors our filesystem looking for any changes (like the creation, change or deletion of a file or of a directory). When a change occurs, the watchdog report it to us raising a specific event that we can handle.
+For example, let&amp;rsquo;s suppose you have developed a program that use a configuration file.</description>
+    </item>
+    
+    <item>
+      <title>How to create a Windows Service in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2018-08-01-how-to-create-a-windows-service-in-python/</link>
+      <pubDate>Wed, 01 Aug 2018 19:36:01 +0200</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2018-08-01-how-to-create-a-windows-service-in-python/</guid>
+      <description>Hi guys, today&amp;rsquo;s post is just for the ones of you that work with the &amp;ldquo;OS of the misoriented slashes&amp;rdquo;: Microsoft Windows. :)
+Have you ever had the need of writing a Python script that could run in background as a Windows Service? In this post, you will learn how to do it in less than 10 minutes, no jokes.
+I will skip all the introduction about Windows Services, how convenient they could be, how much could be appreciated the fact that they can be run in background even when the user is logged off etc&amp;hellip; I mean, if you can code in Python and you use Windows I bet you already know what a Windows Service is, don&amp;rsquo;t you?</description>
+    </item>
+    
+    <item>
+      <title>Speed up your code by using a cache in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2018-04-26-how-to-make-your-code-faster-by-using-a-cache-in-python/</link>
+      <pubDate>Thu, 26 Apr 2018 11:26:00 +0200</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2018-04-26-how-to-make-your-code-faster-by-using-a-cache-in-python/</guid>
+      <description>If the first concern of a developer is to be sure that the code they write works well, the second one is to make sure that it run fast. This is expecially true when you&amp;rsquo;re dealing with web applications, where the scalability of your application is a crucial topic. For this reason, one of the most important tool we can use to improve the speed of our code is the use of a cache system.</description>
+    </item>
+    
+    <item>
+      <title>When To Use Generators in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2018-04-17-generators-in-python-should-i-use-them/</link>
+      <pubDate>Tue, 17 Apr 2018 11:46:00 +0200</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2018-04-17-generators-in-python-should-i-use-them/</guid>
+      <description>Following a request of a reader, today we&amp;rsquo;re going to discuss when to use iterators and generators in Python.
+First of all, it&amp;rsquo;s important to know what iterators and generators are, so if you don&amp;rsquo;t know exactly what they are, I suggest to have a look at my previous article on this topic.
+Now that everything is clear, we can start analyzing when to use these features.
+ Let&amp;rsquo;s start saying that if you have read my previous article, the use of the iterator protocol should be quite clear: you use iterator protocol when you have a custom object that you want to be &amp;ldquo;iterable&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Lambdas and functions in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2017-12-13-lambdas-and-functions-in-python/</link>
+      <pubDate>Wed, 13 Dec 2017 19:06:00 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2017-12-13-lambdas-and-functions-in-python/</guid>
+      <description>In my last post, I discussed some ways to avoid nested code in Python and discussing the &amp;ldquo;filter&amp;rdquo; and &amp;ldquo;map&amp;rdquo; functions I mentioned the lambda functions.
+After that article, some reader asked me to write a little more about this topic, so &amp;hellip; here I am. :)
+Let&amp;rsquo;s start with a mantra. If you want to know what something is, in Python, just use your REPL.
+So, start the Python REPL and define a lambda:</description>
+    </item>
+    
+    <item>
+      <title>The art of avoiding nested code</title>
+      <link>https://mastro35.github.io/tpc/posts/2017-12-04-the-art-of-avoiding-nested-code/</link>
+      <pubDate>Mon, 04 Dec 2017 23:34:42 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2017-12-04-the-art-of-avoiding-nested-code/</guid>
+      <description>Today&amp;rsquo;s article is about nested code and how to avoid it.
+Why we should try to avoid nested code? Well the answer is inside your heart, and in your Python interpreter&amp;hellip;
+Start your REPL and write:
+1&amp;gt;&amp;gt;&amp;gt; import this you will get the &amp;ldquo;Zen Of Python&amp;rdquo; by Tim Peters.
+The Zen of Python, by Tim PetersBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.</description>
+    </item>
+    
+    <item>
+      <title>Logging in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2017-08-29-logging-in-python/</link>
+      <pubDate>Tue, 29 Aug 2017 13:02:52 +0200</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2017-08-29-logging-in-python/</guid>
+      <description>One of the most underestimated topics that I&amp;rsquo;ve seen in my working experience is logs management. A lot of people don&amp;rsquo;t care at all about logging the execution of their programs and I&amp;rsquo;ve seen a lot of code released in the production environment that doesn&amp;rsquo;t log anything. To log seems to be a waste of time to them, especially if the code they&amp;rsquo;re writing is apparently simple. So, why bother logging the execution of a program if the program can run great with no logs?</description>
+    </item>
+    
+    <item>
+      <title>Writing a FUSE filesystem in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2017-02-28-writing-a-fuse-filesystem-in-python/</link>
+      <pubDate>Tue, 28 Feb 2017 00:11:19 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2017-02-28-writing-a-fuse-filesystem-in-python/</guid>
+      <description>We ran into a problem last week. Our web application produces a lot of documents that have to be accessed frequently for a couple of months after they&amp;rsquo;re created. However, in less than a year these documents will be almost never accessed anymore, but we need to keep them available for the web application and for tons of other legacy apps that might need to access them.
+Now, these documents take a lot of space on our expensive but super fast storage system (let&amp;rsquo;s call it primary storage system or PSS from now on) and we would like to be able to move them on the cheaper, not so good and yet quite slow storage system (that we&amp;rsquo;re going to call secondary storage system or SSS) when we believe that they will not be accessed anymore.</description>
+    </item>
+    
+    <item>
+      <title>Working with Exception in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2017-01-10-working-with-exception-in-python/</link>
+      <pubDate>Tue, 10 Jan 2017 19:02:01 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2017-01-10-working-with-exception-in-python/</guid>
+      <description>According to the official documentation, an exception is &amp;ldquo;an error detected during execution not unconditionally fatal&amp;rdquo;. Let&amp;rsquo;s start the interpreter and write:
+1&amp;gt;&amp;gt;&amp;gt; 5/0 2Traceback (most recent call last): 3 File &amp;#34;&amp;lt;pyshell#7&amp;gt;&amp;#34;, line 1, in &amp;lt;module&amp;gt; 4 5/0 5ZeroDivisionError: division by zero As you can see we asked the interpreter to divide the number 5 by 0. Even if our request was syntactically correct when the interpreter tried to compute it, it &amp;ldquo;raised&amp;rdquo; the ZeroDivisionError exception to signal us that we asked something impossible.</description>
+    </item>
+    
+    <item>
+      <title>Python Metaclasses</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-12-22-python-metaclasses/</link>
+      <pubDate>Thu, 22 Dec 2016 12:31:01 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-12-22-python-metaclasses/</guid>
+      <description>Working with Python means working with objects because, in Python, everything is an object. So, for example:
+1&amp;gt;&amp;gt;&amp;gt; type(1) 2&amp;lt;class &amp;#39;int&amp;#39;&amp;gt; 3&amp;gt;&amp;gt;&amp;gt; type(&amp;#39;x&amp;#39;) 4&amp;lt;class &amp;#39;str&amp;#39;&amp;gt; As you can see, even basic types like integer and strings are objects, in particular, they are respectively instances of int and str classes. So, since everything is an object and given that an object is an instance of a class&amp;hellip; what is a class?</description>
+    </item>
+    
+    <item>
+      <title>Syntax sugar in Python 3.6</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-12-13-syntax_sugar_python_36/</link>
+      <pubDate>Tue, 13 Dec 2016 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-12-13-syntax_sugar_python_36/</guid>
+      <description>On December the 8th Guido van Rossum (also known to be the BDFL or the Python project) announced on his twitter account that Python 3.6 rc1 has been officially released. That means that if no major problems will be found with this latest version, the final release is just around the corner and it&amp;rsquo;s scheduled to be released on December the 16th, carrying among other things also some improvements in the Python syntax.</description>
+    </item>
+    
+    <item>
+      <title>Object Serialization in Python With the Pickle Module</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-12-6-object-serialization-python-pickle/</link>
+      <pubDate>Tue, 06 Dec 2016 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-12-6-object-serialization-python-pickle/</guid>
+      <description>DISCLAMER: There&amp;rsquo;s a newer (and probably better) article about this topic that I wrote for Real Python website.
+It&amp;rsquo;s longer and more detailed and it also have a section about the security concern when using the pickle module, so&amp;hellip; I want to be honest and I suggest you to read that article &amp;hellip; but if you like it, don&amp;rsquo;t forget to come back here and buy me a coffe! :)</description>
+    </item>
+    
+    <item>
+      <title>Using Virtual Environments in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-11-29-using-virtual-environments-python/</link>
+      <pubDate>Tue, 29 Nov 2016 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-11-29-using-virtual-environments-python/</guid>
+      <description>Working with Python is like to have superpowers. When you need to do something and you don&amp;rsquo;t know where to start from, you can google your problem and usually, you get aware that someone has already had your problem and created a library for the community. Whichever is your need&amp;hellip;
+ &amp;ldquo;there&amp;rsquo;s a lib for that!&amp;quot;
+ This is so deep inside the Python culture that if you start your python interpreter and you do a&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Iterators and Generators in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-11-22-iterators-generators-python/</link>
+      <pubDate>Tue, 22 Nov 2016 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-11-22-iterators-generators-python/</guid>
+      <description>If you have written some code in Python, something more than the simple &amp;ldquo;Hello World&amp;rdquo; program, you have probably used iterable objects. Iterable objects are objects that conform to the Iteration Protocol and can hence be used in a loop.
+For example:
+1for i in range(50): 2 print(i) In this example, the range(50) is an iterable object that provides, at each iteration, a different value that is assigned to the i variable.</description>
+    </item>
+    
+    <item>
+      <title>Web Automation in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-11-15-web-automation-python/</link>
+      <pubDate>Tue, 15 Nov 2016 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-11-15-web-automation-python/</guid>
+      <description>A couple of days ago I was in the need of automating simple browsing on the internet. To be more specific I needed to visit my company website, click on a couple of specific links and then repeat this operation every few minutes. You are probably thinking that there is software that can perform what is called «automation test» but I am just too lazy to surf the web looking for a free program and writing code is really more fun so there was just one thing in my mind&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>How To Open a File in Python Without Locking It</title>
+      <link>https://mastro35.github.io/tpc/posts/2016-10-27-how-to-open-file-without-locking-it/</link>
+      <pubDate>Thu, 27 Oct 2016 00:00:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2016-10-27-how-to-open-file-without-locking-it/</guid>
+      <description>When I use python I&amp;rsquo;m usually on Linux or macOS but last week I had to write a python script on Windows.
+Yes, Windows! You know&amp;hellip; that place where slashes are misoriented, drives are named with a single alphabet letter and &amp;ldquo;tail&amp;rdquo; and &amp;ldquo;grep&amp;rdquo; commands are usually considered less important than &amp;ldquo;Clippy&amp;rdquo;.
+{: .align-center}
+However, working on windows I&amp;rsquo;ve discovered something I considered weird: opening a file on Windows with the open() method, actually locks the file and prevents it from deletion.</description>
+    </item>
+    
+  </channel>
+</rss>

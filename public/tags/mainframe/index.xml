@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mainframe on The Python Corner</title>
+    <link>https://mastro35.github.io/tpc/tags/mainframe/</link>
+    <description>Recent content in Mainframe on The Python Corner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Davide Mastromatteo</copyright>
+    <lastBuildDate>Thu, 30 Apr 2020 00:18:49 +0100</lastBuildDate><atom:link href="https://mastro35.github.io/tpc/tags/mainframe/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working with EBCDIC in Python</title>
+      <link>https://mastro35.github.io/tpc/posts/2020-04-30-working-with-ebcdic-python/</link>
+      <pubDate>Thu, 30 Apr 2020 00:18:49 +0100</pubDate>
+      
+      <guid>https://mastro35.github.io/tpc/posts/2020-04-30-working-with-ebcdic-python/</guid>
+      <description>A couple of months ago I had to rewrite a program that used to be executed on a IBM System Z9. For those of you who don&amp;rsquo;t know what I&amp;rsquo;m talking about&amp;hellip; &amp;ldquo;it&amp;rsquo;s a mainframe, kiddo&amp;rdquo;!
+However, even if I do know what a mainframe is, when I looked at the input files I was having to work with, I was like&amp;hellip; &amp;ldquo;oh my gosh, what is this stuff?!?!&amp;rdquo;
+It took me a while to understand that what I was seeing wasn&amp;rsquo;t a set of standard ASCII files but a set of weird EBCDIC files.</description>
+    </item>
+    
+  </channel>
+</rss>

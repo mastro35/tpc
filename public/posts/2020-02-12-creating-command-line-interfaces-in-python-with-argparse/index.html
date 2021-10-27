@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+<script data-ad-client="ca-pub-1030730506660314" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script id="mNCC" language="javascript">
+    medianet_width = "728";
+    medianet_height = "90";
+    medianet_crid = "167545135";
+    medianet_versionId = "3111299"; 
+    </script>
+    <script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://blockchain.info/Resources/js/pay-now-button.js"></script>
+
+
+  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Creating command-line interfaces in Python with Argparse | The Python Corner</title>
+  <link rel = 'canonical' href = 'https://mastro35.github.io/tpc/posts/2020-02-12-creating-command-line-interfaces-in-python-with-argparse/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Creating command-line interfaces in Python with Argparse" />
+<meta property="og:description" content="If you have ever written a script in Python you surely know the importance of having a good command-line interface for your application.
+And this is why today I&rsquo;m posting here a link to another post I wrote for Real Python on this topic some months ago.
+Real Python is one of the most important resources on the web about Python and I&rsquo;m really proud to be part of that community full of brilliant people that share a common passion for this incredible programming language." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2020-02-12-creating-command-line-interfaces-in-python-with-argparse/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-12T00:00:49+01:00" />
+<meta property="article:modified_time" content="2020-02-12T00:00:49+01:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating command-line interfaces in Python with Argparse"/>
+<meta name="twitter:description" content="If you have ever written a script in Python you surely know the importance of having a good command-line interface for your application.
+And this is why today I&rsquo;m posting here a link to another post I wrote for Real Python on this topic some months ago.
+Real Python is one of the most important resources on the web about Python and I&rsquo;m really proud to be part of that community full of brilliant people that share a common passion for this incredible programming language."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+
+
+<link rel="apple-touch-icon" sizes="57x57" href="../../images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-120027408-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Articles</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+         
+        <li><a href="../../about">About</a></li>
+         
+        <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
+         
+        <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://mastro35.github.io/tpc/posts/2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://mastro35.github.io/tpc/posts/2020-02-20-serialization-python-json/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&text=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&title=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&is_video=false&description=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&title=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&title=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&name=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse&description=If%20you%20have%20ever%20written%20a%20script%20in%20Python%20you%20surely%20know%20the%20importance%20of%20having%20a%20good%20command-line%20interface%20for%20your%20application.%0aAnd%20this%20is%20why%20today%20I%26rsquo%3bm%20posting%20here%20a%20link%20to%20another%20post%20I%20wrote%20for%20Real%20Python%20on%20this%20topic%20some%20months%20ago.%0aReal%20Python%20is%20one%20of%20the%20most%20important%20resources%20on%20the%20web%20about%20Python%20and%20I%26rsquo%3bm%20really%20proud%20to%20be%20part%20of%20that%20community%20full%20of%20brilliant%20people%20that%20share%20a%20common%20passion%20for%20this%20incredible%20programming%20language." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&t=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Creating command-line interfaces in Python with Argparse
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-02-12 00:00:49 &#43;0100 CET" itemprop="datePublished">2020-02-12</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          0 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="../../categories/dev">Dev</a>
+            
+        </div>
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p><img src="https://imgs.xkcd.com/comics/command_line_fu.png" alt="teaser"></p>
+<p>If you have ever written a script in Python you surely know the importance of having a good command-line interface for your application.</p>
+<p>And this is why today I&rsquo;m posting here a link to another post I wrote for <em>Real Python</em> on this topic some months ago.</p>
+<p><strong><a href="https://www.realpython.com">Real Python</a></strong> is one of the most important resources on the web about Python and I&rsquo;m really proud to be part of that community full of brilliant people that share a common passion for this incredible programming language.</p>
+<p>If you want to read this article just visit <a href="https://realpython.com/command-line-interfaces-python-argparse/">this link</a></p>
+<p>Happy Pythoning!
+D.</p>
+
+    </div>
+  </article>
+
+  
+  <hr>
+  <h2 style="color:#2BBC8A; text-align: center">Did you find this article helpful?</h2><br>
+  <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 10px 7px 10px !important;line-height: 35px !important;height:51px !important;min-width:217px !important;text-decoration: none !important;display:inline-flex !important;color:#FFFFFF !important;background-color:#FF813F !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 10px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#FFFFFF !important;}</style>
+
+  <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+  <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/dXjDHmt" style="align:left">
+    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee!" align="left">
+    <span style="margin-left:15px;font-size:28px !important;">Buy me a coffee!</span></a>
+  <hr>
+            
+
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="mastro35/tpc"
+    issue-term="pathname"
+    label="The Python Corner"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Articles</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+         
+          <li><a href="../../about">About</a></li>
+         
+          <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
+         
+          <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&text=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&title=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&is_video=false&description=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&title=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&title=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&name=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse&description=If%20you%20have%20ever%20written%20a%20script%20in%20Python%20you%20surely%20know%20the%20importance%20of%20having%20a%20good%20command-line%20interface%20for%20your%20application.%0aAnd%20this%20is%20why%20today%20I%26rsquo%3bm%20posting%20here%20a%20link%20to%20another%20post%20I%20wrote%20for%20Real%20Python%20on%20this%20topic%20some%20months%20ago.%0aReal%20Python%20is%20one%20of%20the%20most%20important%20resources%20on%20the%20web%20about%20Python%20and%20I%26rsquo%3bm%20really%20proud%20to%20be%20part%20of%20that%20community%20full%20of%20brilliant%20people%20that%20share%20a%20common%20passion%20for%20this%20incredible%20programming%20language." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-02-12-creating-command-line-interfaces-in-python-with-argparse%2f&t=Creating%20command-line%20interfaces%20in%20Python%20with%20Argparse" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Davide Mastromatteo 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Articles</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+         
+        <li><a href="../../about">About</a></li>
+         
+        <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
+         
+        <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+<script src=../../js/code-copy.js></script>
+
+
+
+
+</html>
