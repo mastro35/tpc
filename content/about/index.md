@@ -2,6 +2,19 @@
 permalink: /about/
 title: "About"
 ---
+The Python Corner was born in 2016. 
+
+I was working on a log analyzer for Windows when I discovered that the `open` Python statement on Windows behave 
+differently than it does on Linux because on Windows it actually locks the opened file. It seemed strange to me and I decided to write a post about that on my [Medium](https://medium.com) publication.
+
+I started to receive a lot of comments of people thanking me for the article and I decided that I would have posted something else if I would have had another nice tip to share and a couple of weeks later I had the need to automate a simple web navigation with Python. This gave me the idea for my second post and I collected even more visualization and comments than the first one.  
+
+This started everything.  
+
+
+a project born in 2016 with
+
+
 If you are reading this page it means that you are interested in this project, so the first thing I want to tell you is **THANK YOU!**
 
 Staying online and creating quality content costs real money. I personally invest all my knowledge, my passion and a lot of my time in this project and so **I need your help**.
