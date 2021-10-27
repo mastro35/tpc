@@ -1,313 +1,216 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html><html lang=en-us>
 <head>
-
-<script data-ad-client="ca-pub-1030730506660314" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-    <script id="mNCC" language="javascript">
-    medianet_width = "728";
-    medianet_height = "90";
-    medianet_crid = "167545135";
-    medianet_versionId = "3111299"; 
-    </script>
-    <script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://blockchain.info/Resources/js/pay-now-button.js"></script>
-
-
-  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
-  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> The Detailed Guide on Sending Emails from your Python App | The Python Corner</title>
-  <link rel = 'canonical' href = 'https://mastro35.github.io/tpc/posts/2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app/'>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="The Detailed Guide on Sending Emails from your Python App" />
-<meta property="og:description" content="Hey there! Now you are reading a quick but detailed guide on adding the essential functionality to your web app built with Python: email sending. From this post, you will learn about the capabilities of the native Python modules for email sending and then get the practical steps for creating a message with images and attachments. With plenty of code examples, you will be able to craft and send your own emails using an SMTP server." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-10-22T00:00:45+02:00" />
-<meta property="article:modified_time" content="2019-10-22T00:00:45+02:00" />
-
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Detailed Guide on Sending Emails from your Python App"/>
-<meta name="twitter:description" content="Hey there! Now you are reading a quick but detailed guide on adding the essential functionality to your web app built with Python: email sending. From this post, you will learn about the capabilities of the native Python modules for email sending and then get the practical steps for creating a message with images and attachments. With plenty of code examples, you will be able to craft and send your own emails using an SMTP server."/>
-
-  
-  
-    
-  
-  
-  <link rel="stylesheet" href="https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
-
-  
-  
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-
-  
-
-
-<link rel="apple-touch-icon" sizes="57x57" href="../../images/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="../../images/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../../images/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="../../images/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../../images/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="../../images/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="../../images/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="../../images/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="../../images/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="../../images/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
-<link rel="manifest" href="../../manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-  
-  
-  
-  
-  
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-120027408-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  
-  
+<script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script>
+<script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
+<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script>
+<script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
+<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> The Detailed Guide on Sending Emails from your Python App | The Python Corner</title>
+<link rel=canonical href=https://mastro35.github.io/tpc/posts/2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app/>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta property="og:title" content="The Detailed Guide on Sending Emails from your Python App">
+<meta property="og:description" content="Hey there! Now you are reading a quick but detailed guide on adding the essential functionality to your web app built with Python: email sending. From this post, you will learn about the capabilities of the native Python modules for email sending and then get the practical steps for creating a message with images and attachments. With plenty of code examples, you will be able to craft and send your own emails using an SMTP server.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-10-22T00:00:45+02:00">
+<meta property="article:modified_time" content="2019-10-22T00:00:45+02:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="The Detailed Guide on Sending Emails from your Python App">
+<meta name=twitter:description content="Hey there! Now you are reading a quick but detailed guide on adding the essential functionality to your web app built with Python: email sending. From this post, you will learn about the capabilities of the native Python modules for email sending and then get the practical steps for creating a message with images and attachments. With plenty of code examples, you will be able to craft and send your own emails using an SMTP server.">
+<link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png>
+<link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png>
+<link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png>
+<link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png>
+<link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png>
+<link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png>
+<link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png>
+<link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png>
+<link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png>
+<link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png>
+<link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png>
+<link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png>
+<link rel=manifest href=../../manifest.json>
+<meta name=msapplication-TileColor content="#ffffff">
+<meta name=msapplication-TileImage content="/images/ms-icon-144x144.png">
+<meta name=theme-color content="#ffffff">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
-
 <body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
-
-  <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="../../">Home</a></li>
-         
-        <li><a href="../../posts">Articles</a></li>
-         
-        <li><a href="../../tags">Tags</a></li>
-         
-        <li><a href="../../about">About</a></li>
-         
-        <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
-         
-        <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" https://mastro35.github.io/tpc/posts/2019-01-13-how-to-create-a-watchdog-in-python-to-look-for-filesystem-changes/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="https://mastro35.github.io/tpc/posts/2020-02-12-creating-command-line-interfaces-in-python-with-argparse/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&text=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&is_video=false&description=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&name=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&description=Hey%20there%21%20Now%20you%20are%20reading%20a%20quick%20but%20detailed%20guide%20on%20adding%20the%20essential%20functionality%20to%20your%20web%20app%20built%20with%20Python%3a%20email%20sending.%20From%20this%20post%2c%20you%20will%20learn%20about%20the%20capabilities%20of%20the%20native%20Python%20modules%20for%20email%20sending%20and%20then%20get%20the%20practical%20steps%20for%20creating%20a%20message%20with%20images%20and%20attachments.%20With%20plenty%20of%20code%20examples%2c%20you%20will%20be%20able%20to%20craft%20and%20send%20your%20own%20emails%20using%20an%20SMTP%20server." aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&t=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
 </ul>
-
-    </div>
-    
-    <div id="toc">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#before-we-start">Before we start</a></li>
-    <li><a href="#how-to-configure-email-sending">How to configure email sending</a></li>
-    <li><a href="#define-smtp-server">Define SMTP server</a></li>
-    <li><a href="#sending-emails-via-gmail-or-another-external-smtp-server">Sending emails via Gmail or another external SMTP server</a></li>
-    <li><a href="#sending-personalized-emails-to-multiple-recipients">Sending personalized emails to multiple recipients</a></li>
-    <li><a href="#lets-add-html-content">Let&rsquo;s add HTML content</a></li>
-    <li><a href="#how-to-attach-files-in-python">How to attach files in Python</a></li>
-    <li><a href="#example-of-attaching-a-pdf-file"><strong>Example of attaching a PDF file:</strong></a></li>
-    <li><a href="#embed-an-image">Embed an image</a></li>
-    <li><a href="#useful-resources-for-sending-emails-with-python">Useful resources for sending emails with Python</a></li>
-  </ul>
-</nav>
-    </div>
-    
-  </span>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2019-01-13-how-to-create-a-watchdog-in-python-to-look-for-filesystem-changes/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2020-02-12-creating-command-line-interfaces-in-python-with-argparse/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&text=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&is_video=false&description=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&name=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&description=Hey%20there%21%20Now%20you%20are%20reading%20a%20quick%20but%20detailed%20guide%20on%20adding%20the%20essential%20functionality%20to%20your%20web%20app%20built%20with%20Python%3a%20email%20sending.%20From%20this%20post%2c%20you%20will%20learn%20about%20the%20capabilities%20of%20the%20native%20Python%20modules%20for%20email%20sending%20and%20then%20get%20the%20practical%20steps%20for%20creating%20a%20message%20with%20images%20and%20attachments.%20With%20plenty%20of%20code%20examples%2c%20you%20will%20be%20able%20to%20craft%20and%20send%20your%20own%20emails%20using%20an%20SMTP%20server." aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&t=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
 </div>
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        The Detailed Guide on Sending Emails from your Python App
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2019-10-22 00:00:45 &#43;0200 CEST" itemprop="datePublished">2019-10-22</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          7 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="../../categories/dev">Dev</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="../../tags/featured" rel="tag">Featured</a>
-            
-             ,  
-            <a class="tag-link" href="../../tags/mail" rel="tag">mail</a>
-            
-             ,  
-            <a class="tag-link" href="../../tags/programming" rel="tag">Programming</a>
-            
-             ,  
-            <a class="tag-link" href="../../tags/python" rel="tag">Python</a>
-            
-        </div>
-        
-      </div>
-    </header>
-
-  
-    
-    <div class="content" itemprop="articleBody">
-      <p><img src="https://imgs.xkcd.com/comics/mail.png" alt="teaser"></p>
-<p>Hey there! Now you are reading a quick but detailed guide on adding the essential functionality to your web app built with Python: email sending. From this post, you will learn about the capabilities of the native Python modules for email sending and then  get the practical steps for creating a message with images and attachments. With plenty of code examples, you will be able to craft and send your own emails using an SMTP server.</p>
-<h2 id="before-we-start">Before we start</h2>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#before-we-start>Before we start</a></li>
+<li><a href=#how-to-configure-email-sending>How to configure email sending</a></li>
+<li><a href=#define-smtp-server>Define SMTP server</a></li>
+<li><a href=#sending-emails-via-gmail-or-another-external-smtp-server>Sending emails via Gmail or another external SMTP server</a></li>
+<li><a href=#sending-personalized-emails-to-multiple-recipients>Sending personalized emails to multiple recipients</a></li>
+<li><a href=#lets-add-html-content>Let&rsquo;s add HTML content</a></li>
+<li><a href=#how-to-attach-files-in-python>How to attach files in Python</a></li>
+<li><a href=#example-of-attaching-a-pdf-file><strong>Example of attaching a PDF file:</strong></a></li>
+<li><a href=#embed-an-image>Embed an image</a></li>
+<li><a href=#useful-resources-for-sending-emails-with-python>Useful resources for sending emails with Python</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+The Detailed Guide on Sending Emails from your Python App
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2019-10-22 00:00:45 +0200 CEST" itemprop=datePublished>2019-10-22</time>
+</div>
+<div class=article-read-time>
+<i class="far fa-clock"></i>
+7 minute read
+</div>
+<div class=article-category>
+<i class="fas fa-archive"></i>
+<a class=category-link href=../../categories/dev>Dev</a>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../tags/featured rel=tag>Featured</a>
+,
+<a class=tag-link href=../../tags/mail rel=tag>mail</a>
+,
+<a class=tag-link href=../../tags/programming rel=tag>Programming</a>
+,
+<a class=tag-link href=../../tags/python rel=tag>Python</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p><img src=https://imgs.xkcd.com/comics/mail.png alt=teaser></p>
+<p>Hey there! Now you are reading a quick but detailed guide on adding the essential functionality to your web app built with Python: email sending. From this post, you will learn about the capabilities of the native Python modules for email sending and then get the practical steps for creating a message with images and attachments. With plenty of code examples, you will be able to craft and send your own emails using an SMTP server.</p>
+<h2 id=before-we-start>Before we start</h2>
 <p>Just a brief theory and a couple of notes before we move to coding. In Python, there is an <em>email</em> package designed for handling email messages. We will explain how to use its main modules and components. It&rsquo;s simple but comprehensive so that you don&rsquo;t need any additional libraries, at least, for a start.</p>
 <p>This guide was created and tested with Python version 3.7.2.</p>
-<h2 id="how-to-configure-email-sending">How to configure email sending</h2>
+<h2 id=how-to-configure-email-sending>How to configure email sending</h2>
 <p>First of all, we need to import the necessary modules. The main one for sending emails is <em>smtplib</em>. From the very beginning, <code>help(smtplib)</code> is indeed very helpful: it will provide you with the list of all available classes and arguments as well as confirm whether <em>smtplib</em> was properly imported:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">import</span> smtplib
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>help(smtplib)
-</code></pre></div><h2 id="define-smtp-server">Define SMTP server</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>import</span> smtplib
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>help(smtplib)
+</code></pre></div><h2 id=define-smtp-server>Define SMTP server</h2>
 <p>Before we can move to the first code sample, we should define an SMTP server. We strongly recommend starting by testing options and only when everything is set up and tested, switch to the production server.</p>
 <p>Python provides an <em>smtpd</em> module for testing your emails in the local environment. There is a *DebuggingServer *feature, for discarding your sent messages and printing them to <em>stdout</em>.</p>
 <p>Set your SMTP server to <em>localhost:1025</em></p>
-<pre tabindex="0"><code class="language-console" data-lang="console">python -m smtpd -n -c DebuggingServer localhost:1025
+<pre tabindex=0><code class=language-console data-lang=console>python -m smtpd -n -c DebuggingServer localhost:1025
 </code></pre><p>With the local debugging, you can check whether your code works and detect the possible problems. Nevertheless, you won&rsquo;t be able to preview your email template and verify whether it works as designed with it. For this purpose, we would advise you to use a dedicated testing tool.</p>
-<h2 id="sending-emails-via-gmail-or-another-external-smtp-server">Sending emails via Gmail or another external SMTP server</h2>
+<h2 id=sending-emails-via-gmail-or-another-external-smtp-server>Sending emails via Gmail or another external SMTP server</h2>
 <p>To send an email via any SMTP server, you have to know the hostname and port as well as get your username and password.</p>
-<p>The difference in sending emails via Gmail is that you need to grant access for your applications. You can do it in two ways: <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://myaccount.google.com/lesssecureapps%26amp;sa%3DD%26amp;ust%3D1571698656469000&amp;sa=D&amp;ust=1571698656550000&amp;usg=AFQjCNG_uhhOg21gT1ctNU7I_Mn-EfK_CQ">allowing less secure apps</a> (2-step verification should be disabled) or using the <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://developers.google.com/gmail/api/quickstart/python%26amp;sa%3DD%26amp;ust%3D1571698656470000&amp;sa=D&amp;ust=1571698656550000&amp;usg=AFQjCNFZqjAT3jVYeXSUlRGTKcay6zW3Ow">OAuth2 authorization protocol</a>.
+<p>The difference in sending emails via Gmail is that you need to grant access for your applications. You can do it in two ways: <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://myaccount.google.com/lesssecureapps%26amp;sa%3DD%26amp;ust%3D1571698656469000&sa=D&ust=1571698656550000&usg=AFQjCNG_uhhOg21gT1ctNU7I_Mn-EfK_CQ">allowing less secure apps</a> (2-step verification should be disabled) or using the <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://developers.google.com/gmail/api/quickstart/python%26amp;sa%3DD%26amp;ust%3D1571698656470000&sa=D&ust=1571698656550000&usg=AFQjCNFZqjAT3jVYeXSUlRGTKcay6zW3Ow">OAuth2 authorization protocol</a>.
 The latter is more secure.</p>
 <p>The Gmail server credentials are:</p>
 <ul>
@@ -316,403 +219,337 @@ The latter is more secure.</p>
 <li>username = <strong>your Gmail email address</strong></li>
 <li>password = <strong>your password</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">import</span> smtplib<span style="color:#ff79c6">,</span> ssl
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">465</span>  
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>password <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">input</span>(<span style="color:#f1fa8c">&#34;your password&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>context <span style="color:#ff79c6">=</span> ssl<span style="color:#ff79c6">.</span>create_default_context()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#ff79c6">with</span> smtplib<span style="color:#ff79c6">.</span>SMTP_SSL(<span style="color:#f1fa8c">&#34;smtp.gmail.com&#34;</span>, port, context<span style="color:#ff79c6">=</span>context) <span style="color:#ff79c6">as</span> server:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    server<span style="color:#ff79c6">.</span>login(<span style="color:#f1fa8c">&#34;my@gmail.com&#34;</span>, password)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>import</span> smtplib<span style=color:#ff79c6>,</span> ssl
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>port <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>465</span>  
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>password <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>input</span>(<span style=color:#f1fa8c>&#34;your password&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>context <span style=color:#ff79c6>=</span> ssl<span style=color:#ff79c6>.</span>create_default_context()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span><span style=color:#ff79c6>with</span> smtplib<span style=color:#ff79c6>.</span>SMTP_SSL(<span style=color:#f1fa8c>&#34;smtp.gmail.com&#34;</span>, port, context<span style=color:#ff79c6>=</span>context) <span style=color:#ff79c6>as</span> server:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6</span>    server<span style=color:#ff79c6>.</span>login(<span style=color:#f1fa8c>&#34;my@gmail.com&#34;</span>, password)
 </code></pre></div><p>Alternatively, you can try Yagmail, the dedicated Gmail/SMTP, which simplifies email sending with Gmail:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">import</span> yagmail
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>yag <span style="color:#ff79c6">=</span> yagmail<span style="color:#ff79c6">.</span>SMTP()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>contents <span style="color:#ff79c6">=</span> [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#f1fa8c">&#34;This is the body, and here is just text http://somedomain/image.png&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    <span style="color:#f1fa8c">&#34;You can find an audio file attached.&#34;</span>, <span style="color:#f1fa8c">&#39;/local/path/to/song.mp3&#39;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>yag<span style="color:#ff79c6">.</span>send(<span style="color:#f1fa8c">&#39;to@someone.com&#39;</span>, <span style="color:#f1fa8c">&#39;subject&#39;</span>, contents)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>import</span> yagmail
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>yag <span style=color:#ff79c6>=</span> yagmail<span style=color:#ff79c6>.</span>SMTP()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>contents <span style=color:#ff79c6>=</span> [
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>    <span style=color:#f1fa8c>&#34;This is the body, and here is just text http://somedomain/image.png&#34;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>    <span style=color:#f1fa8c>&#34;You can find an audio file attached.&#34;</span>, <span style=color:#f1fa8c>&#39;/local/path/to/song.mp3&#39;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span>yag<span style=color:#ff79c6>.</span>send(<span style=color:#f1fa8c>&#39;to@someone.com&#39;</span>, <span style=color:#f1fa8c>&#39;subject&#39;</span>, contents)
 </code></pre></div><p>Finally, let&rsquo;s review the whole example. We will use some external SMTP server:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> smtplib
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2525</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>smtp_server <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;smtp.yourserver.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>login <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your login </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>password <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your password </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"># specify the sender&#39;s and receiver&#39;s email addresses</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>sender <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;my@example.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"># make sure you are not sending test emails to real email addresses </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>receiver <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;your@example.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4"># type your message: use two newlines (\n) to separate the subject from the message body and use &#39;f&#39; to  automatically insert variables in the text</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>message <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;&#34;&#34;</span><span style="color:#f1fa8c">\
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">Subject: Hi there
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#f1fa8c">To: </span><span style="color:#f1fa8c">{</span>receiver<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#f1fa8c">From: </span><span style="color:#f1fa8c">{</span>sender<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#f1fa8c">This is my first message with Python.&#34;&#34;&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4">#send your message with credentials specified above</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#ff79c6">with</span> smtplib<span style="color:#ff79c6">.</span>SMTP(smtp_server, port) <span style="color:#ff79c6">as</span> server:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        server<span style="color:#ff79c6">.</span>login(login, password)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        server<span style="color:#ff79c6">.</span>sendmail(sender, receiver, message)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;Sent&#39;</span>)
-</code></pre></div><h2 id="sending-personalized-emails-to-multiple-recipients">Sending personalized emails to multiple recipients</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>import</span> smtplib
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>port <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2525</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>smtp_server <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;smtp.yourserver.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>login <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your login </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>password <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your password </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span style=color:#6272a4># specify the sender&#39;s and receiver&#39;s email addresses</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>sender <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;my@example.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span style=color:#6272a4># make sure you are not sending test emails to real email addresses </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>receiver <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;your@example.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span style=color:#6272a4># type your message: use two newlines (\n) to separate the subject from the message body and use &#39;f&#39; to  automatically insert variables in the text</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>message <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;&#34;&#34;</span><span style=color:#f1fa8c>\
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span style=color:#f1fa8c></span><span style=color:#f1fa8c>Subject: Hi there
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span style=color:#f1fa8c>To: </span><span style=color:#f1fa8c>{</span>receiver<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span style=color:#f1fa8c>From: </span><span style=color:#f1fa8c>{</span>sender<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span style=color:#f1fa8c>This is my first message with Python.&#34;&#34;&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span style=color:#6272a4>#send your message with credentials specified above</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span style=color:#ff79c6>with</span> smtplib<span style=color:#ff79c6>.</span>SMTP(smtp_server, port) <span style=color:#ff79c6>as</span> server:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>        server<span style=color:#ff79c6>.</span>login(login, password)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>        server<span style=color:#ff79c6>.</span>sendmail(sender, receiver, message)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span style=color:#8be9fd;font-style:italic>print</span>(<span style=color:#f1fa8c>&#39;Sent&#39;</span>)
+</code></pre></div><h2 id=sending-personalized-emails-to-multiple-recipients>Sending personalized emails to multiple recipients</h2>
 <p>Python lets you send multiple emails with dynamic content with almost no
-extra effort, with the help of loops. Make a database in a **.csv **format and save it to the same folder as your Python script. The most simple example is a table with two columns -  name and email address -  as follows:</p>
-<pre tabindex="0"><code class="language-console" data-lang="console">#name,email
+extra effort, with the help of loops. Make a database in a **.csv **format and save it to the same folder as your Python script. The most simple example is a table with two columns - name and email address - as follows:</p>
+<pre tabindex=0><code class=language-console data-lang=console>#name,email
 John Johnson,john@johnson.com
 Peter Peterson,peter@peterson.com
 </code></pre><p>The file will be opened with the script and its rows will be looped over line by line. In this case, the <em>{name}</em> will be replaced with the value from the &ldquo;name&rdquo; column:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> csv<span style="color:#ff79c6">,</span> smtplib
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2525</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>smtp_server <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;smtp.yourserver.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>login <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your login </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>password <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your password </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>message <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;&#34;Subject: Order confirmation
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#f1fa8c">To: </span><span style="color:#f1fa8c">{recipient}</span><span style="color:#f1fa8c">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#f1fa8c">From: </span><span style="color:#f1fa8c">{sender}</span><span style="color:#f1fa8c">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#f1fa8c">Hi </span><span style="color:#f1fa8c">{name}</span><span style="color:#f1fa8c">, thanks for your order! We are processing it now and will contact you soon&#34;&#34;&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>sender <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;new@example.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#ff79c6">with</span> smtplib<span style="color:#ff79c6">.</span>SMTP(smtp_server, port) <span style="color:#ff79c6">as</span> server:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    server<span style="color:#ff79c6">.</span>login(login, password)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;contacts.csv&#34;</span>) <span style="color:#ff79c6">as</span> file:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        reader <span style="color:#ff79c6">=</span> csv<span style="color:#ff79c6">.</span>reader(file)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        <span style="color:#8be9fd;font-style:italic">next</span>(reader)  <span style="color:#6272a4"># it skips the header row</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        <span style="color:#ff79c6">for</span> name, email <span style="color:#ff79c6">in</span> reader:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>            server<span style="color:#ff79c6">.</span>sendmail(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>              sender,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>              email,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>              message<span style="color:#ff79c6">.</span>format(name<span style="color:#ff79c6">=</span>name, recipient<span style="color:#ff79c6">=</span>email, sender<span style="color:#ff79c6">=</span>sender)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>            )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>            <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;Sent to </span><span style="color:#f1fa8c">{</span>name<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>import</span> csv<span style=color:#ff79c6>,</span> smtplib
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>port <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2525</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>smtp_server <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;smtp.yourserver.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>login <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your login </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>password <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your password </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>message <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;&#34;&#34;Subject: Order confirmation
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span style=color:#f1fa8c>To: </span><span style=color:#f1fa8c>{recipient}</span><span style=color:#f1fa8c>
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span style=color:#f1fa8c>From: </span><span style=color:#f1fa8c>{sender}</span><span style=color:#f1fa8c>
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span style=color:#f1fa8c>Hi </span><span style=color:#f1fa8c>{name}</span><span style=color:#f1fa8c>, thanks for your order! We are processing it now and will contact you soon&#34;&#34;&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>sender <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;new@example.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span style=color:#ff79c6>with</span> smtplib<span style=color:#ff79c6>.</span>SMTP(smtp_server, port) <span style=color:#ff79c6>as</span> server:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>    server<span style=color:#ff79c6>.</span>login(login, password)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>    <span style=color:#ff79c6>with</span> <span style=color:#8be9fd;font-style:italic>open</span>(<span style=color:#f1fa8c>&#34;contacts.csv&#34;</span>) <span style=color:#ff79c6>as</span> file:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>        reader <span style=color:#ff79c6>=</span> csv<span style=color:#ff79c6>.</span>reader(file)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>        <span style=color:#8be9fd;font-style:italic>next</span>(reader)  <span style=color:#6272a4># it skips the header row</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>        <span style=color:#ff79c6>for</span> name, email <span style=color:#ff79c6>in</span> reader:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>            server<span style=color:#ff79c6>.</span>sendmail(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>              sender,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>              email,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span>              message<span style=color:#ff79c6>.</span>format(name<span style=color:#ff79c6>=</span>name, recipient<span style=color:#ff79c6>=</span>email, sender<span style=color:#ff79c6>=</span>sender)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>            )
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>            <span style=color:#8be9fd;font-style:italic>print</span>(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#39;Sent to </span><span style=color:#f1fa8c>{</span>name<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#39;</span>)
 </code></pre></div><p>As a result, you should receive the following response:</p>
-<pre tabindex="0"><code class="language-console" data-lang="console">Sent to John Johnson
+<pre tabindex=0><code class=language-console data-lang=console>Sent to John Johnson
 Sent to Peter Peterson
-</code></pre><h2 id="lets-add-html-content">Let&rsquo;s add HTML content</h2>
+</code></pre><h2 id=lets-add-html-content>Let&rsquo;s add HTML content</h2>
 <p>We have examined how the email sending works. Now it&rsquo;s time to create email templates containing images and file attachments.</p>
 <p>In Python, this can be done with the <em>email.mime</em> module, which handles the MIME message type. Write a text version apart from the HTML one, and then merge them with the MIMEMultipart(&ldquo;alternative&rdquo;) instance.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> smtplib
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">from</span> email.mime.text <span style="color:#ff79c6">import</span> MIMEText 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">from</span> email.mime.multipart <span style="color:#ff79c6">import</span> MIMEMultipart 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2525</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>smtp_server <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;smtp.yourserver.com&#34;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>login <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your login </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>password <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your password </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>sender_email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;sender@example.com&#34;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>receiver_email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;new@example.com&#34;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>message <span style="color:#ff79c6">=</span> MIMEMultipart(<span style="color:#f1fa8c">&#34;alternative&#34;</span>) 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>message[<span style="color:#f1fa8c">&#34;Subject&#34;</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;multipart test&#34;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>message[<span style="color:#f1fa8c">&#34;From&#34;</span>] <span style="color:#ff79c6">=</span> sender_email 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>message[<span style="color:#f1fa8c">&#34;To&#34;</span>] <span style="color:#ff79c6">=</span> receiver_email 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4"># write the plain text part </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;&#34;\ Hi, Check out the new post on our blog blog: How to Send Emails with Python? https://blog.example.com/send-email-python/ Feel free to let us know what content would be useful for you!&#34;&#34;&#34;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4"># write the HTML part </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>html <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;&#34;\ &lt;html&gt; &lt;body&gt; &lt;p&gt;Hi,</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c"> Check out the new post on our blog blog: &lt;/p&gt; &lt;p&gt;&lt;a href=&#34;https://blog.example.com/send-email-python/&#34;&gt;How to Send Emails with Python?&lt;/p&gt; &lt;p&gt; Feel free to &lt;strong&gt;let us&lt;/strong&gt; know what content would be useful for you!&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &#34;&#34;&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#6272a4"># convert both parts to MIMEText objects and add them to the MIMEMultipart message </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>part1 <span style="color:#ff79c6">=</span> MIMEText(text, <span style="color:#f1fa8c">&#34;plain&#34;</span>) 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>part2 <span style="color:#ff79c6">=</span> MIMEText(html, <span style="color:#f1fa8c">&#34;html&#34;</span>) 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>message<span style="color:#ff79c6">.</span>attach(part1)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>message<span style="color:#ff79c6">.</span>attach(part2) 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4"># send your email with smtplib.SMTP(&#34;smtp.yourserver.com&#34;, 2525) as server: server.login(login, password) </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>server<span style="color:#ff79c6">.</span>sendmail( sender_email, receiver_email, message<span style="color:#ff79c6">.</span>as_string() ) 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;Sent&#39;</span>)
-</code></pre></div><h2 id="how-to-attach-files-in-python">How to attach files in Python</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>import</span> smtplib
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#ff79c6>from</span> email.mime.text <span style=color:#ff79c6>import</span> MIMEText 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span style=color:#ff79c6>from</span> email.mime.multipart <span style=color:#ff79c6>import</span> MIMEMultipart 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>port <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2525</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>smtp_server <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;smtp.yourserver.com&#34;</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>login <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your login </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>password <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your password </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>sender_email <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;sender@example.com&#34;</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>receiver_email <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;new@example.com&#34;</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>message <span style=color:#ff79c6>=</span> MIMEMultipart(<span style=color:#f1fa8c>&#34;alternative&#34;</span>) 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>message[<span style=color:#f1fa8c>&#34;Subject&#34;</span>] <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;multipart test&#34;</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>message[<span style=color:#f1fa8c>&#34;From&#34;</span>] <span style=color:#ff79c6>=</span> sender_email 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>message[<span style=color:#f1fa8c>&#34;To&#34;</span>] <span style=color:#ff79c6>=</span> receiver_email 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span style=color:#6272a4># write the plain text part </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>text <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;&#34;&#34;\ Hi, Check out the new post on our blog blog: How to Send Emails with Python? https://blog.example.com/send-email-python/ Feel free to let us know what content would be useful for you!&#34;&#34;&#34;</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span style=color:#6272a4># write the HTML part </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>html <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;&#34;&#34;\ &lt;html&gt; &lt;body&gt; &lt;p&gt;Hi,</span><span style=color:#f1fa8c>\n</span><span style=color:#f1fa8c> Check out the new post on our blog blog: &lt;/p&gt; &lt;p&gt;&lt;a href=&#34;https://blog.example.com/send-email-python/&#34;&gt;How to Send Emails with Python?&lt;/p&gt; &lt;p&gt; Feel free to &lt;strong&gt;let us&lt;/strong&gt; know what content would be useful for you!&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &#34;&#34;&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span style=color:#6272a4># convert both parts to MIMEText objects and add them to the MIMEMultipart message </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>part1 <span style=color:#ff79c6>=</span> MIMEText(text, <span style=color:#f1fa8c>&#34;plain&#34;</span>) 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>part2 <span style=color:#ff79c6>=</span> MIMEText(html, <span style=color:#f1fa8c>&#34;html&#34;</span>) 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>message<span style=color:#ff79c6>.</span>attach(part1)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>message<span style=color:#ff79c6>.</span>attach(part2) 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span><span style=color:#6272a4># send your email with smtplib.SMTP(&#34;smtp.yourserver.com&#34;, 2525) as server: server.login(login, password) </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>server<span style=color:#ff79c6>.</span>sendmail( sender_email, receiver_email, message<span style=color:#ff79c6>.</span>as_string() ) 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span><span style=color:#8be9fd;font-style:italic>print</span>(<span style=color:#f1fa8c>&#39;Sent&#39;</span>)
+</code></pre></div><h2 id=how-to-attach-files-in-python>How to attach files in Python</h2>
 <p>In Python, email attachments are treated as the MIME objects. But first, you need to encode them with the <em>base64</em> module.</p>
-<p>You can attach images, text and audio, as well as applications. Each of 
-the file types should be defined by the corresponding email class - for 
-example, *email.mime.image.MIMEImage or email.mime.audio.MIMEAudio. *For details, follow <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://docs.python.org/3/library/email.mime.html%26amp;sa%3DD%26amp;ust%3D1571698656502000&amp;sa=D&amp;ust=1571698656559000&amp;usg=AFQjCNGNIW5oqFcJENkBJKAMes25gJYrKw">this section of the Python documentation</a>.</p>
-<h2 id="example-of-attaching-a-pdf-file"><strong>Example of attaching a PDF file:</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> smtplib
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"># import the corresponding modules</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">from</span> email <span style="color:#ff79c6">import</span> encoders
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">from</span> email.mime.base <span style="color:#ff79c6">import</span> MIMEBase
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">from</span> email.mime.multipart <span style="color:#ff79c6">import</span> MIMEMultipart
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">from</span> email.mime.text <span style="color:#ff79c6">import</span> MIMEText
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2525</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>smtp_server <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;smtp.yourserver.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>login <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your login </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>password <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your password </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>subject <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;An example of boarding pass&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>sender_email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;sender@example.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>receiver_email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;new@example.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>message <span style="color:#ff79c6">=</span> MIMEMultipart()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>message[<span style="color:#f1fa8c">&#34;From&#34;</span>] <span style="color:#ff79c6">=</span> sender_email
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>message[<span style="color:#f1fa8c">&#34;To&#34;</span>] <span style="color:#ff79c6">=</span> receiver_email
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>message[<span style="color:#f1fa8c">&#34;Subject&#34;</span>] <span style="color:#ff79c6">=</span> subject
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#6272a4"># Add body to email</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>body <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;This is an example of how you can send a boarding pass in attachment with Python&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>message<span style="color:#ff79c6">.</span>attach(MIMEText(body, <span style="color:#f1fa8c">&#34;plain&#34;</span>))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>filename <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;yourBP.pdf&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#6272a4"># Open PDF file in binary mode</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4"># We assume that the file is in the directory where you run your Python script from</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename, <span style="color:#f1fa8c">&#34;rb&#34;</span>) <span style="color:#ff79c6">as</span> attachment:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#6272a4"># The content type &#34;application/octet-stream&#34; means that a MIME attachment is a binary file</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    part <span style="color:#ff79c6">=</span> MIMEBase(<span style="color:#f1fa8c">&#34;application&#34;</span>, <span style="color:#f1fa8c">&#34;octet-stream&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    part<span style="color:#ff79c6">.</span>set_payload(attachment<span style="color:#ff79c6">.</span>read())
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    <span style="color:#6272a4"># Encode to base64</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    encoders<span style="color:#ff79c6">.</span>encode_base64(part)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#6272a4"># Add header </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    part<span style="color:#ff79c6">.</span>add_header(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        <span style="color:#f1fa8c">&#34;Content-Disposition&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>        <span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;attachment; filename= </span><span style="color:#f1fa8c">{</span>filename<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#6272a4"># Add attachment to your message and convert it to string</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    message<span style="color:#ff79c6">.</span>attach(part)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>    text <span style="color:#ff79c6">=</span> message<span style="color:#ff79c6">.</span>as_string()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>    <span style="color:#6272a4"># send your email</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    <span style="color:#ff79c6">with</span> smtplib<span style="color:#ff79c6">.</span>SMTP(<span style="color:#f1fa8c">&#34;smtp.yourserver.com&#34;</span>, <span style="color:#bd93f9">2525</span>) <span style="color:#ff79c6">as</span> server:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        server<span style="color:#ff79c6">.</span>login(login, password)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>        server<span style="color:#ff79c6">.</span>sendmail(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>            sender_email, receiver_email, text
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>        )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;Sent&#39;</span>)
+<p>You can attach images, text and audio, as well as applications. Each of
+the file types should be defined by the corresponding email class - for
+example, *email.mime.image.MIMEImage or email.mime.audio.MIMEAudio. *For details, follow <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://docs.python.org/3/library/email.mime.html%26amp;sa%3DD%26amp;ust%3D1571698656502000&sa=D&ust=1571698656559000&usg=AFQjCNGNIW5oqFcJENkBJKAMes25gJYrKw">this section of the Python documentation</a>.</p>
+<h2 id=example-of-attaching-a-pdf-file><strong>Example of attaching a PDF file:</strong></h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>import</span> smtplib
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#6272a4># import the corresponding modules</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span style=color:#ff79c6>from</span> email <span style=color:#ff79c6>import</span> encoders
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span style=color:#ff79c6>from</span> email.mime.base <span style=color:#ff79c6>import</span> MIMEBase
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span style=color:#ff79c6>from</span> email.mime.multipart <span style=color:#ff79c6>import</span> MIMEMultipart
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span style=color:#ff79c6>from</span> email.mime.text <span style=color:#ff79c6>import</span> MIMEText
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>port <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2525</span> 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>smtp_server <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;smtp.yourserver.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>login <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your login </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>password <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your password </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>subject <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;An example of boarding pass&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>sender_email <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;sender@example.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>receiver_email <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;new@example.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>message <span style=color:#ff79c6>=</span> MIMEMultipart()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>message[<span style=color:#f1fa8c>&#34;From&#34;</span>] <span style=color:#ff79c6>=</span> sender_email
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>message[<span style=color:#f1fa8c>&#34;To&#34;</span>] <span style=color:#ff79c6>=</span> receiver_email
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>message[<span style=color:#f1fa8c>&#34;Subject&#34;</span>] <span style=color:#ff79c6>=</span> subject
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span style=color:#6272a4># Add body to email</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>body <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;This is an example of how you can send a boarding pass in attachment with Python&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>message<span style=color:#ff79c6>.</span>attach(MIMEText(body, <span style=color:#f1fa8c>&#34;plain&#34;</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>filename <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;yourBP.pdf&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span><span style=color:#6272a4># Open PDF file in binary mode</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span><span style=color:#6272a4># We assume that the file is in the directory where you run your Python script from</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span><span style=color:#ff79c6>with</span> <span style=color:#8be9fd;font-style:italic>open</span>(filename, <span style=color:#f1fa8c>&#34;rb&#34;</span>) <span style=color:#ff79c6>as</span> attachment:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>    <span style=color:#6272a4># The content type &#34;application/octet-stream&#34; means that a MIME attachment is a binary file</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>    part <span style=color:#ff79c6>=</span> MIMEBase(<span style=color:#f1fa8c>&#34;application&#34;</span>, <span style=color:#f1fa8c>&#34;octet-stream&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31</span>    part<span style=color:#ff79c6>.</span>set_payload(attachment<span style=color:#ff79c6>.</span>read())
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33</span>    <span style=color:#6272a4># Encode to base64</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34</span>    encoders<span style=color:#ff79c6>.</span>encode_base64(part)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36</span>    <span style=color:#6272a4># Add header </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37</span>    part<span style=color:#ff79c6>.</span>add_header(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38</span>        <span style=color:#f1fa8c>&#34;Content-Disposition&#34;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39</span>        <span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;attachment; filename= </span><span style=color:#f1fa8c>{</span>filename<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40</span>    )
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42</span>    <span style=color:#6272a4># Add attachment to your message and convert it to string</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43</span>    message<span style=color:#ff79c6>.</span>attach(part)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44</span>    text <span style=color:#ff79c6>=</span> message<span style=color:#ff79c6>.</span>as_string()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46</span>    <span style=color:#6272a4># send your email</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47</span>    <span style=color:#ff79c6>with</span> smtplib<span style=color:#ff79c6>.</span>SMTP(<span style=color:#f1fa8c>&#34;smtp.yourserver.com&#34;</span>, <span style=color:#bd93f9>2525</span>) <span style=color:#ff79c6>as</span> server:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48</span>        server<span style=color:#ff79c6>.</span>login(login, password)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49</span>        server<span style=color:#ff79c6>.</span>sendmail(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50</span>            sender_email, receiver_email, text
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51</span>        )
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">52</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">53</span>    <span style=color:#8be9fd;font-style:italic>print</span>(<span style=color:#f1fa8c>&#39;Sent&#39;</span>)
 </code></pre></div><p>Call the message.attach() method several times for adding several attachments</p>
-<h2 id="embed-an-image">Embed an image</h2>
+<h2 id=embed-an-image>Embed an image</h2>
 <p>There are three common ways to include an image in an email message: base64 image (inline embedding), CID attachment (embedded as a MIME object), and linked image.</p>
 <p>In the example below we will experiment with inline embedding.</p>
 <p>For this purpose, we will use the <em>base64</em> module:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4"># import the necessary components first</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> smtplib
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">from</span> email.mime.text <span style="color:#ff79c6">import</span> MIMEText
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">from</span> email.mime.multipart <span style="color:#ff79c6">import</span> MIMEMultipart
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">import</span> base64
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2525</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>smtp_server <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;smtp.yourserver.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>login <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your login </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>password <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1a2b3c4d5e6f7g&#34;</span> <span style="color:#6272a4"># paste your password </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>sender_email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;sender@example.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>receiver_email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;new@example.com&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>message <span style="color:#ff79c6">=</span> MIMEMultipart(<span style="color:#f1fa8c">&#34;alternative&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>message[<span style="color:#f1fa8c">&#34;Subject&#34;</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;inline embedding&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>message[<span style="color:#f1fa8c">&#34;From&#34;</span>] <span style="color:#ff79c6">=</span> sender_email
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>message[<span style="color:#f1fa8c">&#34;To&#34;</span>] <span style="color:#ff79c6">=</span> receiver_email
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4"># The image file is in the same directory that you run your Python script from</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>encoded <span style="color:#ff79c6">=</span> base64<span style="color:#ff79c6">.</span>b64encode(<span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;illustration.jpg&#34;</span>, <span style="color:#f1fa8c">&#34;rb&#34;</span>)<span style="color:#ff79c6">.</span>read())<span style="color:#ff79c6">.</span>decode()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>html <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;&#34;&#34;</span><span style="color:#f1fa8c">\
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&lt;html&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#f1fa8c"> &lt;body&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#f1fa8c">   &lt;img src=&#34;data:image/jpg;base64,</span><span style="color:#f1fa8c">{</span>encoded<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span style="color:#f1fa8c"> &lt;/body&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#f1fa8c">&lt;/html&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#f1fa8c">&#34;&#34;&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>part <span style="color:#ff79c6">=</span> MIMEText(html, <span style="color:#f1fa8c">&#34;html&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>message<span style="color:#ff79c6">.</span>attach(part)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#6272a4"># send your email</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#ff79c6">with</span> smtplib<span style="color:#ff79c6">.</span>SMTP(<span style="color:#f1fa8c">&#34;smtp.yourserver.com&#34;</span>, <span style="color:#bd93f9">2525</span>) <span style="color:#ff79c6">as</span> server:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    server<span style="color:#ff79c6">.</span>login(login, password)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    server<span style="color:#ff79c6">.</span>sendmail(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>       sender_email, receiver_email, message<span style="color:#ff79c6">.</span>as_string()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>   )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;Sent&#39;</span>)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#6272a4># import the necessary components first</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#ff79c6>import</span> smtplib
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span style=color:#ff79c6>from</span> email.mime.text <span style=color:#ff79c6>import</span> MIMEText
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span style=color:#ff79c6>from</span> email.mime.multipart <span style=color:#ff79c6>import</span> MIMEMultipart
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span style=color:#ff79c6>import</span> base64
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>port <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2525</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>smtp_server <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;smtp.yourserver.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>login <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your login </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>password <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;1a2b3c4d5e6f7g&#34;</span> <span style=color:#6272a4># paste your password </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>sender_email <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;sender@example.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>receiver_email <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;new@example.com&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>message <span style=color:#ff79c6>=</span> MIMEMultipart(<span style=color:#f1fa8c>&#34;alternative&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>message[<span style=color:#f1fa8c>&#34;Subject&#34;</span>] <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;inline embedding&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>message[<span style=color:#f1fa8c>&#34;From&#34;</span>] <span style=color:#ff79c6>=</span> sender_email
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>message[<span style=color:#f1fa8c>&#34;To&#34;</span>] <span style=color:#ff79c6>=</span> receiver_email
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span style=color:#6272a4># The image file is in the same directory that you run your Python script from</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>encoded <span style=color:#ff79c6>=</span> base64<span style=color:#ff79c6>.</span>b64encode(<span style=color:#8be9fd;font-style:italic>open</span>(<span style=color:#f1fa8c>&#34;illustration.jpg&#34;</span>, <span style=color:#f1fa8c>&#34;rb&#34;</span>)<span style=color:#ff79c6>.</span>read())<span style=color:#ff79c6>.</span>decode()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>html <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;&#34;&#34;</span><span style=color:#f1fa8c>\
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span style=color:#f1fa8c></span><span style=color:#f1fa8c>&lt;html&gt;
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span style=color:#f1fa8c> &lt;body&gt;
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span style=color:#f1fa8c>   &lt;img src=&#34;data:image/jpg;base64,</span><span style=color:#f1fa8c>{</span>encoded<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;&gt;
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span style=color:#f1fa8c> &lt;/body&gt;
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span><span style=color:#f1fa8c>&lt;/html&gt;
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span><span style=color:#f1fa8c>&#34;&#34;&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>part <span style=color:#ff79c6>=</span> MIMEText(html, <span style=color:#f1fa8c>&#34;html&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>message<span style=color:#ff79c6>.</span>attach(part)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31</span><span style=color:#6272a4># send your email</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32</span><span style=color:#ff79c6>with</span> smtplib<span style=color:#ff79c6>.</span>SMTP(<span style=color:#f1fa8c>&#34;smtp.yourserver.com&#34;</span>, <span style=color:#bd93f9>2525</span>) <span style=color:#ff79c6>as</span> server:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33</span>    server<span style=color:#ff79c6>.</span>login(login, password)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34</span>    server<span style=color:#ff79c6>.</span>sendmail(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35</span>       sender_email, receiver_email, message<span style=color:#ff79c6>.</span>as_string()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36</span>   )
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37</span><span style=color:#8be9fd;font-style:italic>print</span>(<span style=color:#f1fa8c>&#39;Sent&#39;</span>)
 </code></pre></div><p>That&rsquo;s it!</p>
-<h2 id="useful-resources-for-sending-emails-with-python">Useful resources for sending emails with Python</h2>
-<p>Python offers a wide set of capabilities for email sending. In this article, we went through the main steps. To go further, you can refer to the <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://docs.python.org/3/library/email.html%26amp;sa%3DD%26amp;ust%3D1571698656527000&amp;sa=D&amp;ust=1571698656566000&amp;usg=AFQjCNGu8NQ5Hp41gjq2_yncquv114dZMw">Python documentation</a> and also try additional libraries such as Flask Mail or Marrow Mailer.</p>
-<p>Here you will find a really <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://awesome-python.com/%26amp;sa%3DD%26amp;ust%3D1571698656527000&amp;sa=D&amp;ust=1571698656567000&amp;usg=AFQjCNE9j1NJsff6cDe5yCH2bzKDrKyNug">awesome list of Python resources</a> sorted by their functionality.</p>
-<p><em>This article was originally published on Mailtrap&rsquo;s blog: <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://blog.mailtrap.io/sending-emails-in-python-tutorial-with-code-examples/%26amp;sa%3DD%26amp;ust%3D1571698656528000&amp;sa=D&amp;ust=1571698656567000&amp;usg=AFQjCNF0Cch_ocBxwHhOWI0AI0TwBrvupg">Sending emails with Python</a></em>.</p>
-
-    </div>
-  </article>
-
-  
-  <hr>
-  <h2 style="color:#2BBC8A; text-align: center">Did you find this article helpful?</h2><br>
-  <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 10px 7px 10px !important;line-height: 35px !important;height:51px !important;min-width:217px !important;text-decoration: none !important;display:inline-flex !important;color:#FFFFFF !important;background-color:#FF813F !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 10px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#FFFFFF !important;}</style>
-
-  <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-  <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/dXjDHmt" style="align:left">
-    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee!" align="left">
-    <span style="margin-left:15px;font-size:28px !important;">Buy me a coffee!</span></a>
-  <hr>
-            
-
-  
-  
-
-
-
-
-  <div class="blog-post-comments">
-    
-      <div id="disquss_thread">
-  <script src="https://utteranc.es/client.js"
-    repo="mastro35/tpc"
-    issue-term="pathname"
-    label="The Python Corner"
-    theme="github-dark"
-    crossorigin="anonymous"
-    async>
-  </script>
+<h2 id=useful-resources-for-sending-emails-with-python>Useful resources for sending emails with Python</h2>
+<p>Python offers a wide set of capabilities for email sending. In this article, we went through the main steps. To go further, you can refer to the <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://docs.python.org/3/library/email.html%26amp;sa%3DD%26amp;ust%3D1571698656527000&sa=D&ust=1571698656566000&usg=AFQjCNGu8NQ5Hp41gjq2_yncquv114dZMw">Python documentation</a> and also try additional libraries such as Flask Mail or Marrow Mailer.</p>
+<p>Here you will find a really <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://awesome-python.com/%26amp;sa%3DD%26amp;ust%3D1571698656527000&sa=D&ust=1571698656567000&usg=AFQjCNE9j1NJsff6cDe5yCH2bzKDrKyNug">awesome list of Python resources</a> sorted by their functionality.</p>
+<p><em>This article was originally published on Mailtrap&rsquo;s blog: <a href="https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://blog.mailtrap.io/sending-emails-in-python-tutorial-with-code-examples/%26amp;sa%3DD%26amp;ust%3D1571698656528000&sa=D&ust=1571698656567000&usg=AFQjCNF0Cch_ocBxwHhOWI0AI0TwBrvupg">Sending emails with Python</a></em>.</p>
 </div>
-
-    
-  </div>
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="../../">Home</a></li>
-         
-          <li><a href="../../posts">Articles</a></li>
-         
-          <li><a href="../../tags">Tags</a></li>
-         
-          <li><a href="../../about">About</a></li>
-         
-          <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
-         
-          <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#before-we-start">Before we start</a></li>
-    <li><a href="#how-to-configure-email-sending">How to configure email sending</a></li>
-    <li><a href="#define-smtp-server">Define SMTP server</a></li>
-    <li><a href="#sending-emails-via-gmail-or-another-external-smtp-server">Sending emails via Gmail or another external SMTP server</a></li>
-    <li><a href="#sending-personalized-emails-to-multiple-recipients">Sending personalized emails to multiple recipients</a></li>
-    <li><a href="#lets-add-html-content">Let&rsquo;s add HTML content</a></li>
-    <li><a href="#how-to-attach-files-in-python">How to attach files in Python</a></li>
-    <li><a href="#example-of-attaching-a-pdf-file"><strong>Example of attaching a PDF file:</strong></a></li>
-    <li><a href="#embed-an-image">Embed an image</a></li>
-    <li><a href="#useful-resources-for-sending-emails-with-python">Useful resources for sending emails with Python</a></li>
-  </ul>
-</nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&text=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&is_video=false&description=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&name=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&description=Hey%20there%21%20Now%20you%20are%20reading%20a%20quick%20but%20detailed%20guide%20on%20adding%20the%20essential%20functionality%20to%20your%20web%20app%20built%20with%20Python%3a%20email%20sending.%20From%20this%20post%2c%20you%20will%20learn%20about%20the%20capabilities%20of%20the%20native%20Python%20modules%20for%20email%20sending%20and%20then%20get%20the%20practical%20steps%20for%20creating%20a%20message%20with%20images%20and%20attachments.%20With%20plenty%20of%20code%20examples%2c%20you%20will%20be%20able%20to%20craft%20and%20send%20your%20own%20emails%20using%20an%20SMTP%20server." aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&t=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
+</article>
+<hr>
+<h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br>
+<style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet>
+<a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left>
+<img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
+<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a>
+<hr>
+<div class=blog-post-comments>
+<div id=disquss_thread>
+<script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script>
+</div>
+</div>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
 </ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
 </div>
-
-
-  <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2021  Davide Mastromatteo 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="../../">Home</a></li>
-         
-        <li><a href="../../posts">Articles</a></li>
-         
-        <li><a href="../../tags">Tags</a></li>
-         
-        <li><a href="../../about">About</a></li>
-         
-        <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
-         
-        <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
-        
-      </ul>
-    </nav>
-  </div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#before-we-start>Before we start</a></li>
+<li><a href=#how-to-configure-email-sending>How to configure email sending</a></li>
+<li><a href=#define-smtp-server>Define SMTP server</a></li>
+<li><a href=#sending-emails-via-gmail-or-another-external-smtp-server>Sending emails via Gmail or another external SMTP server</a></li>
+<li><a href=#sending-personalized-emails-to-multiple-recipients>Sending personalized emails to multiple recipients</a></li>
+<li><a href=#lets-add-html-content>Let&rsquo;s add HTML content</a></li>
+<li><a href=#how-to-attach-files-in-python>How to attach files in Python</a></li>
+<li><a href=#example-of-attaching-a-pdf-file><strong>Example of attaching a PDF file:</strong></a></li>
+<li><a href=#embed-an-image>Embed an image</a></li>
+<li><a href=#useful-resources-for-sending-emails-with-python>Useful resources for sending emails with Python</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&text=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&is_video=false&description=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&title=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&name=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App&description=Hey%20there%21%20Now%20you%20are%20reading%20a%20quick%20but%20detailed%20guide%20on%20adding%20the%20essential%20functionality%20to%20your%20web%20app%20built%20with%20Python%3a%20email%20sending.%20From%20this%20post%2c%20you%20will%20learn%20about%20the%20capabilities%20of%20the%20native%20Python%20modules%20for%20email%20sending%20and%20then%20get%20the%20practical%20steps%20for%20creating%20a%20message%20with%20images%20and%20attachments.%20With%20plenty%20of%20code%20examples%2c%20you%20will%20be%20able%20to%20craft%20and%20send%20your%20own%20emails%20using%20an%20SMTP%20server." aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2019-10-22-the-detailed-guide-on-sending-emails-from-your-python-app%2f&t=The%20Detailed%20Guide%20on%20Sending%20Emails%20from%20your%20Python%20App" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2021 Davide Mastromatteo
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</nav>
+</div>
 </footer>
-
-
-  </div>
+</div>
 </body>
-
-<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
 <script src=../../lib/jquery/jquery.min.js></script>
 <script src=../../js/main.js></script>
-
 <script src=../../js/code-copy.js></script>
-
-
-
-
 </html>

@@ -1,348 +1,252 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html><html lang=en-us>
 <head>
-
-<script data-ad-client="ca-pub-1030730506660314" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-    <script id="mNCC" language="javascript">
-    medianet_width = "728";
-    medianet_height = "90";
-    medianet_crid = "167545135";
-    medianet_versionId = "3111299"; 
-    </script>
-    <script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://blockchain.info/Resources/js/pay-now-button.js"></script>
-
-
-  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="../../lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
-  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> How to create a telegram bot with Python in minutes | The Python Corner</title>
-  <link rel = 'canonical' href = 'https://mastro35.github.io/tpc/posts/2021-01-16-how-create-telegram-bot-in-python/'>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="How to create a telegram bot with Python in minutes" />
+<script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script>
+<script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
+<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script>
+<script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
+<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> How to create a telegram bot with Python in minutes | The Python Corner</title>
+<link rel=canonical href=https://mastro35.github.io/tpc/posts/2021-01-16-how-create-telegram-bot-in-python/>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta property="og:title" content="How to create a telegram bot with Python in minutes">
 <meta property="og:description" content="Creating a telegram bot with Python in minutes may seem like a clickbait title for a post, but trust me, it&rsquo;s possible. If you&rsquo;re going through a boring afternoon or you&rsquo;re locked down due to COVID restriction and you want to do something different, keep reading and let&rsquo;s create our first Python Telegram bot! :)
-For this project, all you will have to use is the python-telegram-bot package that&rsquo;s basically a wrapper around telegram APIs." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2021-01-16-how-create-telegram-bot-in-python/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-01-16T16:00:47+01:00" />
-<meta property="article:modified_time" content="2021-01-16T16:00:47+01:00" />
-
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to create a telegram bot with Python in minutes"/>
-<meta name="twitter:description" content="Creating a telegram bot with Python in minutes may seem like a clickbait title for a post, but trust me, it&rsquo;s possible. If you&rsquo;re going through a boring afternoon or you&rsquo;re locked down due to COVID restriction and you want to do something different, keep reading and let&rsquo;s create our first Python Telegram bot! :)
-For this project, all you will have to use is the python-telegram-bot package that&rsquo;s basically a wrapper around telegram APIs."/>
-
-  
-  
-    
-  
-  
-  <link rel="stylesheet" href="https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
-
-  
-  
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-
-  
-
-
-<link rel="apple-touch-icon" sizes="57x57" href="../../images/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="../../images/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../../images/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="../../images/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../../images/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="../../images/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="../../images/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="../../images/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="../../images/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="../../images/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
-<link rel="manifest" href="../../manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-  
-  
-  
-  
-  
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-120027408-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  
-  
+For this project, all you will have to use is the python-telegram-bot package that&rsquo;s basically a wrapper around telegram APIs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2021-01-16-how-create-telegram-bot-in-python/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-01-16T16:00:47+01:00">
+<meta property="article:modified_time" content="2021-01-16T16:00:47+01:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="How to create a telegram bot with Python in minutes">
+<meta name=twitter:description content="Creating a telegram bot with Python in minutes may seem like a clickbait title for a post, but trust me, it&rsquo;s possible. If you&rsquo;re going through a boring afternoon or you&rsquo;re locked down due to COVID restriction and you want to do something different, keep reading and let&rsquo;s create our first Python Telegram bot! :)
+For this project, all you will have to use is the python-telegram-bot package that&rsquo;s basically a wrapper around telegram APIs.">
+<link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png>
+<link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png>
+<link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png>
+<link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png>
+<link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png>
+<link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png>
+<link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png>
+<link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png>
+<link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png>
+<link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png>
+<link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png>
+<link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png>
+<link rel=manifest href=../../manifest.json>
+<meta name=msapplication-TileColor content="#ffffff">
+<meta name=msapplication-TileImage content="/images/ms-icon-144x144.png">
+<meta name=theme-color content="#ffffff">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
-
 <body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
-
-  <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="../../">Home</a></li>
-         
-        <li><a href="../../posts">Articles</a></li>
-         
-        <li><a href="../../tags">Tags</a></li>
-         
-        <li><a href="../../about">About</a></li>
-         
-        <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
-         
-        <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" https://mastro35.github.io/tpc/posts/2020-12-30-working-with-decorators-python-basics/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&text=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&is_video=false&description=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&name=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&description=Creating%20a%20telegram%20bot%20with%20Python%20in%20minutes%20may%20seem%20like%20a%20clickbait%20title%20for%20a%20post%2c%20but%20trust%20me%2c%20it%26rsquo%3bs%20possible.%20If%20you%26rsquo%3bre%20going%20through%20a%20boring%20afternoon%20or%20you%26rsquo%3bre%20locked%20down%20due%20to%20COVID%20restriction%20and%20you%20want%20to%20do%20something%20different%2c%20keep%20reading%20and%20let%26rsquo%3bs%20create%20our%20first%20Python%20Telegram%20bot%21%20%3a%29%0aFor%20this%20project%2c%20all%20you%20will%20have%20to%20use%20is%20the%20python-telegram-bot%20package%20that%26rsquo%3bs%20basically%20a%20wrapper%20around%20telegram%20APIs." aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&t=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
 </ul>
-
-    </div>
-    
-    <div id="toc">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-  </span>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2020-12-30-working-with-decorators-python-basics/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&text=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&is_video=false&description=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&name=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&description=Creating%20a%20telegram%20bot%20with%20Python%20in%20minutes%20may%20seem%20like%20a%20clickbait%20title%20for%20a%20post%2c%20but%20trust%20me%2c%20it%26rsquo%3bs%20possible.%20If%20you%26rsquo%3bre%20going%20through%20a%20boring%20afternoon%20or%20you%26rsquo%3bre%20locked%20down%20due%20to%20COVID%20restriction%20and%20you%20want%20to%20do%20something%20different%2c%20keep%20reading%20and%20let%26rsquo%3bs%20create%20our%20first%20Python%20Telegram%20bot%21%20%3a%29%0aFor%20this%20project%2c%20all%20you%20will%20have%20to%20use%20is%20the%20python-telegram-bot%20package%20that%26rsquo%3bs%20basically%20a%20wrapper%20around%20telegram%20APIs." aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&t=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
 </div>
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        How to create a telegram bot with Python in minutes
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2021-01-16 16:00:47 &#43;0100 CET" itemprop="datePublished">2021-01-16</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          12 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="../../categories/dev">Dev</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="../../tags/telegram-bot" rel="tag">telegram bot</a>
-            
-             ,  
-            <a class="tag-link" href="../../tags/bot" rel="tag">bot</a>
-            
-             ,  
-            <a class="tag-link" href="../../tags/python" rel="tag">python</a>
-            
-        </div>
-        
-      </div>
-    </header>
-
-  
-    
-    <div class="content" itemprop="articleBody">
-      <p><img src="https://imgs.xkcd.com/comics/android_girlfriend.png" alt="teaser"></p>
+<div id=toc>
+<nav id=TableOfContents></nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+How to create a telegram bot with Python in minutes
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2021-01-16 16:00:47 +0100 CET" itemprop=datePublished>2021-01-16</time>
+</div>
+<div class=article-read-time>
+<i class="far fa-clock"></i>
+12 minute read
+</div>
+<div class=article-category>
+<i class="fas fa-archive"></i>
+<a class=category-link href=../../categories/dev>Dev</a>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../tags/telegram-bot rel=tag>telegram bot</a>
+,
+<a class=tag-link href=../../tags/bot rel=tag>bot</a>
+,
+<a class=tag-link href=../../tags/python rel=tag>python</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p><img src=https://imgs.xkcd.com/comics/android_girlfriend.png alt=teaser></p>
 <p>Creating a telegram bot with Python in minutes may seem like a clickbait title for a post, but trust me, it&rsquo;s possible. If you&rsquo;re going through a boring afternoon or you&rsquo;re locked down due to COVID restriction and you want to do something different, keep reading and let&rsquo;s create our first Python Telegram bot! :)</p>
-<p>For this project, all you will have to use is the  <a href="https://github.com/python-telegram-bot/python-telegram-bot">python-telegram-bot</a> package that&rsquo;s basically a wrapper around telegram APIs. Python Telegram Bot is fully compatible with Python 3.6+ and will make developing a Telegram Bot a piece of cake.</p>
-<p>So, let&rsquo;s start by installing this package (I strongly recommend to use a virtual environment for this kind of things: if you don&rsquo;t know how to do it, just look at this <a href="https://thepythoncorner.com/dev/using-virtual-environments-python/">old article</a> or stay tuned, because I&rsquo;m going to write something about it soon&hellip;</p>
+<p>For this project, all you will have to use is the <a href=https://github.com/python-telegram-bot/python-telegram-bot>python-telegram-bot</a> package that&rsquo;s basically a wrapper around telegram APIs. Python Telegram Bot is fully compatible with Python 3.6+ and will make developing a Telegram Bot a piece of cake.</p>
+<p>So, let&rsquo;s start by installing this package (I strongly recommend to use a virtual environment for this kind of things: if you don&rsquo;t know how to do it, just look at this <a href=https://thepythoncorner.com/dev/using-virtual-environments-python/>old article</a> or stay tuned, because I&rsquo;m going to write something about it soon&mldr;</p>
 <p>$ pip install python-telegram-bot &ndash;upgrade</p>
 <p>Now that you have installed the package, let&rsquo;s start with creating our first bot. And guess what? You don&rsquo;t need any Python to create a bot, you just need to chat with the Telegram <strong>BotFather</strong> account.</p>
 <p>Once you start chatting with the <em>BotFather</em> bot, you just need to issue the <code>/newbot</code> command and answer the questions of <em>BotFather</em> will ask you: the name of your bot (it&rsquo;s the display name) and the username of your bot.</p>
-<p><img src="https://mastro35.github.io/thepythoncorner/images/botfather1.png" alt="botfather1">{: .align-center}</p>
-<p><img src="https://mastro35.github.io/thepythoncorner/images/botfather2.png" alt="botfather2">{: .align-center}</p>
+<p><img src=https://mastro35.github.io/thepythoncorner/images/botfather1.png alt=botfather1>{: .align-center}</p>
+<p><img src=https://mastro35.github.io/thepythoncorner/images/botfather2.png alt=botfather2>{: .align-center}</p>
 <p>That&rsquo;s it, your bot is ready! There is a lot of other stuff that you can ask to BotFather (like changing the profile pic of your bot, for example) but for this basic tutorial, we won&rsquo;t need anything else.</p>
-<p>Now, you&rsquo;re going to face a tough decision: what will your bot do? The bot we will create with this example will give visitors information about their <em>biorhythm</em>. If you don&rsquo;t know what a biorhythm is, <a href="https://en.wikipedia.org/wiki/Biorhythm_(pseudoscience)">check this page</a> on Wikipedia and you will find out two important things:</p>
+<p>Now, you&rsquo;re going to face a tough decision: what will your bot do? The bot we will create with this example will give visitors information about their <em>biorhythm</em>. If you don&rsquo;t know what a biorhythm is, <a href=https://en.wikipedia.org/wiki/Biorhythm_(pseudoscience)>check this page</a> on Wikipedia and you will find out two important things:</p>
 <ol>
 <li>According to the theory of biorhythms &ldquo;a person&rsquo;s life is influenced by rhythmic biological cycles that affect his or her ability in various domains, such as mental, physical, and emotional activity&rdquo;.</li>
 <li>The proposal has been independently tested and, consistently, <strong>no validity</strong> for it has been found. :)</li>
 </ol>
-<p>So our bot will be as useful as reading the horoscope&hellip; that&rsquo;s cool uh? :)</p>
+<p>So our bot will be as useful as reading the horoscope&mldr; that&rsquo;s cool uh? :)</p>
 <p>But don&rsquo;t worry: at the end of the article, you will be able to program any kind of bots, either completely useless like this one or useful ones! :)</p>
 <p>Now, let&rsquo;s see how can we program the bot.</p>
 <p>The <strong>python-telegram-bot</strong> package consists of a wrapper around Telegram APIs. The Telegram APIs are exposed via the <code>telegram.Bot</code> class. However, on top of this class, they have built the <code>telegram.ext</code> module, which will make your work a lot easier, allowing you to create a bot in minutes.</p>
 <p>The <code>telegram.ext</code> module contains a lot of classes, but the most important two are <code>telegram.ext.Updater</code> and <code>telegram.ext.Dispatcher</code>. The <code>Updater</code> class is responsible for fetching new updates from Telegram and passing them to the <code>Dispatcher</code> class, which will handle them through a <code>Handler</code> class.</p>
 <p>So let&rsquo;s start coding!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4"># mastrobot_example.py</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">from</span> telegram.ext <span style="color:#ff79c6">import</span> Updater, CommandHandler, MessageHandler, Filters
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#6272a4"># function to handle the /start command</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">start</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#39;start command received&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"># function to handle the /help command</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">help</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#39;help command received&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"># function to handle errors occured in the dispatcher </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">error</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#39;an error occured&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"># function to handle normal text </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">text</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    text_received <span style="color:#ff79c6">=</span> update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>text
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;did you said &#34;</span><span style="color:#f1fa8c">{</span>text_received<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34; ?&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">main</span>():
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    TOKEN <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;insert here your token and don&#39;t share it with anyone!&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#6272a4"># create the updater, that will automatically create also a dispatcher and a queue to </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#6272a4"># make them dialoge</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    updater <span style="color:#ff79c6">=</span> Updater(TOKEN, use_context<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    dispatcher <span style="color:#ff79c6">=</span> updater<span style="color:#ff79c6">.</span>dispatcher
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#6272a4"># add handlers for start and help commands</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(CommandHandler(<span style="color:#f1fa8c">&#34;start&#34;</span>, start))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(CommandHandler(<span style="color:#f1fa8c">&#34;help&#34;</span>, help))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    <span style="color:#6272a4"># add an handler for normal text (not commands)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(MessageHandler(Filters<span style="color:#ff79c6">.</span>text, text))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#6272a4"># add an handler for errors</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    dispatcher<span style="color:#ff79c6">.</span>add_error_handler(error)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    <span style="color:#6272a4"># start your shiny new bot</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    updater<span style="color:#ff79c6">.</span>start_polling()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#6272a4"># run the bot until Ctrl-C</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    updater<span style="color:#ff79c6">.</span>idle()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>    main()
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#6272a4># mastrobot_example.py</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#ff79c6>from</span> telegram.ext <span style=color:#ff79c6>import</span> Updater, CommandHandler, MessageHandler, Filters
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span style=color:#6272a4># function to handle the /start command</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>start</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#39;start command received&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span style=color:#6272a4># function to handle the /help command</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>help</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#39;help command received&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span style=color:#6272a4># function to handle errors occured in the dispatcher </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>error</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#39;an error occured&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span style=color:#6272a4># function to handle normal text </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>text</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>    text_received <span style=color:#ff79c6>=</span> update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>text
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#39;did you said &#34;</span><span style=color:#f1fa8c>{</span>text_received<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34; ?&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>main</span>():
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>    TOKEN <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;insert here your token and don&#39;t share it with anyone!&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>    <span style=color:#6272a4># create the updater, that will automatically create also a dispatcher and a queue to </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>    <span style=color:#6272a4># make them dialoge</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>    updater <span style=color:#ff79c6>=</span> Updater(TOKEN, use_context<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>    dispatcher <span style=color:#ff79c6>=</span> updater<span style=color:#ff79c6>.</span>dispatcher
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>    <span style=color:#6272a4># add handlers for start and help commands</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(CommandHandler(<span style=color:#f1fa8c>&#34;start&#34;</span>, start))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(CommandHandler(<span style=color:#f1fa8c>&#34;help&#34;</span>, help))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33</span>    <span style=color:#6272a4># add an handler for normal text (not commands)</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(MessageHandler(Filters<span style=color:#ff79c6>.</span>text, text))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36</span>    <span style=color:#6272a4># add an handler for errors</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37</span>    dispatcher<span style=color:#ff79c6>.</span>add_error_handler(error)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39</span>    <span style=color:#6272a4># start your shiny new bot</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40</span>    updater<span style=color:#ff79c6>.</span>start_polling()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42</span>    <span style=color:#6272a4># run the bot until Ctrl-C</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43</span>    updater<span style=color:#ff79c6>.</span>idle()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45</span><span style=color:#ff79c6>if</span> __name__ <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#39;__main__&#39;</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46</span>    main()
 </code></pre></div><p>This first example is quite trivial. In the main function, we have created the <code>Updater</code> class, which has automatically created for us a <code>Dispatcher</code> object, available through the <code>.dispatcher</code> property of the <code>Updater</code> class.</p>
 <p>Then, we&rsquo;ve added some handlers for:</p>
 <ul>
@@ -354,476 +258,410 @@ if (!doNotTrack) {
 <p>Finally, we have written the callback functions, that use the update object received to send messages to the user.</p>
 <p>Let&rsquo;s test this primitive bot.
 Start your bot with:</p>
-<pre tabindex="0"><code class="language-console" data-lang="console">$ python mastrobot_example.py
+<pre tabindex=0><code class=language-console data-lang=console>$ python mastrobot_example.py
 </code></pre><p>and now, let&rsquo;s start chatting with our new bot:</p>
-<p><img src="https://mastro35.github.io/thepythoncorner/images/bot1.png" alt="bot1">{: .align-center}</p>
+<p><img src=https://mastro35.github.io/thepythoncorner/images/bot1.png alt=bot1>{: .align-center}</p>
 <p>It works!</p>
 <p>Now, we wanted to create a bot to tell the user their daily biorhythm, right? This will be easy, we will use the <code>/start</code> command to get the birthday of the user as the chat starts, and then we will create a function to handle a new <code>/biorhythm</code> command to answer the user with its personal biorhythm.</p>
 <p>Let&rsquo;s start with the first part: knowing the user&rsquo;s birthday.</p>
 <p>The first thing to do is to change the function that handles the <code>/start</code> command. We will ask the user it&rsquo;s birthday and we will call a function to start the interaction with the user. To make it simple, we will ask the user the year, the month, and the day they were born in.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4"># function to handle the /start command</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">start</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    first_name <span style="color:#ff79c6">=</span> update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>chat<span style="color:#ff79c6">.</span>first_name
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Hi </span><span style="color:#f1fa8c">{</span>first_name<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">, nice to meet you!&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    start_getting_birthday_info(update, context)
-</code></pre></div><p>As you can see, in the <code>update</code> parameter you will find also some useful information about the user, like its name. However, since this is just a starting tutorial to whet your appetite, I won&rsquo;t discuss here the thousand of things you will be able to do with this package, if you want to know everything about the <em>python-telegram-bot</em> package, just check the <a href="https://python-telegram-bot.readthedocs.io/en/stable/">official documentation</a>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># function to handle the /start command</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>start</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>    first_name <span style=color:#ff79c6>=</span> update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>chat<span style=color:#ff79c6>.</span>first_name
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Hi </span><span style=color:#f1fa8c>{</span>first_name<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>, nice to meet you!&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>    start_getting_birthday_info(update, context)
+</code></pre></div><p>As you can see, in the <code>update</code> parameter you will find also some useful information about the user, like its name. However, since this is just a starting tutorial to whet your appetite, I won&rsquo;t discuss here the thousand of things you will be able to do with this package, if you want to know everything about the <em>python-telegram-bot</em> package, just check the <a href=https://python-telegram-bot.readthedocs.io/en/stable/>official documentation</a>.</p>
 <p>Now, at the very beginning of our script, we will define a new variable <code>STATE</code> that will be used to understand what question the user is answering. Don&rsquo;t worry if you can&rsquo;t get it now, you will get it in a minute.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>STATE <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">None</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>BIRTH_YEAR <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>BIRTH_MONTH <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>BIRTH_DAY <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>
-</code></pre></div><p>Now, we need to implement the function <code>start_getting:_birthday_info()</code> we are calling in the <code>start()</code> function and that starts&hellip; getting birthday info from user :) :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">start_getting_birthday_info</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    STATE <span style="color:#ff79c6">=</span> BIRTH_YEAR
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;I would need to know your birthday, so tell me what year did you born in...&#34;</span>)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>STATE <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>None</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>BIRTH_YEAR <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>BIRTH_MONTH <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>BIRTH_DAY <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>3</span>
+</code></pre></div><p>Now, we need to implement the function <code>start_getting:_birthday_info()</code> we are calling in the <code>start()</code> function and that starts&mldr; getting birthday info from user :) :</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>start_getting_birthday_info</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>    STATE <span style=color:#ff79c6>=</span> BIRTH_YEAR
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;I would need to know your birthday, so tell me what year did you born in...&#34;</span>)
 </code></pre></div><p>As you can see, at the beginning we set the variable <code>STATE</code> to the value <code>BIRTH_YEAR</code> so that we will know, when the user will answer, that it was answering the birth year question. Then, we just send a message to ask for the year of birth.</p>
 <p>Now, the user will answer with a normal text, right? So we need to change the <code>text()</code> function to wait for its answer:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">text</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#ff79c6">if</span> STATE <span style="color:#ff79c6">==</span> BIRTH_YEAR:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        <span style="color:#ff79c6">return</span> received_birth_year(update, context)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#ff79c6">if</span> STATE <span style="color:#ff79c6">==</span> BIRTH_MONTH:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#ff79c6">return</span> received_birth_month(update, context)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#ff79c6">if</span> STATE <span style="color:#ff79c6">==</span> BIRTH_DAY:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#ff79c6">return</span> received_birth_day(update, context)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>text</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>    <span style=color:#ff79c6>if</span> STATE <span style=color:#ff79c6>==</span> BIRTH_YEAR:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>        <span style=color:#ff79c6>return</span> received_birth_year(update, context)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>    <span style=color:#ff79c6>if</span> STATE <span style=color:#ff79c6>==</span> BIRTH_MONTH:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>        <span style=color:#ff79c6>return</span> received_birth_month(update, context)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>    <span style=color:#ff79c6>if</span> STATE <span style=color:#ff79c6>==</span> BIRTH_DAY:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>        <span style=color:#ff79c6>return</span> received_birth_day(update, context)
 </code></pre></div><p>Here in the <code>text()</code> function we just need to understand what&rsquo;s the question the user is answering by using the <code>STATE</code> variable we defined before, and call a specific function to handle each answer.</p>
 <p>These functions could be written like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">received_birth_year</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#ff79c6">try</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        year <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>text)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#ff79c6">if</span> year <span style="color:#ff79c6">&gt;</span> today<span style="color:#ff79c6">.</span>year:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>            <span style="color:#ff79c6">raise</span> ValueError(<span style="color:#f1fa8c">&#34;invalid value&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_year&#39;</span>] <span style="color:#ff79c6">=</span> year
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;ok, now I need to know the month (in numerical form)...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        STATE <span style="color:#ff79c6">=</span> BIRTH_MONTH
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#ff79c6">except</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">received_birth_month</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#ff79c6">try</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        month <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>text)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        <span style="color:#ff79c6">if</span> month <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">12</span> <span style="color:#ff79c6">or</span> month <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">1</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>            <span style="color:#ff79c6">raise</span> ValueError(<span style="color:#f1fa8c">&#34;invalid value&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_month&#39;</span>] <span style="color:#ff79c6">=</span> month
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;great! And now, the day...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>        STATE <span style="color:#ff79c6">=</span> BIRTH_DAY
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    <span style="color:#ff79c6">except</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">received_birth_day</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#ff79c6">try</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>        today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        dd <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>text)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>        yyyy <span style="color:#ff79c6">=</span> context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_year&#39;</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>        mm <span style="color:#ff79c6">=</span> context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_month&#39;</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        birthday <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date(year<span style="color:#ff79c6">=</span>yyyy, month<span style="color:#ff79c6">=</span>mm, day<span style="color:#ff79c6">=</span>dd)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>        <span style="color:#ff79c6">if</span> today <span style="color:#ff79c6">-</span> birthday <span style="color:#ff79c6">&lt;</span> datetime<span style="color:#ff79c6">.</span>timedelta(days<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>            <span style="color:#ff79c6">raise</span> ValueError(<span style="color:#f1fa8c">&#34;invalid value&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birthday&#39;</span>] <span style="color:#ff79c6">=</span> birthday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>        STATE <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">None</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;ok, you born on </span><span style="color:#f1fa8c">{</span>birthday<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>    <span style="color:#ff79c6">except</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)        
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>received_birth_year</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>    <span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>        today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>        year <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>text)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>        
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>        <span style=color:#ff79c6>if</span> year <span style=color:#ff79c6>&gt;</span> today<span style=color:#ff79c6>.</span>year:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>            <span style=color:#ff79c6>raise</span> ValueError(<span style=color:#f1fa8c>&#34;invalid value&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_year&#39;</span>] <span style=color:#ff79c6>=</span> year
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;ok, now I need to know the month (in numerical form)...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>        STATE <span style=color:#ff79c6>=</span> BIRTH_MONTH
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>    <span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>received_birth_month</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>    <span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span>        today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>        month <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>text)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>        <span style=color:#ff79c6>if</span> month <span style=color:#ff79c6>&gt;</span> <span style=color:#bd93f9>12</span> <span style=color:#ff79c6>or</span> month <span style=color:#ff79c6>&lt;</span> <span style=color:#bd93f9>1</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>            <span style=color:#ff79c6>raise</span> ValueError(<span style=color:#f1fa8c>&#34;invalid value&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_month&#39;</span>] <span style=color:#ff79c6>=</span> month
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;great! And now, the day...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>        STATE <span style=color:#ff79c6>=</span> BIRTH_DAY
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>    <span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>received_birth_day</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36</span>    <span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37</span>        today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38</span>        dd <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>text)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39</span>        yyyy <span style=color:#ff79c6>=</span> context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_year&#39;</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40</span>        mm <span style=color:#ff79c6>=</span> context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_month&#39;</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41</span>        birthday <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date(year<span style=color:#ff79c6>=</span>yyyy, month<span style=color:#ff79c6>=</span>mm, day<span style=color:#ff79c6>=</span>dd)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43</span>        <span style=color:#ff79c6>if</span> today <span style=color:#ff79c6>-</span> birthday <span style=color:#ff79c6>&lt;</span> datetime<span style=color:#ff79c6>.</span>timedelta(days<span style=color:#ff79c6>=</span><span style=color:#bd93f9>0</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44</span>            <span style=color:#ff79c6>raise</span> ValueError(<span style=color:#f1fa8c>&#34;invalid value&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birthday&#39;</span>] <span style=color:#ff79c6>=</span> birthday
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47</span>        STATE <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>None</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#39;ok, you born on </span><span style=color:#f1fa8c>{</span>birthday<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50</span>    <span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)        
 </code></pre></div><p>As you can see, when we receive the user birth year, we just check if it is a valid value and in this case, we save it to the <code>context.user_data[]</code> dictionary, and then we go ahead setting the next value for the <code>STATE</code> variable and asking the next question.</p>
 <p>When the last question is asked and we received the day of birth, we just create a date variable and store it in the <code>context.user_data[]</code> dictionary as well.</p>
 <p>If the user enters an invalid value, we just tell them that it&rsquo;s not correct and doesn&rsquo;t change the value of the <code>STATE</code> variable, so the user is stuck with that question until it doesn&rsquo;t answer correctly.</p>
 <p>Ok, now we just need to handle the <code>/biorhythm</code> command and we&rsquo;ve finished.</p>
 <p>Let&rsquo;s start adding a new command handler into our <code>main()</code> function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(CommandHandler(<span style="color:#f1fa8c">&#34;biorhythm&#34;</span>, biorhythm))
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(CommandHandler(<span style=color:#f1fa8c>&#34;biorhythm&#34;</span>, biorhythm))
 </code></pre></div><p>and let&rsquo;s write the function that calculate the biorhythm:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4"># This function is called when the /biorhythm command is issued</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">biorhythm</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    user_biorhythm <span style="color:#ff79c6">=</span> calculate_biorhythm(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birthday&#39;</span>])
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Phisical: </span><span style="color:#f1fa8c">{</span>user_biorhythm[<span style="color:#f1fa8c">&#39;phisical&#39;</span>]<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Emotional: </span><span style="color:#f1fa8c">{</span>user_biorhythm[<span style="color:#f1fa8c">&#39;emotional&#39;</span>]<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Intellectual: </span><span style="color:#f1fa8c">{</span>user_biorhythm[<span style="color:#f1fa8c">&#39;intellectual&#39;</span>]<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">calculate_biorhythm</span>(birthdate):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    delta <span style="color:#ff79c6">=</span> today <span style="color:#ff79c6">-</span> birthdate
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    days <span style="color:#ff79c6">=</span> delta<span style="color:#ff79c6">.</span>days
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    phisical <span style="color:#ff79c6">=</span> math<span style="color:#ff79c6">.</span>sin(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">*</span>math<span style="color:#ff79c6">.</span>pi<span style="color:#ff79c6">*</span>(days<span style="color:#ff79c6">/</span><span style="color:#bd93f9">23</span>))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    emotional <span style="color:#ff79c6">=</span> math<span style="color:#ff79c6">.</span>sin(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">*</span>math<span style="color:#ff79c6">.</span>pi<span style="color:#ff79c6">*</span>(days<span style="color:#ff79c6">/</span><span style="color:#bd93f9">28</span>))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    intellectual <span style="color:#ff79c6">=</span> math<span style="color:#ff79c6">.</span>sin(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">*</span>math<span style="color:#ff79c6">.</span>pi<span style="color:#ff79c6">*</span>(days<span style="color:#ff79c6">/</span><span style="color:#bd93f9">33</span>))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    biorhythm <span style="color:#ff79c6">=</span> {}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    biorhythm[<span style="color:#f1fa8c">&#39;phisical&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(phisical <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10000</span>)<span style="color:#ff79c6">/</span><span style="color:#bd93f9">100</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    biorhythm[<span style="color:#f1fa8c">&#39;emotional&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(emotional <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10000</span>)<span style="color:#ff79c6">/</span><span style="color:#bd93f9">100</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    biorhythm[<span style="color:#f1fa8c">&#39;intellectual&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(intellectual <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10000</span>)<span style="color:#ff79c6">/</span><span style="color:#bd93f9">100</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    biorhythm[<span style="color:#f1fa8c">&#39;phisical_critical_day&#39;</span>] <span style="color:#ff79c6">=</span> (phisical <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    biorhythm[<span style="color:#f1fa8c">&#39;emotional_critical_day&#39;</span>] <span style="color:#ff79c6">=</span> (emotional <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    biorhythm[<span style="color:#f1fa8c">&#39;intellectual_critical_day&#39;</span>] <span style="color:#ff79c6">=</span> (intellectual <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    <span style="color:#ff79c6">return</span> biorhythm
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#6272a4># This function is called when the /biorhythm command is issued</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>biorhythm</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>    user_biorhythm <span style=color:#ff79c6>=</span> calculate_biorhythm(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birthday&#39;</span>])
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Phisical: </span><span style=color:#f1fa8c>{</span>user_biorhythm[<span style=color:#f1fa8c>&#39;phisical&#39;</span>]<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Emotional: </span><span style=color:#f1fa8c>{</span>user_biorhythm[<span style=color:#f1fa8c>&#39;emotional&#39;</span>]<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Intellectual: </span><span style=color:#f1fa8c>{</span>user_biorhythm[<span style=color:#f1fa8c>&#39;intellectual&#39;</span>]<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>calculate_biorhythm</span>(birthdate):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>    today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>    delta <span style=color:#ff79c6>=</span> today <span style=color:#ff79c6>-</span> birthdate
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>    days <span style=color:#ff79c6>=</span> delta<span style=color:#ff79c6>.</span>days
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>    phisical <span style=color:#ff79c6>=</span> math<span style=color:#ff79c6>.</span>sin(<span style=color:#bd93f9>2</span><span style=color:#ff79c6>*</span>math<span style=color:#ff79c6>.</span>pi<span style=color:#ff79c6>*</span>(days<span style=color:#ff79c6>/</span><span style=color:#bd93f9>23</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>    emotional <span style=color:#ff79c6>=</span> math<span style=color:#ff79c6>.</span>sin(<span style=color:#bd93f9>2</span><span style=color:#ff79c6>*</span>math<span style=color:#ff79c6>.</span>pi<span style=color:#ff79c6>*</span>(days<span style=color:#ff79c6>/</span><span style=color:#bd93f9>28</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>    intellectual <span style=color:#ff79c6>=</span> math<span style=color:#ff79c6>.</span>sin(<span style=color:#bd93f9>2</span><span style=color:#ff79c6>*</span>math<span style=color:#ff79c6>.</span>pi<span style=color:#ff79c6>*</span>(days<span style=color:#ff79c6>/</span><span style=color:#bd93f9>33</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>    biorhythm <span style=color:#ff79c6>=</span> {}
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>    biorhythm[<span style=color:#f1fa8c>&#39;phisical&#39;</span>] <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(phisical <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>10000</span>)<span style=color:#ff79c6>/</span><span style=color:#bd93f9>100</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span>    biorhythm[<span style=color:#f1fa8c>&#39;emotional&#39;</span>] <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(emotional <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>10000</span>)<span style=color:#ff79c6>/</span><span style=color:#bd93f9>100</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>    biorhythm[<span style=color:#f1fa8c>&#39;intellectual&#39;</span>] <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(intellectual <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>10000</span>)<span style=color:#ff79c6>/</span><span style=color:#bd93f9>100</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>    biorhythm[<span style=color:#f1fa8c>&#39;phisical_critical_day&#39;</span>] <span style=color:#ff79c6>=</span> (phisical <span style=color:#ff79c6>==</span> <span style=color:#bd93f9>0</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>    biorhythm[<span style=color:#f1fa8c>&#39;emotional_critical_day&#39;</span>] <span style=color:#ff79c6>=</span> (emotional <span style=color:#ff79c6>==</span> <span style=color:#bd93f9>0</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>    biorhythm[<span style=color:#f1fa8c>&#39;intellectual_critical_day&#39;</span>] <span style=color:#ff79c6>=</span> (intellectual <span style=color:#ff79c6>==</span> <span style=color:#bd93f9>0</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>    <span style=color:#ff79c6>return</span> biorhythm
 </code></pre></div><p>As you can see I have written two different functions, one to handle the command and the other one to calculate the biorhythm to separate the responsibility of these functions.</p>
 <p>So, here there&rsquo;s the complete code of our bot:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#6272a4"># mastrobot_example2.py</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#ff79c6">import</span> datetime
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="color:#ff79c6">import</span> math
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span style="color:#ff79c6">from</span> telegram.ext <span style="color:#ff79c6">import</span> Updater, CommandHandler, MessageHandler, Filters
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span>STATE <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">None</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span>BIRTH_YEAR <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span>BIRTH_MONTH <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span>BIRTH_DAY <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span style="color:#6272a4"># function to handle the /start command</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">start</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span>    first_name <span style="color:#ff79c6">=</span> update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>chat<span style="color:#ff79c6">.</span>first_name
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Hi </span><span style="color:#f1fa8c">{</span>first_name<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">, nice to meet you!&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span>    start_getting_birthday_info(update, context)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">start_getting_birthday_info</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span>    STATE <span style="color:#ff79c6">=</span> BIRTH_YEAR
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span>        <span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;I would need to know your birthday, so tell me what year did you born in...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">received_birth_year</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>    <span style="color:#ff79c6">try</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span>        today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span>        year <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>text)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>        <span style="color:#ff79c6">if</span> year <span style="color:#ff79c6">&gt;</span> today<span style="color:#ff79c6">.</span>year:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>            <span style="color:#ff79c6">raise</span> ValueError(<span style="color:#f1fa8c">&#34;invalid value&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_year&#39;</span>] <span style="color:#ff79c6">=</span> year
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span>            <span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;ok, now I need to know the month (in numerical form)...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>        STATE <span style="color:#ff79c6">=</span> BIRTH_MONTH
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>    <span style="color:#ff79c6">except</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>            <span style="color:#f1fa8c">&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">received_birth_month</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>    <span style="color:#ff79c6">try</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>        today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>        month <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>text)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>        <span style="color:#ff79c6">if</span> month <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">12</span> <span style="color:#ff79c6">or</span> month <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">1</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>            <span style="color:#ff79c6">raise</span> ValueError(<span style="color:#f1fa8c">&#34;invalid value&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_month&#39;</span>] <span style="color:#ff79c6">=</span> month
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;great! And now, the day...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>        STATE <span style="color:#ff79c6">=</span> BIRTH_DAY
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span>    <span style="color:#ff79c6">except</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>            <span style="color:#f1fa8c">&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">received_birth_day</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>    <span style="color:#ff79c6">try</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>        today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>        dd <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>text)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>        yyyy <span style="color:#ff79c6">=</span> context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_year&#39;</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>        mm <span style="color:#ff79c6">=</span> context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birth_month&#39;</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>        birthday <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date(year<span style="color:#ff79c6">=</span>yyyy, month<span style="color:#ff79c6">=</span>mm, day<span style="color:#ff79c6">=</span>dd)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>        <span style="color:#ff79c6">if</span> today <span style="color:#ff79c6">-</span> birthday <span style="color:#ff79c6">&lt;</span> datetime<span style="color:#ff79c6">.</span>timedelta(days<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>            <span style="color:#ff79c6">raise</span> ValueError(<span style="color:#f1fa8c">&#34;invalid value&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birthday&#39;</span>] <span style="color:#ff79c6">=</span> birthday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>        STATE <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">None</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;ok, you born on </span><span style="color:#f1fa8c">{</span>birthday<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>    <span style="color:#ff79c6">except</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>        update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>            <span style="color:#f1fa8c">&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span><span style="color:#6272a4"># function to handle the /help command</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">help</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#39;help command received&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span style="color:#6272a4"># function to handle errors occured in the dispatcher</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">error</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">&#39;an error occured&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span><span style="color:#6272a4"># function to handle normal text</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">text</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>    <span style="color:#ff79c6">global</span> STATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>    <span style="color:#ff79c6">if</span> STATE <span style="color:#ff79c6">==</span> BIRTH_YEAR:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span>        <span style="color:#ff79c6">return</span> received_birth_year(update, context)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>    <span style="color:#ff79c6">if</span> STATE <span style="color:#ff79c6">==</span> BIRTH_MONTH:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>        <span style="color:#ff79c6">return</span> received_birth_month(update, context)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>    <span style="color:#ff79c6">if</span> STATE <span style="color:#ff79c6">==</span> BIRTH_DAY:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>        <span style="color:#ff79c6">return</span> received_birth_day(update, context)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span><span style="color:#6272a4"># This function is called when the /biorhythm command is issued</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">biorhythm</span>(update, context):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span>    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;ok&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>    user_biorhythm <span style="color:#ff79c6">=</span> calculate_biorhythm(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span>        context<span style="color:#ff79c6">.</span>user_data[<span style="color:#f1fa8c">&#39;birthday&#39;</span>])
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Phisical: </span><span style="color:#f1fa8c">{</span>user_biorhythm[<span style="color:#f1fa8c">&#39;phisical&#39;</span>]<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Emotional: </span><span style="color:#f1fa8c">{</span>user_biorhythm[<span style="color:#f1fa8c">&#39;emotional&#39;</span>]<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>    update<span style="color:#ff79c6">.</span>message<span style="color:#ff79c6">.</span>reply_text(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Intellectual: </span><span style="color:#f1fa8c">{</span>user_biorhythm[<span style="color:#f1fa8c">&#39;intellectual&#39;</span>]<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">calculate_biorhythm</span>(birthdate):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span>    today <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>date<span style="color:#ff79c6">.</span>today()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span>    delta <span style="color:#ff79c6">=</span> today <span style="color:#ff79c6">-</span> birthdate
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span>    days <span style="color:#ff79c6">=</span> delta<span style="color:#ff79c6">.</span>days
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span>    phisical <span style="color:#ff79c6">=</span> math<span style="color:#ff79c6">.</span>sin(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">*</span>math<span style="color:#ff79c6">.</span>pi<span style="color:#ff79c6">*</span>(days<span style="color:#ff79c6">/</span><span style="color:#bd93f9">23</span>))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span>    emotional <span style="color:#ff79c6">=</span> math<span style="color:#ff79c6">.</span>sin(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">*</span>math<span style="color:#ff79c6">.</span>pi<span style="color:#ff79c6">*</span>(days<span style="color:#ff79c6">/</span><span style="color:#bd93f9">28</span>))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span>    intellectual <span style="color:#ff79c6">=</span> math<span style="color:#ff79c6">.</span>sin(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">*</span>math<span style="color:#ff79c6">.</span>pi<span style="color:#ff79c6">*</span>(days<span style="color:#ff79c6">/</span><span style="color:#bd93f9">33</span>))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span>    biorhythm <span style="color:#ff79c6">=</span> {}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span>    biorhythm[<span style="color:#f1fa8c">&#39;phisical&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(phisical <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10000</span>)<span style="color:#ff79c6">/</span><span style="color:#bd93f9">100</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span>    biorhythm[<span style="color:#f1fa8c">&#39;emotional&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(emotional <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10000</span>)<span style="color:#ff79c6">/</span><span style="color:#bd93f9">100</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span>    biorhythm[<span style="color:#f1fa8c">&#39;intellectual&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(intellectual <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10000</span>)<span style="color:#ff79c6">/</span><span style="color:#bd93f9">100</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span>    biorhythm[<span style="color:#f1fa8c">&#39;phisical_critical_day&#39;</span>] <span style="color:#ff79c6">=</span> (phisical <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span>    biorhythm[<span style="color:#f1fa8c">&#39;emotional_critical_day&#39;</span>] <span style="color:#ff79c6">=</span> (emotional <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span>    biorhythm[<span style="color:#f1fa8c">&#39;intellectual_critical_day&#39;</span>] <span style="color:#ff79c6">=</span> (intellectual <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span>    <span style="color:#ff79c6">return</span> biorhythm
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">main</span>():
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span>    TOKEN <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;insert here your token and don&#39;t share it with anyone!&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span>    <span style="color:#6272a4"># create the updater, that will automatically create also a dispatcher and a queue to</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span>    <span style="color:#6272a4"># make them dialoge</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span>    updater <span style="color:#ff79c6">=</span> Updater(TOKEN, use_context<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span>    dispatcher <span style="color:#ff79c6">=</span> updater<span style="color:#ff79c6">.</span>dispatcher
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span>    <span style="color:#6272a4"># add handlers for start and help commands</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(CommandHandler(<span style="color:#f1fa8c">&#34;start&#34;</span>, start))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(CommandHandler(<span style="color:#f1fa8c">&#34;help&#34;</span>, help))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141</span>    <span style="color:#6272a4"># add an handler for our biorhythm command</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(CommandHandler(<span style="color:#f1fa8c">&#34;biorhythm&#34;</span>, biorhythm))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144</span>    <span style="color:#6272a4"># add an handler for normal text (not commands)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145</span>    dispatcher<span style="color:#ff79c6">.</span>add_handler(MessageHandler(Filters<span style="color:#ff79c6">.</span>text, text))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147</span>    <span style="color:#6272a4"># add an handler for errors</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148</span>    dispatcher<span style="color:#ff79c6">.</span>add_error_handler(error)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150</span>    <span style="color:#6272a4"># start your shiny new bot</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151</span>    updater<span style="color:#ff79c6">.</span>start_polling()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153</span>    <span style="color:#6272a4"># run the bot until Ctrl-C</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154</span>    updater<span style="color:#ff79c6">.</span>idle()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157</span><span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158</span>    main()
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  1</span><span style=color:#6272a4># mastrobot_example2.py</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  2</span><span style=color:#ff79c6>import</span> datetime
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  3</span><span style=color:#ff79c6>import</span> math
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  4</span><span style=color:#ff79c6>from</span> telegram.ext <span style=color:#ff79c6>import</span> Updater, CommandHandler, MessageHandler, Filters
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  5</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  6</span>STATE <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>None</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  7</span>BIRTH_YEAR <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  8</span>BIRTH_MONTH <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  9</span>BIRTH_DAY <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>3</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 10</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 11</span><span style=color:#6272a4># function to handle the /start command</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 12</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>start</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 13</span>    first_name <span style=color:#ff79c6>=</span> update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>chat<span style=color:#ff79c6>.</span>first_name
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 14</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Hi </span><span style=color:#f1fa8c>{</span>first_name<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>, nice to meet you!&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 15</span>    start_getting_birthday_info(update, context)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 16</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 17</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>start_getting_birthday_info</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 18</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 19</span>    STATE <span style=color:#ff79c6>=</span> BIRTH_YEAR
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 20</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 21</span>        <span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;I would need to know your birthday, so tell me what year did you born in...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 22</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 23</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>received_birth_year</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 24</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 25</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 26</span>    <span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 27</span>        today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 28</span>        year <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>text)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 29</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 30</span>        <span style=color:#ff79c6>if</span> year <span style=color:#ff79c6>&gt;</span> today<span style=color:#ff79c6>.</span>year:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 31</span>            <span style=color:#ff79c6>raise</span> ValueError(<span style=color:#f1fa8c>&#34;invalid value&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 32</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 33</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_year&#39;</span>] <span style=color:#ff79c6>=</span> year
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 34</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 35</span>            <span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;ok, now I need to know the month (in numerical form)...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 36</span>        STATE <span style=color:#ff79c6>=</span> BIRTH_MONTH
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 37</span>    <span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 38</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 39</span>            <span style=color:#f1fa8c>&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 40</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 41</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>received_birth_month</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 42</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 43</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 44</span>    <span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 45</span>        today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 46</span>        month <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>text)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 47</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 48</span>        <span style=color:#ff79c6>if</span> month <span style=color:#ff79c6>&gt;</span> <span style=color:#bd93f9>12</span> <span style=color:#ff79c6>or</span> month <span style=color:#ff79c6>&lt;</span> <span style=color:#bd93f9>1</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 49</span>            <span style=color:#ff79c6>raise</span> ValueError(<span style=color:#f1fa8c>&#34;invalid value&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 50</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 51</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_month&#39;</span>] <span style=color:#ff79c6>=</span> month
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 52</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;great! And now, the day...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 53</span>        STATE <span style=color:#ff79c6>=</span> BIRTH_DAY
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 54</span>    <span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 55</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 56</span>            <span style=color:#f1fa8c>&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 57</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 58</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>received_birth_day</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 59</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 60</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 61</span>    <span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 62</span>        today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 63</span>        dd <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>text)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 64</span>        yyyy <span style=color:#ff79c6>=</span> context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_year&#39;</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 65</span>        mm <span style=color:#ff79c6>=</span> context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birth_month&#39;</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 66</span>        birthday <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date(year<span style=color:#ff79c6>=</span>yyyy, month<span style=color:#ff79c6>=</span>mm, day<span style=color:#ff79c6>=</span>dd)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 67</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 68</span>        <span style=color:#ff79c6>if</span> today <span style=color:#ff79c6>-</span> birthday <span style=color:#ff79c6>&lt;</span> datetime<span style=color:#ff79c6>.</span>timedelta(days<span style=color:#ff79c6>=</span><span style=color:#bd93f9>0</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 69</span>            <span style=color:#ff79c6>raise</span> ValueError(<span style=color:#f1fa8c>&#34;invalid value&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 70</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 71</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birthday&#39;</span>] <span style=color:#ff79c6>=</span> birthday
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 72</span>        STATE <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>None</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 73</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#39;ok, you born on </span><span style=color:#f1fa8c>{</span>birthday<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 74</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75</span>    <span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76</span>        update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77</span>            <span style=color:#f1fa8c>&#34;it&#39;s funny but it doesn&#39;t seem to be correct...&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79</span><span style=color:#6272a4># function to handle the /help command</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>help</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#39;help command received&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83</span><span style=color:#6272a4># function to handle errors occured in the dispatcher</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>error</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>&#39;an error occured&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87</span><span style=color:#6272a4># function to handle normal text</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>text</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89</span>    <span style=color:#ff79c6>global</span> STATE
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91</span>    <span style=color:#ff79c6>if</span> STATE <span style=color:#ff79c6>==</span> BIRTH_YEAR:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92</span>        <span style=color:#ff79c6>return</span> received_birth_year(update, context)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94</span>    <span style=color:#ff79c6>if</span> STATE <span style=color:#ff79c6>==</span> BIRTH_MONTH:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95</span>        <span style=color:#ff79c6>return</span> received_birth_month(update, context)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97</span>    <span style=color:#ff79c6>if</span> STATE <span style=color:#ff79c6>==</span> BIRTH_DAY:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98</span>        <span style=color:#ff79c6>return</span> received_birth_day(update, context)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">100</span><span style=color:#6272a4># This function is called when the /biorhythm command is issued</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">101</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>biorhythm</span>(update, context):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">102</span>    <span style=color:#8be9fd;font-style:italic>print</span>(<span style=color:#f1fa8c>&#34;ok&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">103</span>    user_biorhythm <span style=color:#ff79c6>=</span> calculate_biorhythm(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">104</span>        context<span style=color:#ff79c6>.</span>user_data[<span style=color:#f1fa8c>&#39;birthday&#39;</span>])
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">105</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">106</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Phisical: </span><span style=color:#f1fa8c>{</span>user_biorhythm[<span style=color:#f1fa8c>&#39;phisical&#39;</span>]<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">107</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Emotional: </span><span style=color:#f1fa8c>{</span>user_biorhythm[<span style=color:#f1fa8c>&#39;emotional&#39;</span>]<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">108</span>    update<span style=color:#ff79c6>.</span>message<span style=color:#ff79c6>.</span>reply_text(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Intellectual: </span><span style=color:#f1fa8c>{</span>user_biorhythm[<span style=color:#f1fa8c>&#39;intellectual&#39;</span>]<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">109</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">110</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>calculate_biorhythm</span>(birthdate):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">111</span>    today <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>date<span style=color:#ff79c6>.</span>today()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">112</span>    delta <span style=color:#ff79c6>=</span> today <span style=color:#ff79c6>-</span> birthdate
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">113</span>    days <span style=color:#ff79c6>=</span> delta<span style=color:#ff79c6>.</span>days
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">114</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">115</span>    phisical <span style=color:#ff79c6>=</span> math<span style=color:#ff79c6>.</span>sin(<span style=color:#bd93f9>2</span><span style=color:#ff79c6>*</span>math<span style=color:#ff79c6>.</span>pi<span style=color:#ff79c6>*</span>(days<span style=color:#ff79c6>/</span><span style=color:#bd93f9>23</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">116</span>    emotional <span style=color:#ff79c6>=</span> math<span style=color:#ff79c6>.</span>sin(<span style=color:#bd93f9>2</span><span style=color:#ff79c6>*</span>math<span style=color:#ff79c6>.</span>pi<span style=color:#ff79c6>*</span>(days<span style=color:#ff79c6>/</span><span style=color:#bd93f9>28</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">117</span>    intellectual <span style=color:#ff79c6>=</span> math<span style=color:#ff79c6>.</span>sin(<span style=color:#bd93f9>2</span><span style=color:#ff79c6>*</span>math<span style=color:#ff79c6>.</span>pi<span style=color:#ff79c6>*</span>(days<span style=color:#ff79c6>/</span><span style=color:#bd93f9>33</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">118</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">119</span>    biorhythm <span style=color:#ff79c6>=</span> {}
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">120</span>    biorhythm[<span style=color:#f1fa8c>&#39;phisical&#39;</span>] <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(phisical <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>10000</span>)<span style=color:#ff79c6>/</span><span style=color:#bd93f9>100</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">121</span>    biorhythm[<span style=color:#f1fa8c>&#39;emotional&#39;</span>] <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(emotional <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>10000</span>)<span style=color:#ff79c6>/</span><span style=color:#bd93f9>100</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">122</span>    biorhythm[<span style=color:#f1fa8c>&#39;intellectual&#39;</span>] <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(intellectual <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>10000</span>)<span style=color:#ff79c6>/</span><span style=color:#bd93f9>100</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">123</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">124</span>    biorhythm[<span style=color:#f1fa8c>&#39;phisical_critical_day&#39;</span>] <span style=color:#ff79c6>=</span> (phisical <span style=color:#ff79c6>==</span> <span style=color:#bd93f9>0</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">125</span>    biorhythm[<span style=color:#f1fa8c>&#39;emotional_critical_day&#39;</span>] <span style=color:#ff79c6>=</span> (emotional <span style=color:#ff79c6>==</span> <span style=color:#bd93f9>0</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">126</span>    biorhythm[<span style=color:#f1fa8c>&#39;intellectual_critical_day&#39;</span>] <span style=color:#ff79c6>=</span> (intellectual <span style=color:#ff79c6>==</span> <span style=color:#bd93f9>0</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">127</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">128</span>    <span style=color:#ff79c6>return</span> biorhythm
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">129</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">130</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>main</span>():
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">131</span>    TOKEN <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;insert here your token and don&#39;t share it with anyone!&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">132</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">133</span>    <span style=color:#6272a4># create the updater, that will automatically create also a dispatcher and a queue to</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">134</span>    <span style=color:#6272a4># make them dialoge</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">135</span>    updater <span style=color:#ff79c6>=</span> Updater(TOKEN, use_context<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">136</span>    dispatcher <span style=color:#ff79c6>=</span> updater<span style=color:#ff79c6>.</span>dispatcher
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">137</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">138</span>    <span style=color:#6272a4># add handlers for start and help commands</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">139</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(CommandHandler(<span style=color:#f1fa8c>&#34;start&#34;</span>, start))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">140</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(CommandHandler(<span style=color:#f1fa8c>&#34;help&#34;</span>, help))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">141</span>    <span style=color:#6272a4># add an handler for our biorhythm command</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">142</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(CommandHandler(<span style=color:#f1fa8c>&#34;biorhythm&#34;</span>, biorhythm))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">143</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">144</span>    <span style=color:#6272a4># add an handler for normal text (not commands)</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">145</span>    dispatcher<span style=color:#ff79c6>.</span>add_handler(MessageHandler(Filters<span style=color:#ff79c6>.</span>text, text))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">146</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">147</span>    <span style=color:#6272a4># add an handler for errors</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">148</span>    dispatcher<span style=color:#ff79c6>.</span>add_error_handler(error)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">149</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">150</span>    <span style=color:#6272a4># start your shiny new bot</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">151</span>    updater<span style=color:#ff79c6>.</span>start_polling()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">152</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">153</span>    <span style=color:#6272a4># run the bot until Ctrl-C</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">154</span>    updater<span style=color:#ff79c6>.</span>idle()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">155</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">156</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">157</span><span style=color:#ff79c6>if</span> __name__ <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#39;__main__&#39;</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">158</span>    main()
 </code></pre></div><p>It&rsquo;s time to test it, right?</p>
-<p><img src="https://mastro35.github.io/thepythoncorner/images/bot2.png" alt="bot2">{: .align-center}</p>
-<p>Oh my gosh&hellip; I hope you won&rsquo;t find too many mistakes in this article, but in that case bear with me, my intellectual cycle today is only at 28%&hellip; that&rsquo;s not so good uh?</p>
-<p>I will keep the bot alive, so you can try it if you want (the username is @mastro35_mastrobot) but if it doesn&rsquo;t work &hellip; consider that it&rsquo;s running on my raspberry pi and that it could be offline sometimes&hellip;</p>
-<p>Ok guys, it&rsquo;s enough for today! If you liked this article feel free to click on the <strong>buy me a coffee</strong> button or subscribe to become a member and <a href="https://www.buymeacoffee.com/dXjDHmt">support me on a monthly basis</a>.</p>
-<p>Happy coding and&hellip; stay safe!
+<p><img src=https://mastro35.github.io/thepythoncorner/images/bot2.png alt=bot2>{: .align-center}</p>
+<p>Oh my gosh&mldr; I hope you won&rsquo;t find too many mistakes in this article, but in that case bear with me, my intellectual cycle today is only at 28%&mldr; that&rsquo;s not so good uh?</p>
+<p>I will keep the bot alive, so you can try it if you want (the username is @mastro35_mastrobot) but if it doesn&rsquo;t work &mldr; consider that it&rsquo;s running on my raspberry pi and that it could be offline sometimes&mldr;</p>
+<p>Ok guys, it&rsquo;s enough for today! If you liked this article feel free to click on the <strong>buy me a coffee</strong> button or subscribe to become a member and <a href=https://www.buymeacoffee.com/dXjDHmt>support me on a monthly basis</a>.</p>
+<p>Happy coding and&mldr; stay safe!
 D.</p>
-
-    </div>
-  </article>
-
-  
-  <hr>
-  <h2 style="color:#2BBC8A; text-align: center">Did you find this article helpful?</h2><br>
-  <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 10px 7px 10px !important;line-height: 35px !important;height:51px !important;min-width:217px !important;text-decoration: none !important;display:inline-flex !important;color:#FFFFFF !important;background-color:#FF813F !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 10px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#FFFFFF !important;}</style>
-
-  <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-  <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/dXjDHmt" style="align:left">
-    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee!" align="left">
-    <span style="margin-left:15px;font-size:28px !important;">Buy me a coffee!</span></a>
-  <hr>
-            
-
-  
-  
-
-
-
-
-  <div class="blog-post-comments">
-    
-      <div id="disquss_thread">
-  <script src="https://utteranc.es/client.js"
-    repo="mastro35/tpc"
-    issue-term="pathname"
-    label="The Python Corner"
-    theme="github-dark"
-    crossorigin="anonymous"
-    async>
-  </script>
 </div>
-
-    
-  </div>
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="../../">Home</a></li>
-         
-          <li><a href="../../posts">Articles</a></li>
-         
-          <li><a href="../../tags">Tags</a></li>
-         
-          <li><a href="../../about">About</a></li>
-         
-          <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
-         
-          <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&text=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&is_video=false&description=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&name=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&description=Creating%20a%20telegram%20bot%20with%20Python%20in%20minutes%20may%20seem%20like%20a%20clickbait%20title%20for%20a%20post%2c%20but%20trust%20me%2c%20it%26rsquo%3bs%20possible.%20If%20you%26rsquo%3bre%20going%20through%20a%20boring%20afternoon%20or%20you%26rsquo%3bre%20locked%20down%20due%20to%20COVID%20restriction%20and%20you%20want%20to%20do%20something%20different%2c%20keep%20reading%20and%20let%26rsquo%3bs%20create%20our%20first%20Python%20Telegram%20bot%21%20%3a%29%0aFor%20this%20project%2c%20all%20you%20will%20have%20to%20use%20is%20the%20python-telegram-bot%20package%20that%26rsquo%3bs%20basically%20a%20wrapper%20around%20telegram%20APIs." aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&t=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
+</article>
+<hr>
+<h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br>
+<style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet>
+<a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left>
+<img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
+<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a>
+<hr>
+<div class=blog-post-comments>
+<div id=disquss_thread>
+<script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script>
+</div>
+</div>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
 </ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
 </div>
-
-
-  <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2021  Davide Mastromatteo 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="../../">Home</a></li>
-         
-        <li><a href="../../posts">Articles</a></li>
-         
-        <li><a href="../../tags">Tags</a></li>
-         
-        <li><a href="../../about">About</a></li>
-         
-        <li><a href="https://buttondown.email/thepythoncorner">Newsletter</a></li>
-         
-        <li><a href="https://shop.spreadshirt.com/the-python-corner">Swag Store</a></li>
-        
-      </ul>
-    </nav>
-  </div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents></nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&text=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&is_video=false&description=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&title=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&name=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes&description=Creating%20a%20telegram%20bot%20with%20Python%20in%20minutes%20may%20seem%20like%20a%20clickbait%20title%20for%20a%20post%2c%20but%20trust%20me%2c%20it%26rsquo%3bs%20possible.%20If%20you%26rsquo%3bre%20going%20through%20a%20boring%20afternoon%20or%20you%26rsquo%3bre%20locked%20down%20due%20to%20COVID%20restriction%20and%20you%20want%20to%20do%20something%20different%2c%20keep%20reading%20and%20let%26rsquo%3bs%20create%20our%20first%20Python%20Telegram%20bot%21%20%3a%29%0aFor%20this%20project%2c%20all%20you%20will%20have%20to%20use%20is%20the%20python-telegram-bot%20package%20that%26rsquo%3bs%20basically%20a%20wrapper%20around%20telegram%20APIs." aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2021-01-16-how-create-telegram-bot-in-python%2f&t=How%20to%20create%20a%20telegram%20bot%20with%20Python%20in%20minutes" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2021 Davide Mastromatteo
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</nav>
+</div>
 </footer>
-
-
-  </div>
+</div>
 </body>
-
-<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
 <script src=../../lib/jquery/jquery.min.js></script>
 <script src=../../js/main.js></script>
-
 <script src=../../js/code-copy.js></script>
-
-
-
-
 </html>

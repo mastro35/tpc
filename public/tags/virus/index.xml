@@ -1,24 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>virus on The Python Corner</title>
-    <link>https://mastro35.github.io/tpc/tags/virus/</link>
-    <description>Recent content in virus on The Python Corner</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Davide Mastromatteo</copyright>
-    <lastBuildDate>Mon, 30 Aug 2021 16:00:47 +0100</lastBuildDate><atom:link href="https://mastro35.github.io/tpc/tags/virus/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to create a computer virus in Python</title>
-      <link>https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/</link>
-      <pubDate>Mon, 30 Aug 2021 16:00:47 +0100</pubDate>
-      
-      <guid>https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/</guid>
-      <description>I was relaxing on a beach during my summer leave when I received a mail from a reader that asked me if it is technically possible to write a virus using Python.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virus on The Python Corner</title><link>https://mastro35.github.io/tpc/tags/virus/</link><description>Recent content in virus on The Python Corner</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Davide Mastromatteo</copyright><lastBuildDate>Mon, 30 Aug 2021 16:00:47 +0100</lastBuildDate><atom:link href="https://mastro35.github.io/tpc/tags/virus/index.xml" rel="self" type="application/rss+xml"/><item><title>How to create a computer virus in Python</title><link>https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/</link><pubDate>Mon, 30 Aug 2021 16:00:47 +0100</pubDate><guid>https://mastro35.github.io/tpc/posts/2021-08-30-how-to-create-virus-python/</guid><description>I was relaxing on a beach during my summer leave when I received a mail from a reader that asked me if it is technically possible to write a virus using Python.
 The short answer: YES.
 The longer answer: yes, BUT&amp;hellip;
-Let&amp;rsquo;s start by saying that viruses are a little bit anachronistic in 2021&amp;hellip; nowadays other kinds of malware (like worms for example) are far more common than viruses. Moreover, modern operative systems are more secure and less prone to be infected than MS-DOS or Windows 95 were (sorry Microsoft&amp;hellip;) and people are more aware of the risk of malware in general.</description>
-    </item>
-    
-  </channel>
-</rss>
+Let&amp;rsquo;s start by saying that viruses are a little bit anachronistic in 2021&amp;hellip; nowadays other kinds of malware (like worms for example) are far more common than viruses. Moreover, modern operative systems are more secure and less prone to be infected than MS-DOS or Windows 95 were (sorry Microsoft&amp;hellip;) and people are more aware of the risk of malware in general.</description></item></channel></rss>
