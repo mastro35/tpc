@@ -1,0 +1,377 @@
+<!doctype html><html lang=en-us>
+<head>
+<script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script>
+<script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
+<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script>
+<script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
+<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> Logging in Python | The Python Corner</title>
+<link rel=canonical href=https://mastro35.github.io/tpc/posts/2017-08-29-logging-in-python/>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta property="og:title" content="Logging in Python">
+<meta property="og:description" content="One of the most underestimated topics that I&rsquo;ve seen in my working experience is logs management. A lot of people don&rsquo;t care at all about logging the execution of their programs and I&rsquo;ve seen a lot of code released in the production environment that doesn&rsquo;t log anything. To log seems to be a waste of time to them, especially if the code they&rsquo;re writing is apparently simple. So, why bother logging the execution of a program if the program can run great with no logs?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2017-08-29-logging-in-python/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2017-08-29T13:02:52+02:00">
+<meta property="article:modified_time" content="2017-08-29T13:02:52+02:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Logging in Python">
+<meta name=twitter:description content="One of the most underestimated topics that I&rsquo;ve seen in my working experience is logs management. A lot of people don&rsquo;t care at all about logging the execution of their programs and I&rsquo;ve seen a lot of code released in the production environment that doesn&rsquo;t log anything. To log seems to be a waste of time to them, especially if the code they&rsquo;re writing is apparently simple. So, why bother logging the execution of a program if the program can run great with no logs?">
+<link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png>
+<link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png>
+<link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png>
+<link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png>
+<link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png>
+<link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png>
+<link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png>
+<link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png>
+<link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png>
+<link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png>
+<link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png>
+<link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png>
+<link rel=manifest href=../../manifest.json>
+<meta name=msapplication-TileColor content="#ffffff">
+<meta name=msapplication-TileImage content="/images/ms-icon-144x144.png">
+<meta name=theme-color content="#ffffff">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2017-02-28-writing-a-fuse-filesystem-in-python/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2017-12-04-the-art-of-avoiding-nested-code/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&text=Logging%20in%20Python" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&title=Logging%20in%20Python" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&is_video=false&description=Logging%20in%20Python" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=Logging%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&title=Logging%20in%20Python" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&title=Logging%20in%20Python" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&name=Logging%20in%20Python&description=One%20of%20the%20most%20underestimated%20topics%20that%20I%26rsquo%3bve%20seen%20in%20my%20working%20experience%20is%20logs%20management.%20A%20lot%20of%20people%20don%26rsquo%3bt%20care%20at%20all%20about%20logging%20the%20execution%20of%20their%20programs%20and%20I%26rsquo%3bve%20seen%20a%20lot%20of%20code%20released%20in%20the%20production%20environment%20that%20doesn%26rsquo%3bt%20log%20anything.%20To%20log%20seems%20to%20be%20a%20waste%20of%20time%20to%20them%2c%20especially%20if%20the%20code%20they%26rsquo%3bre%20writing%20is%20apparently%20simple.%20So%2c%20why%20bother%20logging%20the%20execution%20of%20a%20program%20if%20the%20program%20can%20run%20great%20with%20no%20logs%3f" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&t=Logging%20in%20Python" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents></nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+Logging in Python
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2017-08-29 13:02:52 +0200 +0200" itemprop=datePublished>2017-08-29</time>
+</div>
+<div class=article-read-time>
+<i class="far fa-clock"></i>
+5 minute read
+</div>
+<div class=article-category>
+<i class="fas fa-archive"></i>
+<a class=category-link href=../../categories/dev>Dev</a>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../tags/featured rel=tag>Featured</a>
+,
+<a class=tag-link href=../../tags/logging rel=tag>Logging</a>
+,
+<a class=tag-link href=../../tags/python rel=tag>Python</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p><img src=https://imgs.xkcd.com/comics/git_commit.png alt=teaser></p>
+<p>One of the most underestimated topics that I&rsquo;ve seen in my working experience is logs management. A lot of people don&rsquo;t care at all about logging the execution of their programs and I&rsquo;ve seen a lot of code released in the production environment that doesn&rsquo;t log anything. To log seems to be a waste of time to them, especially if the code they&rsquo;re writing is apparently simple. So, why bother logging the execution of a program if the program can run great with no logs?</p>
+<p>Actually, logging the execution of your own program avoids you lots of headaches when something goes wrong in production and make your coding experience easier. Besides, logging a lot of debug information can save you time in writing comments, because your code is just well documented by the use of the logging, so to log is always a good idea in production as it is during the development, and that is true for any language you&rsquo;re using to code, not just in Python.</p>
+<p>But Python is not &ldquo;any language&rdquo;, Python is a great language that comes with &ldquo;batteries included&rdquo;, isn&rsquo;t it?</p>
+<p>In fact, although in other languages you need to write your own logging facility or to download some third-party libraries that solve this problem for you, in Python it just means to use the built-in logging module.</p>
+<p>So, what are we waiting for? Let&rsquo;s start logging in Python!</p>
+<p>The first thing that we have to bear in mind is that a log can contain a different kind of messages and each message has its own level of importance. These levels, in Python, are defined in order of verbosity (from the most verbose to the less verbose) as follows:</p>
+<ul>
+<li>DEBUG: Detailed information, typically of interest only when diagnosing problems.- INFO: Confirmation that things are working as expected.</li>
+<li>WARNING: An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low'). The software is still working as expected.</li>
+<li>ERROR: Due to a more serious problem, the software has not been able to perform some function.</li>
+<li>CRITICAL: A serious error, indicating that the program itself may be unable to continue running.</li>
+</ul>
+<p>So, each time we want to write something in our log we have to decide what kind of message we are writing to the log, and hence what level it should have.</p>
+<p>The second thing that we have to know is how to configure a logger in Python. It&rsquo;s really easy actually, we just need three components:</p>
+<ul>
+<li>a logger: the object that our code will use to log</li>
+<li>at least one handler: the object that will handle the writing of our log to the target device</li>
+<li>a formatter: an object that defines the format of our log for the handler</li>
+</ul>
+<p>Ok, too much talk, let&rsquo;s start coding.</p>
+<p>Let&rsquo;s start by importing the logging module:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>import</span> logging
+</code></pre></div><p>Then, let&rsquo;s create the the logger:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>logger<span style=color:#ff79c6>=</span>logging<span style=color:#ff79c6>.</span>getLogger(__name__)
+</code></pre></div><p>as you can see, to create a logger we just have to call the &ldquo;getLogger&rdquo; method of our logging module passing to it a name for the logger. Usually, it&rsquo;s a good idea to use the <strong>name</strong> special variable to specify the name of the logger. Doing this you will have different loggers for different modules by design, and you will be able to configure differently every single logger.</p>
+<p>Now we have to specify the default log level of our logger. This configuration ensures you that just the log messages with this level or with a less verbose level will be recorded. This enables you to have a super detailed log with all the debug information when you are developing or testing your application and a less verbose log when you deploy your program to the production environment.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># define the default level of the logger. </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span><span style=color:#6272a4># We could specify a greater (LESS VERBOSE) level on the single handler </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>logger<span style=color:#ff79c6>.</span>setLevel(logging<span style=color:#ff79c6>.</span>DEBUG)
+</code></pre></div><p>Now we have to create our second object: the formatter. As we said before, the formatter is the object that specifies the format we want for our log. In this example, I&rsquo;m creating a formatter that will output every single message specifying its timestamp and its log level. There are plenty of variables you can use to configure the format of your log, to have a complete list check the <a href=https://docs.python.org/3/library/logging.html#logrecord-attributes>official documentation</a>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># creating a formatter. </span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span><span style=color:#6272a4># to see all the attributes you can use</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>formatter<span style=color:#ff79c6>=</span>logging<span style=color:#ff79c6>.</span>Formatter(<span style=color:#f1fa8c>&#39;</span><span style=color:#f1fa8c>%(asctime)s</span><span style=color:#f1fa8c> | </span><span style=color:#f1fa8c>%(levelname)s</span><span style=color:#f1fa8c> -&gt; </span><span style=color:#f1fa8c>%(message)s</span><span style=color:#f1fa8c>&#39;</span>)
+</code></pre></div><p>Now we need to create the handler (or the handlers) that will take care of writing our logs to the target device. Usually I create a file handler to log on a file on the filesystem all the information with an INFO level or greater (it&rsquo;s a must for the production environment) and a stream handler to log every single information also to the console (it&rsquo;s quite convenient while I&rsquo;m coding and prevent me to misuse the &ldquo;print&rdquo; function). Note that we can specify a different level for each handler unless it is greater or equal to the main level specified for the logger. Even the format can be different (we could need different information for the console and for the log file for example).</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># creating a handler to log on the filesystem</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>file_handler<span style=color:#ff79c6>=</span>logging<span style=color:#ff79c6>.</span>FileHandler(<span style=color:#f1fa8c>&#39;mylogfile.log&#39;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>file_handler<span style=color:#ff79c6>.</span>setFormatter(formatter)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>file_handler<span style=color:#ff79c6>.</span>setLevel(logging<span style=color:#ff79c6>.</span>INFO)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6</span><span style=color:#6272a4># creating a handler to log on the console</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span>stream_handler<span style=color:#ff79c6>=</span>logging<span style=color:#ff79c6>.</span>StreamHandler()
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8</span>stream_handler<span style=color:#ff79c6>.</span>setFormatter(formatter)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9</span>stream_handler<span style=color:#ff79c6>.</span>setLevel(logging<span style=color:#ff79c6>.</span>INFO)
+</code></pre></div><p>Ok, we have almost finished now, we just need to put everything together&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># adding handlers to our logger</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>logger<span style=color:#ff79c6>.</span>addHandler(stream_handler)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>logger<span style=color:#ff79c6>.</span>addHandler(file_handler)
+</code></pre></div><p>and that&rsquo;s it! We have configured our logger. It wasn&rsquo;t a pain, was it? Now, to log a message we will just need to call the &ldquo;info&rdquo;, &ldquo;warning&rdquo;, &ldquo;error&rdquo;, &ldquo;debug&rdquo;, or &ldquo;critical&rdquo; method passing the message we want to log as a parameter. For example:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>logger<span style=color:#ff79c6>.</span>info(<span style=color:#f1fa8c>&#39;this is a log message...&#39;</span>)
+</code></pre></div><p>and we&rsquo;ll get:</p>
+<pre tabindex=0><code class=language-console data-lang=console>2017-08-29 12:41:42,154 | INFO -&gt; this is a log message...
+</code></pre><p>Now, if we were creating a program to divide two given numbers and log the result, we could have done something like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>a<span style=color:#ff79c6>=</span><span style=color:#bd93f9>50</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>b<span style=color:#ff79c6>=</span><span style=color:#bd93f9>10</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span><span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>    c<span style=color:#ff79c6>=</span>a<span style=color:#ff79c6>/</span>b
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6</span>    logger<span style=color:#ff79c6>.</span>info(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Operation </span><span style=color:#f1fa8c>{</span>a<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>/</span><span style=color:#f1fa8c>{</span>b<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c> gave the result </span><span style=color:#f1fa8c>{</span>c<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span><span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8</span>    logger<span style=color:#ff79c6>.</span>error(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Error occured during the division of </span><span style=color:#f1fa8c>{</span>a<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c> and </span><span style=color:#f1fa8c>{</span>b<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+</code></pre></div><p>And the output would be:</p>
+<pre tabindex=0><code class=language-console data-lang=console>2017-08-29 12:41:42,204 | INFO -&gt; Operation 50/10 gave the result 5.0
+</code></pre><p>It&rsquo;s worth to be said that to log the exceptions there&rsquo;s also an &ldquo;exception&rdquo; method of the logger that write a message with the &ldquo;ERROR&rdquo; level but add to it also some more information from the exception, like the stacktrace and the exception message. So for example, in this example it was far better to write something like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>a<span style=color:#ff79c6>=</span><span style=color:#bd93f9>50</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>b<span style=color:#ff79c6>=</span><span style=color:#bd93f9>0</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span><span style=color:#ff79c6>try</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>    c<span style=color:#ff79c6>=</span>a<span style=color:#ff79c6>/</span>b
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6</span>    logger<span style=color:#ff79c6>.</span>info(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Operation </span><span style=color:#f1fa8c>{</span>a<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>/</span><span style=color:#f1fa8c>{</span>b<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c> gave the result </span><span style=color:#f1fa8c>{</span>c<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span><span style=color:#ff79c6>except</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8</span>    logger<span style=color:#ff79c6>.</span>error(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;Error occured during the division of </span><span style=color:#f1fa8c>{</span>a<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c> and </span><span style=color:#f1fa8c>{</span>b<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
+</code></pre></div><p>And the output would be:</p>
+<pre tabindex=0><code class=language-console data-lang=console>2017-08-29 12:41:42,242 | ERROR -&gt; Error occured during the division of 50 and 0
+Traceback (most recent call last):
+  File &quot;&lt;ipython-input-10-9b4751150eb5&gt;&quot;, line 5, in &lt;module&gt;
+    c=a/b
+ZeroDivisionError: division by zero
+</code></pre><p>As always, for more information and for advanced topics I encourage you to check the <a href=https://docs.python.org/3/library/logging.html#module-logging>official documentation</a> and the <a href=https://www.python.org/dev/peps/pep-0282/>original PEP</a>.</p>
+<p>That&rsquo;s all folks, happy coding and&mldr;
+happy logging! :)</p>
+<p>D.</p>
+</div>
+</article>
+<hr>
+<h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br>
+<style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet>
+<a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left>
+<img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
+<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a>
+<hr>
+<div class=blog-post-comments>
+<div id=disquss_thread>
+<script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script>
+</div>
+</div>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents></nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&text=Logging%20in%20Python" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&title=Logging%20in%20Python" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&is_video=false&description=Logging%20in%20Python" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=Logging%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&title=Logging%20in%20Python" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&title=Logging%20in%20Python" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&name=Logging%20in%20Python&description=One%20of%20the%20most%20underestimated%20topics%20that%20I%26rsquo%3bve%20seen%20in%20my%20working%20experience%20is%20logs%20management.%20A%20lot%20of%20people%20don%26rsquo%3bt%20care%20at%20all%20about%20logging%20the%20execution%20of%20their%20programs%20and%20I%26rsquo%3bve%20seen%20a%20lot%20of%20code%20released%20in%20the%20production%20environment%20that%20doesn%26rsquo%3bt%20log%20anything.%20To%20log%20seems%20to%20be%20a%20waste%20of%20time%20to%20them%2c%20especially%20if%20the%20code%20they%26rsquo%3bre%20writing%20is%20apparently%20simple.%20So%2c%20why%20bother%20logging%20the%20execution%20of%20a%20program%20if%20the%20program%20can%20run%20great%20with%20no%20logs%3f" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-08-29-logging-in-python%2f&t=Logging%20in%20Python" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2021 Davide Mastromatteo
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script src=../../js/code-copy.js></script>
+</html>

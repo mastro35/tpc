@@ -1,0 +1,631 @@
+<!doctype html><html lang=en-us>
+<head>
+<script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script>
+<script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
+<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script>
+<script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
+<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> Writing a FUSE filesystem in Python | The Python Corner</title>
+<link rel=canonical href=https://mastro35.github.io/tpc/posts/2017-02-28-writing-a-fuse-filesystem-in-python/>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta property="og:title" content="Writing a FUSE filesystem in Python">
+<meta property="og:description" content="We ran into a problem last week. Our web application produces a lot of documents that have to be accessed frequently for a couple of months after they&rsquo;re created. However, in less than a year these documents will be almost never accessed anymore, but we need to keep them available for the web application and for tons of other legacy apps that might need to access them.
+Now, these documents take a lot of space on our expensive but super fast storage system (let&rsquo;s call it primary storage system or PSS from now on) and we would like to be able to move them on the cheaper, not so good and yet quite slow storage system (that we&rsquo;re going to call secondary storage system or SSS) when we believe that they will not be accessed anymore.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2017-02-28-writing-a-fuse-filesystem-in-python/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2017-02-28T00:11:19+01:00">
+<meta property="article:modified_time" content="2017-02-28T00:11:19+01:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Writing a FUSE filesystem in Python">
+<meta name=twitter:description content="We ran into a problem last week. Our web application produces a lot of documents that have to be accessed frequently for a couple of months after they&rsquo;re created. However, in less than a year these documents will be almost never accessed anymore, but we need to keep them available for the web application and for tons of other legacy apps that might need to access them.
+Now, these documents take a lot of space on our expensive but super fast storage system (let&rsquo;s call it primary storage system or PSS from now on) and we would like to be able to move them on the cheaper, not so good and yet quite slow storage system (that we&rsquo;re going to call secondary storage system or SSS) when we believe that they will not be accessed anymore.">
+<link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png>
+<link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png>
+<link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png>
+<link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png>
+<link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png>
+<link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png>
+<link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png>
+<link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png>
+<link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png>
+<link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png>
+<link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png>
+<link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png>
+<link rel=manifest href=../../manifest.json>
+<meta name=msapplication-TileColor content="#ffffff">
+<meta name=msapplication-TileImage content="/images/ms-icon-144x144.png">
+<meta name=theme-color content="#ffffff">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2017-01-10-working-with-exception-in-python/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://mastro35.github.io/tpc/posts/2017-08-29-logging-in-python/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&text=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&title=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&is_video=false&description=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=Writing%20a%20FUSE%20filesystem%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&title=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&title=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&name=Writing%20a%20FUSE%20filesystem%20in%20Python&description=We%20ran%20into%20a%20problem%20last%20week.%20Our%20web%20application%20produces%20a%20lot%20of%20documents%20that%20have%20to%20be%20accessed%20frequently%20for%20a%20couple%20of%20months%20after%20they%26rsquo%3bre%20created.%20However%2c%20in%20less%20than%20a%20year%20these%20documents%20will%20be%20almost%20never%20accessed%20anymore%2c%20but%20we%20need%20to%20keep%20them%20available%20for%20the%20web%20application%20and%20for%20tons%20of%20other%20legacy%20apps%20that%20might%20need%20to%20access%20them.%0aNow%2c%20these%20documents%20take%20a%20lot%20of%20space%20on%20our%20expensive%20but%20super%20fast%20storage%20system%20%28let%26rsquo%3bs%20call%20it%20primary%20storage%20system%20or%20PSS%20from%20now%20on%29%20and%20we%20would%20like%20to%20be%20able%20to%20move%20them%20on%20the%20cheaper%2c%20not%20so%20good%20and%20yet%20quite%20slow%20storage%20system%20%28that%20we%26rsquo%3bre%20going%20to%20call%20secondary%20storage%20system%20or%20SSS%29%20when%20we%20believe%20that%20they%20will%20not%20be%20accessed%20anymore." aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&t=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#what-wellneed>What we&rsquo;ll need</a></li>
+<li><a href=#the-fusepymodule>The fusepy module</a></li>
+<li><a href=#lets-start>Let&rsquo;s start</a></li>
+<li><a href=#a-couple-ofnotes>A couple of notes</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+Writing a FUSE filesystem in Python
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2017-02-28 00:11:19 +0100 +0100" itemprop=datePublished>2017-02-28</time>
+</div>
+<div class=article-read-time>
+<i class="far fa-clock"></i>
+10 minute read
+</div>
+<div class=article-category>
+<i class="fas fa-archive"></i>
+<a class=category-link href=../../categories/dev>Dev</a>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../tags/featured rel=tag>Featured</a>
+,
+<a class=tag-link href=../../tags/filesystem rel=tag>Filesystem</a>
+,
+<a class=tag-link href=../../tags/fuse rel=tag>Fuse</a>
+,
+<a class=tag-link href=../../tags/linux rel=tag>Linux</a>
+,
+<a class=tag-link href=../../tags/python rel=tag>Python</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p><img src=https://imgs.xkcd.com/comics/porn_folder.png alt=teaser></p>
+<p>We ran into a problem last week. Our web application produces a lot of documents that have to be accessed frequently for a couple of months after they&rsquo;re created. However, in less than a year these documents will be almost never accessed anymore, but we need to keep them available for the web application and for tons of other legacy apps that <em>might</em> need to access them.</p>
+<p>Now, these documents take a lot of space on our <em>expensive but super fast storage system</em> (let&rsquo;s call it <strong>primary storage system</strong> or <strong>PSS</strong> from now on) and we would like to be able to move them on the <em>cheaper, not so good and yet quite slow storage system</em> (that we&rsquo;re going to call <strong>secondary storage system</strong> or <strong>SSS</strong>) when we believe that they will not be accessed anymore.</p>
+<p>Our idea was to move the older files to the SSS and to modify all the software that needs to access the storage so to look at the PSS first and in the case, nothing was found, to look at the SSS. This approach, however, meant that we should have to modify all the client software we had&mldr;</p>
+<blockquote>
+<p>&ldquo;There are no problems, only opportunities&rdquo; — I.R.</p>
+</blockquote>
+<p>So, wouldn&rsquo;t it be great if we could create a virtual filesystem to map both the PSS and the SSS into a single directory?</p>
+<p>And that&rsquo;s what we&rsquo;re gonna do today.</p>
+<p>From the client software perspective, everything will remain unchanged, but under the hood all our read and write operations will be forwarded to the correct storage system.</p>
+<p>Please note: I&rsquo;m not saying that this is the best solution ever for this specific problem. There are probably better solutions to address this problem but&mldr; we have to talk about Python, don&rsquo;t we?</p>
+<h3 id=what-wellneed>What we&rsquo;ll need</h3>
+<p>To start this project we just need to satisfy a couple of prerequisites:</p>
+<ul>
+<li>Python</li>
+<li>A good OS</li>
+</ul>
+<p>I assume that you already have Python (if not&mldr; what are you doing here?), and for what about the OS keep in mind that this article is based on <strong><a href=https://en.wikipedia.org/wiki/Filesystem_in_Userspace>FUSE</a></strong>.</p>
+<p>According to Wikipedia, <strong>FUSE</strong> is</p>
+<blockquote>
+<p>a software interface for Unix-like computer operating systems that lets non-privileged users create their own file systems without editing kernel code. This is achieved by running file system code in user space while the FUSE module provides only a &ldquo;bridge&rdquo; to the actual kernel interfaces.</p>
+</blockquote>
+<p>FUSE is available for Linux, FreeBSD, OpenBSD, NetBSD (as puffs), OpenSolaris, Minix 3, Android and <a href=https://osxfuse.github.io/>macOS</a>.</p>
+<p>So, if you use macOS you need to download and install FUSE, if you use Linux, keep in mind that Fuse has been merged into the mainstream Linux kernel in the 2.6.14 version, originally released in 2005, on October the 27th, so every recent version of Linux has it yet.</p>
+<p>If you use Windows&mldr; well&mldr; I mean&mldr; I&rsquo;m sorry buddy, but you didn&rsquo;t satisfy the second prerequisite&mldr;</p>
+<h3 id=the-fusepymodule>The fusepy module</h3>
+<p>First of all, to communicate with the FUSE module from Python you will need to install the <strong><a href=https://github.com/terencehonles/fusepy>fusepy</a></strong> module. This module is just a simple interface to FUSE and MacFUSE. Nothing more than this, so go on and install it by using <code>pip</code>:</p>
+<pre tabindex=0><code class=language-console data-lang=console>pip install fusepy
+</code></pre><h3 id=lets-start>Let&rsquo;s start</h3>
+<p>There&rsquo;s a great start point for building our filesystem, and it&rsquo;s the <a href=https://twitter.com/stavros>Stavros Korokithakis</a> code. What Stavros made is available on <a href=https://github.com/skorokithakis/python-fuse-sample>his GitHub repo</a> and I will report it here:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  1</span><span style=color:#6272a4>#!/usr/bin/env python</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  2</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  3</span><span style=color:#ff79c6>from</span> __future__ <span style=color:#ff79c6>import</span> with_statement
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  4</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  5</span><span style=color:#ff79c6>import</span> os
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  6</span><span style=color:#ff79c6>import</span> sys
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  7</span><span style=color:#ff79c6>import</span> errno
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  8</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  9</span><span style=color:#ff79c6>from</span> fuse <span style=color:#ff79c6>import</span> FUSE, FuseOSError, Operations
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 10</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 11</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 12</span><span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Passthrough</span>(Operations):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 13</span>    <span style=color:#ff79c6>def</span> __init__(self, root):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 14</span>        self<span style=color:#ff79c6>.</span>root <span style=color:#ff79c6>=</span> root
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 15</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 16</span>    <span style=color:#6272a4># Helpers</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 17</span>    <span style=color:#6272a4># =======</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 18</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 19</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_full_path</span>(self, partial):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 20</span>        <span style=color:#ff79c6>if</span> partial<span style=color:#ff79c6>.</span>startswith(<span style=color:#f1fa8c>&#34;/&#34;</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 21</span>            partial <span style=color:#ff79c6>=</span> partial[<span style=color:#bd93f9>1</span>:]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 22</span>        path <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>join(self<span style=color:#ff79c6>.</span>root, partial)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 23</span>        <span style=color:#ff79c6>return</span> path
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 24</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 25</span>    <span style=color:#6272a4># Filesystem methods</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 26</span>    <span style=color:#6272a4># ==================</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 27</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 28</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>access</span>(self, path, mode):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 29</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 30</span>        <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> os<span style=color:#ff79c6>.</span>access(full_path, mode):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 31</span>            <span style=color:#ff79c6>raise</span> FuseOSError(errno<span style=color:#ff79c6>.</span>EACCES)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 32</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 33</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>chmod</span>(self, path, mode):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 34</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 35</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>chmod(full_path, mode)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 36</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 37</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>chown</span>(self, path, uid, gid):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 38</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 39</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>chown(full_path, uid, gid)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 40</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 41</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>getattr</span>(self, path, fh<span style=color:#ff79c6>=</span><span style=color:#ff79c6>None</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 42</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 43</span>        st <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>lstat(full_path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 44</span>        <span style=color:#ff79c6>return</span> <span style=color:#8be9fd;font-style:italic>dict</span>((key, <span style=color:#8be9fd;font-style:italic>getattr</span>(st, key)) <span style=color:#ff79c6>for</span> key <span style=color:#ff79c6>in</span> (<span style=color:#f1fa8c>&#39;st_atime&#39;</span>, <span style=color:#f1fa8c>&#39;st_ctime&#39;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 45</span>                     <span style=color:#f1fa8c>&#39;st_gid&#39;</span>, <span style=color:#f1fa8c>&#39;st_mode&#39;</span>, <span style=color:#f1fa8c>&#39;st_mtime&#39;</span>, <span style=color:#f1fa8c>&#39;st_nlink&#39;</span>, <span style=color:#f1fa8c>&#39;st_size&#39;</span>, <span style=color:#f1fa8c>&#39;st_uid&#39;</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 46</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 47</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>readdir</span>(self, path, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 48</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 49</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 50</span>        dirents <span style=color:#ff79c6>=</span> [<span style=color:#f1fa8c>&#39;.&#39;</span>, <span style=color:#f1fa8c>&#39;..&#39;</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 51</span>        <span style=color:#ff79c6>if</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>isdir(full_path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 52</span>            dirents<span style=color:#ff79c6>.</span>extend(os<span style=color:#ff79c6>.</span>listdir(full_path))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 53</span>        <span style=color:#ff79c6>for</span> r <span style=color:#ff79c6>in</span> dirents:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 54</span>            <span style=color:#ff79c6>yield</span> r
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 55</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 56</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>readlink</span>(self, path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 57</span>        pathname <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>readlink(self<span style=color:#ff79c6>.</span>_full_path(path))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 58</span>        <span style=color:#ff79c6>if</span> pathname<span style=color:#ff79c6>.</span>startswith(<span style=color:#f1fa8c>&#34;/&#34;</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 59</span>            <span style=color:#6272a4># Path name is absolute, sanitize it.</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 60</span>            <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>relpath(pathname, self<span style=color:#ff79c6>.</span>root)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 61</span>        <span style=color:#ff79c6>else</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 62</span>            <span style=color:#ff79c6>return</span> pathname
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 63</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 64</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>mknod</span>(self, path, mode, dev):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 65</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>mknod(self<span style=color:#ff79c6>.</span>_full_path(path), mode, dev)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 66</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 67</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>rmdir</span>(self, path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 68</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 69</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>rmdir(full_path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 70</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 71</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>mkdir</span>(self, path, mode):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 72</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>mkdir(self<span style=color:#ff79c6>.</span>_full_path(path), mode)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 73</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 74</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>statfs</span>(self, path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76</span>        stv <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>statvfs(full_path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77</span>        <span style=color:#ff79c6>return</span> <span style=color:#8be9fd;font-style:italic>dict</span>((key, <span style=color:#8be9fd;font-style:italic>getattr</span>(stv, key)) <span style=color:#ff79c6>for</span> key <span style=color:#ff79c6>in</span> (<span style=color:#f1fa8c>&#39;f_bavail&#39;</span>, <span style=color:#f1fa8c>&#39;f_bfree&#39;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78</span>            <span style=color:#f1fa8c>&#39;f_blocks&#39;</span>, <span style=color:#f1fa8c>&#39;f_bsize&#39;</span>, <span style=color:#f1fa8c>&#39;f_favail&#39;</span>, <span style=color:#f1fa8c>&#39;f_ffree&#39;</span>, <span style=color:#f1fa8c>&#39;f_files&#39;</span>, <span style=color:#f1fa8c>&#39;f_flag&#39;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79</span>            <span style=color:#f1fa8c>&#39;f_frsize&#39;</span>, <span style=color:#f1fa8c>&#39;f_namemax&#39;</span>))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>unlink</span>(self, path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>unlink(self<span style=color:#ff79c6>.</span>_full_path(path))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>symlink</span>(self, name, target):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>symlink(name, self<span style=color:#ff79c6>.</span>_full_path(target))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>rename</span>(self, old, new):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>rename(self<span style=color:#ff79c6>.</span>_full_path(old), self<span style=color:#ff79c6>.</span>_full_path(new))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>link</span>(self, target, name):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>link(self<span style=color:#ff79c6>.</span>_full_path(target), self<span style=color:#ff79c6>.</span>_full_path(name))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>utimens</span>(self, path, times<span style=color:#ff79c6>=</span><span style=color:#ff79c6>None</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>utime(self<span style=color:#ff79c6>.</span>_full_path(path), times)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96</span>    <span style=color:#6272a4># File methods</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97</span>    <span style=color:#6272a4># ============</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>open</span>(self, path, flags):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">100</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">101</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>open(full_path, flags)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">102</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">103</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>create</span>(self, path, mode, fi<span style=color:#ff79c6>=</span><span style=color:#ff79c6>None</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">104</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">105</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>open(full_path, os<span style=color:#ff79c6>.</span>O_WRONLY <span style=color:#ff79c6>|</span> os<span style=color:#ff79c6>.</span>O_CREAT, mode)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">106</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">107</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>read</span>(self, path, length, offset, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">108</span>        os<span style=color:#ff79c6>.</span>lseek(fh, offset, os<span style=color:#ff79c6>.</span>SEEK_SET)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">109</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>read(fh, length)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">110</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">111</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>write</span>(self, path, buf, offset, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">112</span>        os<span style=color:#ff79c6>.</span>lseek(fh, offset, os<span style=color:#ff79c6>.</span>SEEK_SET)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">113</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>write(fh, buf)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">114</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">115</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>truncate</span>(self, path, length, fh<span style=color:#ff79c6>=</span><span style=color:#ff79c6>None</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">116</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">117</span>        <span style=color:#ff79c6>with</span> <span style=color:#8be9fd;font-style:italic>open</span>(full_path, <span style=color:#f1fa8c>&#39;r+&#39;</span>) <span style=color:#ff79c6>as</span> f:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">118</span>            f<span style=color:#ff79c6>.</span>truncate(length)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">119</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">120</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>flush</span>(self, path, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">121</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>fsync(fh)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">122</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">123</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>release</span>(self, path, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">124</span>        <span style=color:#ff79c6>return</span> os<span style=color:#ff79c6>.</span>close(fh)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">125</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">126</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>fsync</span>(self, path, fdatasync, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">127</span>        <span style=color:#ff79c6>return</span> self<span style=color:#ff79c6>.</span>flush(path, fh)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">128</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">129</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">130</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>main</span>(mountpoint, root):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">131</span>    FUSE(Passthrough(root), mountpoint, nothreads<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>, foreground<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">132</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">133</span><span style=color:#ff79c6>if</span> __name__ <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#39;__main__&#39;</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">134</span>    main(sys<span style=color:#ff79c6>.</span>argv[<span style=color:#bd93f9>2</span>], sys<span style=color:#ff79c6>.</span>argv[<span style=color:#bd93f9>1</span>])
+</code></pre></div><p>Take a minute to analyze Stavros' code. It just implements a &ldquo;passthrough filesystem&rdquo;, that just mount a directory into a mount point. For each operation requested to the mount point, it returns the python implementation on the real file of the mounted directory.</p>
+<p>So, to try this code just save this file as Passthrough.py and run</p>
+<pre tabindex=0><code class=language-console data-lang=console>python Passthrough.py [directoryToBeMounted] [directoryToBeUsedAsMountpoint]
+</code></pre><p>That&rsquo;s it! Now, your bare new filesystem is mounted on what you specified in the*[directoryToBeUsedAsMountpoint]* parameter and all the operations you will do on this mount point will be silently passed to what you specified in the *[directoryToBeMounted]* parameter.</p>
+<p>Really cool, even if a little bit useless so far&mldr; :)</p>
+<p>So, how can we implement our filesystem as said before? Thanks to Stavros, our job is quite simple. We just need to create a class that inherits from Stavros' base class and overrides some methods.</p>
+<p>The first method we have to override is the _full_path method. This method is used in the original code to take the mount point relative path and translate it to the real mounted path. In our filesystem, this will be the most difficult piece of code, because we will need to add some logic to define if the requested path belongs to the PSS or to the SSS. However, also this &ldquo;most difficult piece of code&rdquo; is quite trivial.</p>
+<p>We just need to verify if the requested path exists at least in one storage system. If it does, we will return the real path, if not, we will assume that the path has been requested for a write operation on a file that does not exist yet. So we will try to look if the directory name of the path exists in one of the storage systems and we will return the correct path.</p>
+<p>A look at the code will make things more clear:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_full_path</span>(self, partial, useFallBack<span style=color:#ff79c6>=</span><span style=color:#ff79c6>False</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>        <span style=color:#ff79c6>if</span> partial<span style=color:#ff79c6>.</span>startswith(<span style=color:#f1fa8c>&#34;/&#34;</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>            partial <span style=color:#ff79c6>=</span> partial[<span style=color:#bd93f9>1</span>:]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>        <span style=color:#6272a4># Find out the real path. If has been requesetd for a fallback path,</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>        <span style=color:#6272a4># use it</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>        path <span style=color:#ff79c6>=</span> primaryPath <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>join(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>            self<span style=color:#ff79c6>.</span>fallbackPath <span style=color:#ff79c6>if</span> useFallBack <span style=color:#ff79c6>else</span> self<span style=color:#ff79c6>.</span>root, partial)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>        <span style=color:#6272a4># If the pah does not exists and we haven&#39;t been asked for the fallback path</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>        <span style=color:#6272a4># try to look on the fallback filessytem</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>        <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(primaryPath) <span style=color:#ff79c6>and</span> <span style=color:#ff79c6>not</span> useFallBack:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>            path <span style=color:#ff79c6>=</span> fallbackPath <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>join(self<span style=color:#ff79c6>.</span>fallbackPath, partial)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>            <span style=color:#6272a4># If the path does not exists neither in the fallback fielsysem</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>            <span style=color:#6272a4># it&#39;s likely to be a write operation, so use the primary</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>            <span style=color:#6272a4># filesystem... unless the path to get the file exists in the</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>            <span style=color:#6272a4># fallbackFS!</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>            <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(fallbackPath):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>                <span style=color:#6272a4># This is probabily a write operation, so prefer to use the</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span>                <span style=color:#6272a4># primary path either if the directory of the path exists in the</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>                <span style=color:#6272a4># primary FS or not exists in the fallback FS</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>                primaryDir <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>dirname(primaryPath)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>                fallbackDir <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>dirname(fallbackPath)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>                <span style=color:#ff79c6>if</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(primaryDir) <span style=color:#ff79c6>or</span> <span style=color:#ff79c6>not</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(fallbackDir):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>                    path <span style=color:#ff79c6>=</span> primaryPath
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>        <span style=color:#ff79c6>return</span> path
+</code></pre></div><p>Done this, we have almost finished. If we&rsquo;re using a Linux system we have also to override the &ldquo;*getattr&rdquo; *function to return also the ‘st_blocks' attribute (it turned out that without this attribute the &ldquo;du&rdquo; bash command doesn&rsquo;t work as expected).</p>
+<p>So, we need just to override this method and return the extra attribute:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>getattr</span>(self, path, fh<span style=color:#ff79c6>=</span><span style=color:#ff79c6>None</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>        st <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>lstat(full_path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>        <span style=color:#ff79c6>return</span> <span style=color:#8be9fd;font-style:italic>dict</span>((key, <span style=color:#8be9fd;font-style:italic>getattr</span>(st, key)) <span style=color:#ff79c6>for</span> key <span style=color:#ff79c6>in</span> (<span style=color:#f1fa8c>&#39;st_atime&#39;</span>, <span style=color:#f1fa8c>&#39;st_ctime&#39;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>                                                        <span style=color:#f1fa8c>&#39;st_gid&#39;</span>, <span style=color:#f1fa8c>&#39;st_mode&#39;</span>, <span style=color:#f1fa8c>&#39;st_mtime&#39;</span>, <span style=color:#f1fa8c>&#39;st_nlink&#39;</span>, <span style=color:#f1fa8c>&#39;st_size&#39;</span>, <span style=color:#f1fa8c>&#39;st_uid&#39;</span>, <span style=color:#f1fa8c>&#39;st_blocks&#39;</span>))
+</code></pre></div><p>And then we need to override the &ldquo;<em>readdir</em>&rdquo; function, that is the generator function that is called when someone does a &ldquo;ls&rdquo; in our mount point. In our case, the &ldquo;ls&rdquo; command has to list the content of both our primary storage system and our secondary storage system.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>readdir</span>(self, path, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>        dirents <span style=color:#ff79c6>=</span> [<span style=color:#f1fa8c>&#39;.&#39;</span>, <span style=color:#f1fa8c>&#39;..&#39;</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>        <span style=color:#6272a4># print(&#34;listing &#34; + full_path)</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>        <span style=color:#ff79c6>if</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>isdir(full_path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>            dirents<span style=color:#ff79c6>.</span>extend(os<span style=color:#ff79c6>.</span>listdir(full_path))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>        <span style=color:#ff79c6>if</span> self<span style=color:#ff79c6>.</span>fallbackPath <span style=color:#ff79c6>not</span> <span style=color:#ff79c6>in</span> full_path:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>            full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path, useFallBack<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>            <span style=color:#6272a4># print(&#34;listing_ext &#34; + full_path)</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>            <span style=color:#ff79c6>if</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>isdir(full_path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>                dirents<span style=color:#ff79c6>.</span>extend(os<span style=color:#ff79c6>.</span>listdir(full_path))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>        <span style=color:#ff79c6>for</span> r <span style=color:#ff79c6>in</span> <span style=color:#8be9fd;font-style:italic>list</span>(<span style=color:#8be9fd;font-style:italic>set</span>(dirents)):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>            <span style=color:#ff79c6>yield</span> r
+</code></pre></div><p>We&rsquo;ve almost finished, we just need to override the &ldquo;main&rdquo; method because we need an extra parameter (in the original code we had one directory to be mounted and one directory to be used as a mount point, in our filesystem we have to specify two directories to be mounted into the mount point).</p>
+<p>So here there is the full code of our new file system &ldquo;dfs&rdquo; (the &ldquo;Dave File System&rdquo; :D )</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#6272a4>#!/usr/bin/env python</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span style=color:#ff79c6>import</span> os
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span style=color:#ff79c6>import</span> sys
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span style=color:#ff79c6>import</span> errno
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span style=color:#ff79c6>from</span> fuse <span style=color:#ff79c6>import</span> FUSE, FuseOSError, Operations
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span style=color:#ff79c6>from</span> Passthrough <span style=color:#ff79c6>import</span> Passthrough
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span style=color:#ff79c6>class</span> <span style=color:#50fa7b>dfs</span>(Passthrough):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>    <span style=color:#ff79c6>def</span> __init__(self, root, fallbackPath):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>        self<span style=color:#ff79c6>.</span>root <span style=color:#ff79c6>=</span> root
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>        self<span style=color:#ff79c6>.</span>fallbackPath <span style=color:#ff79c6>=</span> fallbackPath
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>        
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>    <span style=color:#6272a4># Helpers</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>    <span style=color:#6272a4># =======</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_full_path</span>(self, partial, useFallBack<span style=color:#ff79c6>=</span><span style=color:#ff79c6>False</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>        <span style=color:#ff79c6>if</span> partial<span style=color:#ff79c6>.</span>startswith(<span style=color:#f1fa8c>&#34;/&#34;</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>            partial <span style=color:#ff79c6>=</span> partial[<span style=color:#bd93f9>1</span>:]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>        <span style=color:#6272a4># Find out the real path. If has been requesetd for a fallback path,</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span>        <span style=color:#6272a4># use it</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>        path <span style=color:#ff79c6>=</span> primaryPath <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>join(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>            self<span style=color:#ff79c6>.</span>fallbackPath <span style=color:#ff79c6>if</span> useFallBack <span style=color:#ff79c6>else</span> self<span style=color:#ff79c6>.</span>root, partial)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>        <span style=color:#6272a4># If the pah does not exists and we haven&#39;t been asked for the fallback path</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>        <span style=color:#6272a4># try to look on the fallback filessytem</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>        <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(primaryPath) <span style=color:#ff79c6>and</span> <span style=color:#ff79c6>not</span> useFallBack:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>            path <span style=color:#ff79c6>=</span> fallbackPath <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>join(self<span style=color:#ff79c6>.</span>fallbackPath, partial)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>            <span style=color:#6272a4># If the path does not exists neither in the fallback fielsysem</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>            <span style=color:#6272a4># it&#39;s likely to be a write operation, so use the primary</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>            <span style=color:#6272a4># filesystem... unless the path to get the file exists in the</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31</span>            <span style=color:#6272a4># fallbackFS!</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32</span>            <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(fallbackPath):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33</span>                <span style=color:#6272a4># This is probabily a write operation, so prefer to use the</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34</span>                <span style=color:#6272a4># primary path either if the directory of the path exists in the</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35</span>                <span style=color:#6272a4># primary FS or not exists in the fallback FS</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36</span>                primaryDir <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>dirname(primaryPath)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37</span>                fallbackDir <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>dirname(fallbackPath)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38</span>                <span style=color:#ff79c6>if</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(primaryDir) <span style=color:#ff79c6>or</span> <span style=color:#ff79c6>not</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>exists(fallbackDir):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39</span>                    path <span style=color:#ff79c6>=</span> primaryPath
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40</span>        <span style=color:#ff79c6>return</span> path
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41</span>      
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>getattr</span>(self, path, fh<span style=color:#ff79c6>=</span><span style=color:#ff79c6>None</span>):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44</span>        st <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>lstat(full_path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45</span>        <span style=color:#ff79c6>return</span> <span style=color:#8be9fd;font-style:italic>dict</span>((key, <span style=color:#8be9fd;font-style:italic>getattr</span>(st, key)) <span style=color:#ff79c6>for</span> key <span style=color:#ff79c6>in</span> (<span style=color:#f1fa8c>&#39;st_atime&#39;</span>, <span style=color:#f1fa8c>&#39;st_ctime&#39;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46</span>                                                        <span style=color:#f1fa8c>&#39;st_gid&#39;</span>, <span style=color:#f1fa8c>&#39;st_mode&#39;</span>, <span style=color:#f1fa8c>&#39;st_mtime&#39;</span>, <span style=color:#f1fa8c>&#39;st_nlink&#39;</span>, <span style=color:#f1fa8c>&#39;st_size&#39;</span>, <span style=color:#f1fa8c>&#39;st_uid&#39;</span>, <span style=color:#f1fa8c>&#39;st_blocks&#39;</span>)) 
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>readdir</span>(self, path, fh):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49</span>        dirents <span style=color:#ff79c6>=</span> [<span style=color:#f1fa8c>&#39;.&#39;</span>, <span style=color:#f1fa8c>&#39;..&#39;</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50</span>        full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51</span>        <span style=color:#6272a4># print(&#34;listing &#34; + full_path)</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">52</span>        <span style=color:#ff79c6>if</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>isdir(full_path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">53</span>            dirents<span style=color:#ff79c6>.</span>extend(os<span style=color:#ff79c6>.</span>listdir(full_path))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">54</span>        <span style=color:#ff79c6>if</span> self<span style=color:#ff79c6>.</span>fallbackPath <span style=color:#ff79c6>not</span> <span style=color:#ff79c6>in</span> full_path:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">55</span>            full_path <span style=color:#ff79c6>=</span> self<span style=color:#ff79c6>.</span>_full_path(path, useFallBack<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">56</span>            <span style=color:#6272a4># print(&#34;listing_ext &#34; + full_path)</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">57</span>            <span style=color:#ff79c6>if</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>isdir(full_path):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">58</span>                dirents<span style=color:#ff79c6>.</span>extend(os<span style=color:#ff79c6>.</span>listdir(full_path))
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">59</span>        <span style=color:#ff79c6>for</span> r <span style=color:#ff79c6>in</span> <span style=color:#8be9fd;font-style:italic>list</span>(<span style=color:#8be9fd;font-style:italic>set</span>(dirents)):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">60</span>            <span style=color:#ff79c6>yield</span> r
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">61</span>            
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">62</span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>main</span>(mountpoint, root, fallbackPath):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">63</span>    FUSE(dfs(root, fallbackPath), mountpoint, nothreads<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">64</span>         foreground<span style=color:#ff79c6>=</span><span style=color:#ff79c6>True</span>, <span style=color:#ff79c6>**</span>{<span style=color:#f1fa8c>&#39;allow_other&#39;</span>: <span style=color:#ff79c6>True</span>})
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">65</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">66</span><span style=color:#ff79c6>if</span> __name__ <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#39;__main__&#39;</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">67</span>    mountpoint <span style=color:#ff79c6>=</span> sys<span style=color:#ff79c6>.</span>argv[<span style=color:#bd93f9>3</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">68</span>    root <span style=color:#ff79c6>=</span> sys<span style=color:#ff79c6>.</span>argv[<span style=color:#bd93f9>1</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">69</span>    fallbackPath <span style=color:#ff79c6>=</span> sys<span style=color:#ff79c6>.</span>argv[<span style=color:#bd93f9>2</span>]
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">70</span>    main(mountpoint, root, fallbackPath)
+</code></pre></div><p>That&rsquo;s it, now if we issue the command &mldr;</p>
+<pre tabindex=0><code class=language-console data-lang=console>python dfs.py /home/dave/Desktop/PrimaryFS/ /home/dave/Desktop/FallbackFS/ /home/dave/Desktop/myMountpoint/
+</code></pre><p>&mldr; we get a mount point (/home/dave/Desktop/myMountpoint/) that lists both the content of /home/dave/Desktop/PrimaryFS/ and /home/dave/Desktop/FallbackFS/ and that works as expected.</p>
+<p>Yes, it was THAT easy!</p>
+<h3 id=a-couple-ofnotes>A couple of notes</h3>
+<p>It worth to be noted that:</p>
+<ul>
+<li>when we instantiate the FUSE object with **foreground=False **we can run the operation in the background.</li>
+<li>The <strong>{‘allow_other': True}</strong> is really important if you need to share the mount point over the network with Samba (omitting this prevents you to share this directory).</li>
+</ul>
+<p>That&rsquo;s all folks, now stop reading and start to develop your first filesystem with Python! :)</p>
+<p>D.</p>
+</div>
+</article>
+<hr>
+<h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br>
+<style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet>
+<a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left>
+<img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
+<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a>
+<hr>
+<div class=blog-post-comments>
+<div id=disquss_thread>
+<script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script>
+</div>
+</div>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#what-wellneed>What we&rsquo;ll need</a></li>
+<li><a href=#the-fusepymodule>The fusepy module</a></li>
+<li><a href=#lets-start>Let&rsquo;s start</a></li>
+<li><a href=#a-couple-ofnotes>A couple of notes</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&text=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&title=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&is_video=false&description=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=Writing%20a%20FUSE%20filesystem%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&title=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&title=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&name=Writing%20a%20FUSE%20filesystem%20in%20Python&description=We%20ran%20into%20a%20problem%20last%20week.%20Our%20web%20application%20produces%20a%20lot%20of%20documents%20that%20have%20to%20be%20accessed%20frequently%20for%20a%20couple%20of%20months%20after%20they%26rsquo%3bre%20created.%20However%2c%20in%20less%20than%20a%20year%20these%20documents%20will%20be%20almost%20never%20accessed%20anymore%2c%20but%20we%20need%20to%20keep%20them%20available%20for%20the%20web%20application%20and%20for%20tons%20of%20other%20legacy%20apps%20that%20might%20need%20to%20access%20them.%0aNow%2c%20these%20documents%20take%20a%20lot%20of%20space%20on%20our%20expensive%20but%20super%20fast%20storage%20system%20%28let%26rsquo%3bs%20call%20it%20primary%20storage%20system%20or%20PSS%20from%20now%20on%29%20and%20we%20would%20like%20to%20be%20able%20to%20move%20them%20on%20the%20cheaper%2c%20not%20so%20good%20and%20yet%20quite%20slow%20storage%20system%20%28that%20we%26rsquo%3bre%20going%20to%20call%20secondary%20storage%20system%20or%20SSS%29%20when%20we%20believe%20that%20they%20will%20not%20be%20accessed%20anymore." aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2017-02-28-writing-a-fuse-filesystem-in-python%2f&t=Writing%20a%20FUSE%20filesystem%20in%20Python" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2021 Davide Mastromatteo
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Articles</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../about>About</a></li>
+<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
+<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script src=../../js/code-copy.js></script>
+</html>
