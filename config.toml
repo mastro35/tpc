@@ -86,11 +86,11 @@ url = "https://shop.spreadshirt.com/the-python-corner"
 
   [params.comments]
     enabled = true # default
-    engine = "disqus" # only disqus, utterances, and cactus_comments is supported
+    engine = "utterances" # only disqus, utterances, and cactus_comments is supported
     [params.comments.utterances]
-      repo = "<github_username>/<github_reponame>"
-      label = "hugo-site-name" # you can use however you want to label your name in your repo's issues
-      theme = "github-light"
+      repo = "mastro35/tpc"
+      label = "The Python Corner" # you can use however you want to label your name in your repo's issues
+      theme = "github-dark"
     [params.comments.cactuscomments]
       siteName = "your_cactus_comments_sitename" # see https://cactus.chat/ on how to register your site name
       #serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
