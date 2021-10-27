@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Functools on The Python Corner</title><link>https://mastro35.github.io/tpc/tags/functools/</link><description>Recent content in Functools on The Python Corner</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Davide Mastromatteo</copyright><lastBuildDate>Mon, 04 Dec 2017 23:34:42 +0100</lastBuildDate><atom:link href="https://mastro35.github.io/tpc/tags/functools/index.xml" rel="self" type="application/rss+xml"/><item><title>The art of avoiding nested code</title><link>https://mastro35.github.io/tpc/posts/2017-12-04-the-art-of-avoiding-nested-code/</link><pubDate>Mon, 04 Dec 2017 23:34:42 +0100</pubDate><guid>https://mastro35.github.io/tpc/posts/2017-12-04-the-art-of-avoiding-nested-code/</guid><description>Today&amp;rsquo;s article is about nested code and how to avoid it.
-Why we should try to avoid nested code? Well the answer is inside your heart, and in your Python interpreter&amp;hellip;
-Start your REPL and write:
-1&amp;gt;&amp;gt;&amp;gt; import this you will get the &amp;ldquo;Zen Of Python&amp;rdquo; by Tim Peters.
-The Zen of Python, by Tim Peters
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.</description></item></channel></rss>
