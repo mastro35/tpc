@@ -1,4 +1,4 @@
-baseURL = "https://mastro35.gitlab.io/thepythoncorner"
+baseURL = "https://mastro35.github.io/tpc"
 
 relativeURLs = true
 canonifyURLs = true
