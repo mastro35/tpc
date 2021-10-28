@@ -35,6 +35,11 @@ url = "/about"
 weight = 4
 
 [[menu.main]]
+name = "Help Us"
+url = "/help_us"
+weight = 5
+
+[[menu.main]]
 name = "Newsletter"
 weight = 0
 url = "https://buttondown.email/thepythoncorner"
