@@ -17,5 +17,4 @@ I also wrote a [Medium article](https://medium.com/@mastro35/medium-just-doesnt-
 
 I wish I could transform this place in a real community of people that share their Pythonic enthusiasm and help each other, I wish I had tons of guest posts, I wish this place could expand and become something great.
 
-This is just the beginning guys...
-
+This is just the beginning guys... and if you want to help me, just [click here](/help_us).
