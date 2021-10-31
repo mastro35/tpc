@@ -1,176 +1,14 @@
-<!doctype html><html lang=en-us>
-<head>
-<script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-<script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script>
-<script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
-<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script>
-<script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
-<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<title> Representing geographic data in Python - feat. Coronavirus | The Python Corner</title>
-<link rel=canonical href=https://mastro35.github.io/tpc/posts/2020-03-02-python-geographical-maps-coronavirus/>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="all,follow">
-<meta name=googlebot content="index,follow,snippet,archive">
-<meta property="og:title" content="Representing geographic data in Python - feat. Coronavirus">
-<meta property="og:description" content="As you may know, I live in Italy, a beautiful country made famous by style, fashion, and food. But in the last days, we&rsquo;ve become famous also for something a little less cool: the Coronavirus.
-At the end of February, in fact, we have become overnight the third country with more infections in the world, after China and South Korea. And Milan (the city I live in) is one of the most affected Italian cities.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2020-03-02-python-geographical-maps-coronavirus/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-03-02T00:18:49+01:00">
-<meta property="article:modified_time" content="2020-03-02T00:18:49+01:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Representing geographic data in Python - feat. Coronavirus">
-<meta name=twitter:description content="As you may know, I live in Italy, a beautiful country made famous by style, fashion, and food. But in the last days, we&rsquo;ve become famous also for something a little less cool: the Coronavirus.
-At the end of February, in fact, we have become overnight the third country with more infections in the world, after China and South Korea. And Milan (the city I live in) is one of the most affected Italian cities.">
-<link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
-<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
-<link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png>
-<link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png>
-<link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png>
-<link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png>
-<link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png>
-<link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png>
-<link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png>
-<link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png>
-<link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png>
-<link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png>
-<link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png>
-<link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png>
-<link rel=manifest href=../../manifest.json>
-<meta name=msapplication-TileColor content="#ffffff">
-<meta name=msapplication-TileImage content="/images/ms-icon-144x144.png">
-<meta name=theme-color content="#ffffff">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body class="max-width mx-auto px3 ltr">
-<div class="content index py4">
-<div id=header-post>
-<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<!doctype html><html lang=en-us><head><script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script><script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script><script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script><script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script><link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><script type=text/javascript src=https://latest.cactus.chat/cactus.js></script><link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Representing geographic data in Python - feat. Coronavirus | The Python Corner</title><link rel=canonical href=https://mastro35.github.io/tpc/posts/2020-03-02-python-geographical-maps-coronavirus/><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="Representing geographic data in Python - feat. Coronavirus"><meta property="og:description" content="As you may know, I live in Italy, a beautiful country made famous by style, fashion, and food. But in the last days, we&rsquo;ve become famous also for something a little less cool: the Coronavirus.
+At the end of February, in fact, we have become overnight the third country with more infections in the world, after China and South Korea. And Milan (the city I live in) is one of the most affected Italian cities."><meta property="og:type" content="article"><meta property="og:url" content="https://mastro35.github.io/tpc/posts/2020-03-02-python-geographical-maps-coronavirus/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-03-02T00:18:49+01:00"><meta property="article:modified_time" content="2020-03-02T00:18:49+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Representing geographic data in Python - feat. Coronavirus"><meta name=twitter:description content="As you may know, I live in Italy, a beautiful country made famous by style, fashion, and food. But in the last days, we&rsquo;ve become famous also for something a little less cool: the Coronavirus.
+At the end of February, in fact, we have become overnight the third country with more infections in the world, after China and South Korea. And Milan (the city I live in) is one of the most affected Italian cities."><link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png><link rel=manifest href=../../manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/images/ms-icon-144x144.png"><meta name=theme-color content="#ffffff"><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-<span id=menu>
-<span id=nav>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</span>
-<br>
-<span id=actions>
-<ul>
-<li>
-<a class=icon href=https://mastro35.github.io/tpc/posts/2020-02-20-serialization-python-json/ aria-label=Previous>
-<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=https://mastro35.github.io/tpc/posts/2020-04-30-working-with-ebcdic-python/ aria-label=Next>
-<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# aria-label=Share>
-<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
-</a>
-</li>
-</ul>
-<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=menu><span id=nav><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://mastro35.github.io/tpc/posts/2020-02-20-serialization-python-json/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i></a></li><li><a class=icon href=https://mastro35.github.io/tpc/posts/2020-04-30-working-with-ebcdic-python/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i></a></li><li><a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
 <span id=i-next class=info style=display:none>Next post</span>
 <span id=i-top class=info style=display:none>Back to top</span>
-<span id=i-share class=info style=display:none>Share post</span>
-</span>
-<br>
-<div id=share style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Facebook>
-<i class="fab fa-facebook" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&text=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Twitter>
-<i class="fab fa-twitter" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Linkedin>
-<i class="fab fa-linkedin" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&is_video=false&description=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pinterest>
-<i class="fab fa-pinterest" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Email>
-<i class="fas fa-envelope" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pocket>
-<i class="fab fa-get-pocket" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=reddit>
-<i class="fab fa-reddit" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&name=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&description=As%20you%20may%20know%2c%20I%20live%20in%20Italy%2c%20a%20beautiful%20country%20made%20famous%20by%20style%2c%20fashion%2c%20and%20food.%20But%20in%20the%20last%20days%2c%20we%26rsquo%3bve%20become%20famous%20also%20for%20something%20a%20little%20less%20cool%3a%20the%20Coronavirus.%0aAt%20the%20end%20of%20February%2c%20in%20fact%2c%20we%20have%20become%20overnight%20the%20third%20country%20with%20more%20infections%20in%20the%20world%2c%20after%20China%20and%20South%20Korea.%20And%20Milan%20%28the%20city%20I%20live%20in%29%20is%20one%20of%20the%20most%20affected%20Italian%20cities." aria-label=Tumblr>
-<i class="fab fa-tumblr" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&t=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label="Hacker News">
-<i class="fab fa-hacker-news" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=toc>
-<nav id=TableOfContents></nav>
-</div>
-</span>
-</div>
-<article class=post itemscope itemtype=http://schema.org/BlogPosting>
-<header>
-<h1 class=posttitle itemprop="name headline">
-Representing geographic data in Python - feat. Coronavirus
-</h1>
-<div class=meta>
-<div class=postdate>
-<time datetime="2020-03-02 00:18:49 +0100 +0100" itemprop=datePublished>2020-03-02</time>
-</div>
-<div class=article-read-time>
-<i class="far fa-clock"></i>
-4 minute read
-</div>
-<div class=article-category>
-<i class="fas fa-archive"></i>
-<a class=category-link href=../../categories/dev>Dev</a>
-</div>
-<div class=article-tag>
-<i class="fas fa-tag"></i>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&text=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&is_video=false&description=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&name=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&description=As%20you%20may%20know%2c%20I%20live%20in%20Italy%2c%20a%20beautiful%20country%20made%20famous%20by%20style%2c%20fashion%2c%20and%20food.%20But%20in%20the%20last%20days%2c%20we%26rsquo%3bve%20become%20famous%20also%20for%20something%20a%20little%20less%20cool%3a%20the%20Coronavirus.%0aAt%20the%20end%20of%20February%2c%20in%20fact%2c%20we%20have%20become%20overnight%20the%20third%20country%20with%20more%20infections%20in%20the%20world%2c%20after%20China%20and%20South%20Korea.%20And%20Milan%20%28the%20city%20I%20live%20in%29%20is%20one%20of%20the%20most%20affected%20Italian%20cities." aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&t=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">Representing geographic data in Python - feat. Coronavirus</h1><div class=meta><div class=postdate><time datetime="2020-03-02 00:18:49 +0100 +0100" itemprop=datePublished>2020-03-02</time></div><div class=article-read-time><i class="far fa-clock"></i>
+4 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=../../categories/dev>Dev</a></div><div class=article-tag><i class="fas fa-tag"></i>
 <a class=tag-link href=../../tags/geographic rel=tag>geographic</a>
 ,
 <a class=tag-link href=../../tags/maps rel=tag>maps</a>
@@ -183,58 +21,25 @@ Representing geographic data in Python - feat. Coronavirus
 ,
 <a class=tag-link href=../../tags/coronavirus rel=tag>coronavirus</a>
 ,
-<a class=tag-link href=../../tags/python rel=tag>python</a>
-</div>
-</div>
-</header>
-<div class=content itemprop=articleBody>
-<p><img src=https://imgs.xkcd.com/comics/colds.png alt=teaser></p>
-<p>As you may know, I live in Italy, a beautiful country made famous by style, fashion, and food. But in the last days, we&rsquo;ve become famous also for something a little less cool: the <a href=https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_outbreak>Coronavirus</a>.</p>
-<p>At the end of February, in fact, we have become overnight the third country with more infections in the world, after China and South Korea. And Milan (the city I live in) is one of the most affected Italian cities.</p>
-<p>As this disease started to spread, everyone in town was like obsessed with the <a href=https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6>contagious map</a> an interactive map that let you track the disease in the world.
-And I was as well obsessed with this map, not for the contagious, not for the coronavirus, but because I wanted to know&mldr; how to create a map like this in Python!</p>
-<p>It turns out that it&rsquo;s easier than you think with the right tools.</p>
-<p>The first tool we will need is <a href=https://python-visualization.github.io/folium/>Folium</a>. Folium is a package that makes super easy to get a map like that with the data you want. You just need to create the object and place your data in the map specifying latitude, longitude and the data you need.</p>
-<p>For this example, I will use <a href=https://jupyter.org/>Jupiter Notebooks</a>.
-According to the official site:</p>
-<blockquote>
-<p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.</p>
-</blockquote>
-<p>It&rsquo;s somehow similar to a playground for Python, which also supports some markdown and other useful stuff. Once you have developed a notebook there are a lot of sites that offer you hosting of your notebooks almost for free. One of the most famous is <a href=https://colab.research.google.com/>Google Colab</a>.</p>
-<p>So let&rsquo;s recap:</p>
-<ul>
-<li>google Colab</li>
-<li>folium</li>
-<li>Jupiter Notebooks</li>
-<li>Python</li>
-</ul>
-<p>Am I missing something to create my interactive map?
+<a class=tag-link href=../../tags/python rel=tag>python</a></div></div></header><div class=content itemprop=articleBody><p><img src=https://imgs.xkcd.com/comics/colds.png alt=teaser></p><p>As you may know, I live in Italy, a beautiful country made famous by style, fashion, and food. But in the last days, we&rsquo;ve become famous also for something a little less cool: the <a href=https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_outbreak>Coronavirus</a>.</p><p>At the end of February, in fact, we have become overnight the third country with more infections in the world, after China and South Korea. And Milan (the city I live in) is one of the most affected Italian cities.</p><p>As this disease started to spread, everyone in town was like obsessed with the <a href=https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6>contagious map</a> an interactive map that let you track the disease in the world.
+And I was as well obsessed with this map, not for the contagious, not for the coronavirus, but because I wanted to know&mldr; how to create a map like this in Python!</p><p>It turns out that it&rsquo;s easier than you think with the right tools.</p><p>The first tool we will need is <a href=https://python-visualization.github.io/folium/>Folium</a>. Folium is a package that makes super easy to get a map like that with the data you want. You just need to create the object and place your data in the map specifying latitude, longitude and the data you need.</p><p>For this example, I will use <a href=https://jupyter.org/>Jupiter Notebooks</a>.
+According to the official site:</p><blockquote><p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.</p></blockquote><p>It&rsquo;s somehow similar to a playground for Python, which also supports some markdown and other useful stuff. Once you have developed a notebook there are a lot of sites that offer you hosting of your notebooks almost for free. One of the most famous is <a href=https://colab.research.google.com/>Google Colab</a>.</p><p>So let&rsquo;s recap:</p><ul><li>google Colab</li><li>folium</li><li>Jupiter Notebooks</li><li>Python</li></ul><p>Am I missing something to create my interactive map?
 Oh, sure&mldr; data! I need some data to plot.
-And when you need data a good place to start is <a href=https://www.kaggle.com/>kaggle</a>.</p>
-<p>Kaggle is a site that allows you to download a lot of datasets for any kind of use. Weather, Virus, Hotel booking &mldr; there&rsquo;s plenty of topics to choose from and there are data for any kind of use.
+And when you need data a good place to start is <a href=https://www.kaggle.com/>kaggle</a>.</p><p>Kaggle is a site that allows you to download a lot of datasets for any kind of use. Weather, Virus, Hotel booking &mldr; there&rsquo;s plenty of topics to choose from and there are data for any kind of use.
 Brief research on Kaggle brings me to <a href=https://www.kaggle.com/vignesh1694/covid19-coronavirus>this dataset from Vignesh Coumarane</a>.
-I don&rsquo;t know if the data are accurate or not&mldr; but who cares, I don&rsquo;t need precise data, I just need something to create an interactive map, right?</p>
-<p>Now, to use Kaggle data you have to register (for free) to Kaggle and create an API Token.
-From the <a href=https://www.kaggle.com/docs/api>official docs of Kaggle</a>:</p>
-<blockquote>
-<p>To use the Kaggle’s public API, you must first authenticate using an API token. From the site header, click on your user profile picture, then on &ldquo;My Account&rdquo; from the dropdown menu. This will take you to your account settings at <a href=https://www.kaggle.com/account>https://www.kaggle.com/account</a>. Scroll down to the section of the page labeled API:
-To create a new token, click on the &ldquo;Create New API Token&rdquo; button. This will download a fresh authentication token onto your machine.</p>
-</blockquote>
-<p>Is everything clear?
-So, let&rsquo;s start!</p>
-<p>Let&rsquo;s go to google colab and create a new Jupiter Notebook.
-For the first block we have to import some stuff:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># import some stuff</span>
+I don&rsquo;t know if the data are accurate or not&mldr; but who cares, I don&rsquo;t need precise data, I just need something to create an interactive map, right?</p><p>Now, to use Kaggle data you have to register (for free) to Kaggle and create an API Token.
+From the <a href=https://www.kaggle.com/docs/api>official docs of Kaggle</a>:</p><blockquote><p>To use the Kaggle’s public API, you must first authenticate using an API token. From the site header, click on your user profile picture, then on &ldquo;My Account&rdquo; from the dropdown menu. This will take you to your account settings at <a href=https://www.kaggle.com/account>https://www.kaggle.com/account</a>. Scroll down to the section of the page labeled API:
+To create a new token, click on the &ldquo;Create New API Token&rdquo; button. This will download a fresh authentication token onto your machine.</p></blockquote><p>Is everything clear?
+So, let&rsquo;s start!</p><p>Let&rsquo;s go to google colab and create a new Jupiter Notebook.
+For the first block we have to import some stuff:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># import some stuff</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span><span style=color:#ff79c6>import</span> folium
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span><span style=color:#ff79c6>import</span> pandas <span style=color:#ff79c6>as</span> pd
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span><span style=color:#ff79c6>import</span> os
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span><span style=color:#ff79c6>import</span> json
-</code></pre></div><p>then we have to set up two variables that will keep our Kaggle username and our Kaggle API KEY:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># set kaggle username and API token</span>
+</code></pre></div><p>then we have to set up two variables that will keep our Kaggle username and our Kaggle API KEY:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># set kaggle username and API token</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>USERNAME<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;YOUR USERNAME GOES HERE&#34;</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>KEY<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;YOUR KEY GOES HERE&#34;</span>
-</code></pre></div><p>then we will need to create a JSON file with this information under <code>~/.kaggle/kaggle.json</code></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># pack everything into a json file</span>
+</code></pre></div><p>then we will need to create a JSON file with this information under <code>~/.kaggle/kaggle.json</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># pack everything into a json file</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>!mkdir <span style=color:#ff79c6>~/.</span>kaggle
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>!mkdir <span style=color:#ff79c6>/</span>content<span style=color:#ff79c6>/.</span>kaggle
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>
@@ -243,28 +48,22 @@ For the first block we have to import some stuff:</p>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span>    json<span style=color:#ff79c6>.</span>dump(token, file)
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9</span>!cp <span style=color:#ff79c6>/</span>content<span style=color:#ff79c6>/.</span>kaggle<span style=color:#ff79c6>/</span>kaggle<span style=color:#ff79c6>.</span>json <span style=color:#ff79c6>~/.</span>kaggle<span style=color:#ff79c6>/</span>kaggle<span style=color:#ff79c6>.</span>json
-</code></pre></div><p>Ok. We&rsquo;re ready to authenticate against Kaggle now</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># let&#39;s authenticate on kaggle</span>
+</code></pre></div><p>Ok. We&rsquo;re ready to authenticate against Kaggle now</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># let&#39;s authenticate on kaggle</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>api<span style=color:#ff79c6>=</span>KaggleApi()
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span><span style=color:#ff79c6>from</span> kaggle.api.kaggle_api_extended <span style=color:#ff79c6>import</span> KaggleApi
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>api<span style=color:#ff79c6>.</span>authenticate()
-</code></pre></div><p>Ok, now that we&rsquo;re in, we need to download the dataset. We can still use the api of kaggle for that:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># download the data we need</span>
+</code></pre></div><p>Ok, now that we&rsquo;re in, we need to download the dataset. We can still use the api of kaggle for that:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># download the data we need</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>dataset_name<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;vignesh1694/covid19-coronavirus&#34;</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>filename<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;time_series_19-covid-Confirmed.csv&#34;</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>api<span style=color:#ff79c6>.</span>dataset_download_file(dataset_name, filename)
-</code></pre></div><p>and now that we have downloaded the file, we can read this CSV and plot the data to the map. Let&rsquo;s start by creating a Panda data frame with the data we need:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># create a Panda data frame with the data</span>
+</code></pre></div><p>and now that we have downloaded the file, we can read this CSV and plot the data to the map. Let&rsquo;s start by creating a Panda data frame with the data we need:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># create a Panda data frame with the data</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>df<span style=color:#ff79c6>=</span>pd<span style=color:#ff79c6>.</span>read_csv(filename)
-</code></pre></div><p>Cool. Now if you examine the dataset you will see that the &ldquo;Province/State&rdquo; field is populated just for Chinese regions. Let&rsquo;s create a new &ldquo;name&rdquo; field that contains the &ldquo;Province/State&rdquo; when indicated and the &ldquo;Country/Region&rdquo; field otherwise.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># transform your dataset to coalesce the Province/State and the Country/Region</span>
+</code></pre></div><p>Cool. Now if you examine the dataset you will see that the &ldquo;Province/State&rdquo; field is populated just for Chinese regions. Let&rsquo;s create a new &ldquo;name&rdquo; field that contains the &ldquo;Province/State&rdquo; when indicated and the &ldquo;Country/Region&rdquo; field otherwise.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># transform your dataset to coalesce the Province/State and the Country/Region</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>df[<span style=color:#f1fa8c>&#39;name&#39;</span>]<span style=color:#ff79c6>=</span>df[<span style=color:#f1fa8c>&#39;Province/State&#39;</span>]<span style=color:#ff79c6>.</span>mask(pd<span style=color:#ff79c6>.</span>isnull, df[<span style=color:#f1fa8c>&#39;Country/Region&#39;</span>])
-</code></pre></div><p>Now the cool stuff. Let&rsquo;s create a map with folium:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># create an empty map</span>
+</code></pre></div><p>Now the cool stuff. Let&rsquo;s create a map with folium:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># create an empty map</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span><span style=color:#8be9fd;font-style:italic>map</span> <span style=color:#ff79c6>=</span> folium<span style=color:#ff79c6>.</span>Map(zoom_start<span style=color:#ff79c6>=</span><span style=color:#bd93f9>1.5</span>,width<span style=color:#ff79c6>=</span><span style=color:#bd93f9>1000</span>,height<span style=color:#ff79c6>=</span><span style=color:#bd93f9>750</span>,location<span style=color:#ff79c6>=</span>[<span style=color:#bd93f9>0</span>,<span style=color:#bd93f9>0</span>], tiles <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#39;Stamen Toner&#39;</span>)
 </code></pre></div><p>And now start to loop on your data frame to add all the rows with confirmed cases on your map.
-As you can see you just need to create a CircleMarker object specifying the location, the radius of the point and the color:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#6272a4># loop on your date to populate the map</span>
+As you can see you just need to create a CircleMarker object specifying the location, the radius of the point and the color:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#6272a4># loop on your date to populate the map</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#ff79c6>for</span> row <span style=color:#ff79c6>in</span> df<span style=color:#ff79c6>.</span>itertuples():
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>    lat<span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>getattr</span>(row, <span style=color:#f1fa8c>&#34;Lat&#34;</span>)
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>    long<span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>getattr</span>(row, <span style=color:#f1fa8c>&#34;Long&#34;</span>)
@@ -281,126 +80,10 @@ As you can see you just need to create a CircleMarker object specifying the loca
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>            color<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;red&#39;</span>,
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>            fill_color<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;red&#39;</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>        )<span style=color:#ff79c6>.</span>add_to(<span style=color:#8be9fd;font-style:italic>map</span>)
-</code></pre></div><p>and now your map is ready to be shown:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># output the map</span>
+</code></pre></div><p>and now your map is ready to be shown:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#6272a4># output the map</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span><span style=color:#8be9fd;font-style:italic>map</span>
-</code></pre></div><p>Et voilà:</p>
-<p><img src=https://mastro35.github.io/thepythoncorner/images/mappa.png alt=map></p>
-<p>Oh my God&mldr; 888 cases right now in Italy! &mldr; it&rsquo;s time to go now!</p>
-<p>Bye<br>
-D.</p>
-</div>
-</article>
-<hr>
-<h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br>
-<style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style>
-<link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet>
-<a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left>
-<img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
-<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a>
-<hr>
-<div class=blog-post-comments>
-<div id=disquss_thread>
-<script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script>
-</div>
-</div>
-<div id=footer-post-container>
-<div id=footer-post>
-<div id=nav-footer style=display:none>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</div>
-<div id=toc-footer style=display:none>
-<nav id=TableOfContents></nav>
-</div>
-<div id=share-footer style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Facebook>
-<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&text=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Twitter>
-<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Linkedin>
-<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&is_video=false&description=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pinterest>
-<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Email>
-<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pocket>
-<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=reddit>
-<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&name=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&description=As%20you%20may%20know%2c%20I%20live%20in%20Italy%2c%20a%20beautiful%20country%20made%20famous%20by%20style%2c%20fashion%2c%20and%20food.%20But%20in%20the%20last%20days%2c%20we%26rsquo%3bve%20become%20famous%20also%20for%20something%20a%20little%20less%20cool%3a%20the%20Coronavirus.%0aAt%20the%20end%20of%20February%2c%20in%20fact%2c%20we%20have%20become%20overnight%20the%20third%20country%20with%20more%20infections%20in%20the%20world%2c%20after%20China%20and%20South%20Korea.%20And%20Milan%20%28the%20city%20I%20live%20in%29%20is%20one%20of%20the%20most%20affected%20Italian%20cities." aria-label=Tumblr>
-<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&t=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label="Hacker News">
-<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=actions-footer>
-<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
-<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
-<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
-<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
-<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
-<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
-<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
-</div>
-</div>
-</div>
-<footer id=footer>
-<div class=footer-left>
-Copyright &copy; 2021 Davide Mastromatteo
-</div>
-<div class=footer-right>
-<nav>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</nav>
-</div>
-</footer>
-</div>
-</body>
-<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
-<script src=../../lib/jquery/jquery.min.js></script>
-<script src=../../js/main.js></script>
-<script src=../../js/code-copy.js></script>
-</html>
+</code></pre></div><p>Et voilà:</p><p><img src=https://mastro35.github.io/thepythoncorner/images/mappa.png alt=map></p><p>Oh my God&mldr; 888 cases right now in Italy! &mldr; it&rsquo;s time to go now!</p><p>Bye<br>D.</p></div></article><hr><h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br><style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet><a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left><img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
+<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a><hr><div class=blog-post-comments><div id=disquss_thread><script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script></div></div><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&text=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&is_video=false&description=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&title=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&name=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus&description=As%20you%20may%20know%2c%20I%20live%20in%20Italy%2c%20a%20beautiful%20country%20made%20famous%20by%20style%2c%20fashion%2c%20and%20food.%20But%20in%20the%20last%20days%2c%20we%26rsquo%3bve%20become%20famous%20also%20for%20something%20a%20little%20less%20cool%3a%20the%20Coronavirus.%0aAt%20the%20end%20of%20February%2c%20in%20fact%2c%20we%20have%20become%20overnight%20the%20third%20country%20with%20more%20infections%20in%20the%20world%2c%20after%20China%20and%20South%20Korea.%20And%20Milan%20%28the%20city%20I%20live%20in%29%20is%20one%20of%20the%20most%20affected%20Italian%20cities." aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-03-02-python-geographical-maps-coronavirus%2f&t=Representing%20geographic%20data%20in%20Python%20-%20feat.%20Coronavirus" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2021 Davide Mastromatteo</div><div class=footer-right><nav><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=../../lib/font-awesome/css/all.min.css><script src=../../lib/jquery/jquery.min.js></script><script src=../../js/main.js></script><script src=../../js/code-copy.js></script></html>

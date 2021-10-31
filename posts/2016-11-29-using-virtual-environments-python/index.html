@@ -1,416 +1,46 @@
-<!doctype html><html lang=en-us>
-<head>
-<script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-<script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script>
-<script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
-<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script>
-<script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
-<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<title> Using Virtual Environments in Python | The Python Corner</title>
-<link rel=canonical href=https://mastro35.github.io/tpc/posts/2016-11-29-using-virtual-environments-python/>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="all,follow">
-<meta name=googlebot content="index,follow,snippet,archive">
-<meta property="og:title" content="Using Virtual Environments in Python">
-<meta property="og:description" content="Working with Python is like to have superpowers. When you need to do something and you don&rsquo;t know where to start from, you can google your problem and usually, you get aware that someone has already had your problem and created a library for the community. Whichever is your need&mldr;
+<!doctype html><html lang=en-us><head><script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script><script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script><script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script><script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script><link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><script type=text/javascript src=https://latest.cactus.chat/cactus.js></script><link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Using Virtual Environments in Python | The Python Corner</title><link rel=canonical href=https://mastro35.github.io/tpc/posts/2016-11-29-using-virtual-environments-python/><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="Using Virtual Environments in Python"><meta property="og:description" content="Working with Python is like to have superpowers. When you need to do something and you don&rsquo;t know where to start from, you can google your problem and usually, you get aware that someone has already had your problem and created a library for the community. Whichever is your need&mldr;
  &ldquo;there&rsquo;s a lib for that!&#34;
- This is so deep inside the Python culture that if you start your python interpreter and you do a&mldr;">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2016-11-29-using-virtual-environments-python/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2016-11-29T00:00:49+01:00">
-<meta property="article:modified_time" content="2016-11-29T00:00:49+01:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Using Virtual Environments in Python">
-<meta name=twitter:description content="Working with Python is like to have superpowers. When you need to do something and you don&rsquo;t know where to start from, you can google your problem and usually, you get aware that someone has already had your problem and created a library for the community. Whichever is your need&mldr;
+ This is so deep inside the Python culture that if you start your python interpreter and you do a&mldr;"><meta property="og:type" content="article"><meta property="og:url" content="https://mastro35.github.io/tpc/posts/2016-11-29-using-virtual-environments-python/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2016-11-29T00:00:49+01:00"><meta property="article:modified_time" content="2016-11-29T00:00:49+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Using Virtual Environments in Python"><meta name=twitter:description content="Working with Python is like to have superpowers. When you need to do something and you don&rsquo;t know where to start from, you can google your problem and usually, you get aware that someone has already had your problem and created a library for the community. Whichever is your need&mldr;
  &ldquo;there&rsquo;s a lib for that!&#34;
- This is so deep inside the Python culture that if you start your python interpreter and you do a&mldr;">
-<link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
-<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
-<link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png>
-<link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png>
-<link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png>
-<link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png>
-<link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png>
-<link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png>
-<link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png>
-<link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png>
-<link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png>
-<link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png>
-<link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png>
-<link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png>
-<link rel=manifest href=../../manifest.json>
-<meta name=msapplication-TileColor content="#ffffff">
-<meta name=msapplication-TileImage content="/images/ms-icon-144x144.png">
-<meta name=theme-color content="#ffffff">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body class="max-width mx-auto px3 ltr">
-<div class="content index py4">
-<div id=header-post>
-<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+ This is so deep inside the Python culture that if you start your python interpreter and you do a&mldr;"><link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png><link rel=manifest href=../../manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/images/ms-icon-144x144.png"><meta name=theme-color content="#ffffff"><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-<span id=menu>
-<span id=nav>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</span>
-<br>
-<span id=actions>
-<ul>
-<li>
-<a class=icon href=https://mastro35.github.io/tpc/posts/2016-11-22-iterators-generators-python/ aria-label=Previous>
-<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=https://mastro35.github.io/tpc/posts/2016-12-6-object-serialization-python-pickle/ aria-label=Next>
-<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# aria-label=Share>
-<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
-</a>
-</li>
-</ul>
-<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=menu><span id=nav><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://mastro35.github.io/tpc/posts/2016-11-22-iterators-generators-python/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i></a></li><li><a class=icon href=https://mastro35.github.io/tpc/posts/2016-12-6-object-serialization-python-pickle/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i></a></li><li><a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
 <span id=i-next class=info style=display:none>Next post</span>
 <span id=i-top class=info style=display:none>Back to top</span>
-<span id=i-share class=info style=display:none>Share post</span>
-</span>
-<br>
-<div id=share style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Facebook>
-<i class="fab fa-facebook" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&text=Using%20Virtual%20Environments%20in%20Python" aria-label=Twitter>
-<i class="fab fa-twitter" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Linkedin>
-<i class="fab fa-linkedin" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&is_video=false&description=Using%20Virtual%20Environments%20in%20Python" aria-label=Pinterest>
-<i class="fab fa-pinterest" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Using%20Virtual%20Environments%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Email>
-<i class="fas fa-envelope" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Pocket>
-<i class="fab fa-get-pocket" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=reddit>
-<i class="fab fa-reddit" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&name=Using%20Virtual%20Environments%20in%20Python&description=Working%20with%20Python%20is%20like%20to%20have%20superpowers.%20When%20you%20need%20to%20do%20something%20and%20you%20don%26rsquo%3bt%20know%20where%20to%20start%20from%2c%20you%20can%20google%20your%20problem%20and%20usually%2c%20you%20get%20aware%20that%20someone%20has%20already%20had%20your%20problem%20and%20created%20a%20library%20for%20the%20community.%20Whichever%20is%20your%20need%26hellip%3b%0a%20%26ldquo%3bthere%26rsquo%3bs%20a%20lib%20for%20that%21%26quot%3b%0a%20This%20is%20so%20deep%20inside%20the%20Python%20culture%20that%20if%20you%20start%20your%20python%20interpreter%20and%20you%20do%20a%26hellip%3b" aria-label=Tumblr>
-<i class="fab fa-tumblr" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&t=Using%20Virtual%20Environments%20in%20Python" aria-label="Hacker News">
-<i class="fab fa-hacker-news" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=toc>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#virtualenv-virtualenv-wrapper-pyvenv-python3--m-venv-are-you-kidding-me>virtualenv, virtualenv-wrapper, pyvenv, python3 -m venv&mldr; Are you kidding me?</a>
-<ul>
-<li><a href=#virtualenv>virtualenv</a></li>
-<li><a href=#virtualenvwrapper>virtualenvwrapper</a></li>
-<li><a href=#the-venv-module>the venv module</a></li>
-<li><a href=#the-bottom-line>The bottom line</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</span>
-</div>
-<article class=post itemscope itemtype=http://schema.org/BlogPosting>
-<header>
-<h1 class=posttitle itemprop="name headline">
-Using Virtual Environments in Python
-</h1>
-<div class=meta>
-<div class=postdate>
-<time datetime="2016-11-29 00:00:49 +0100 +0100" itemprop=datePublished>2016-11-29</time>
-</div>
-<div class=article-read-time>
-<i class="far fa-clock"></i>
-7 minute read
-</div>
-<div class=article-category>
-<i class="fas fa-archive"></i>
-<a class=category-link href=../../categories/dev>Dev</a>
-</div>
-<div class=article-tag>
-<i class="fas fa-tag"></i>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&text=Using%20Virtual%20Environments%20in%20Python" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&is_video=false&description=Using%20Virtual%20Environments%20in%20Python" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Using%20Virtual%20Environments%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&name=Using%20Virtual%20Environments%20in%20Python&description=Working%20with%20Python%20is%20like%20to%20have%20superpowers.%20When%20you%20need%20to%20do%20something%20and%20you%20don%26rsquo%3bt%20know%20where%20to%20start%20from%2c%20you%20can%20google%20your%20problem%20and%20usually%2c%20you%20get%20aware%20that%20someone%20has%20already%20had%20your%20problem%20and%20created%20a%20library%20for%20the%20community.%20Whichever%20is%20your%20need%26hellip%3b%0a%20%26ldquo%3bthere%26rsquo%3bs%20a%20lib%20for%20that%21%26quot%3b%0a%20This%20is%20so%20deep%20inside%20the%20Python%20culture%20that%20if%20you%20start%20your%20python%20interpreter%20and%20you%20do%20a%26hellip%3b" aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&t=Using%20Virtual%20Environments%20in%20Python" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents><ul><li><a href=#virtualenv-virtualenv-wrapper-pyvenv-python3--m-venv-are-you-kidding-me>virtualenv, virtualenv-wrapper, pyvenv, python3 -m venv&mldr; Are you kidding me?</a><ul><li><a href=#virtualenv>virtualenv</a></li><li><a href=#virtualenvwrapper>virtualenvwrapper</a></li><li><a href=#the-venv-module>the venv module</a></li><li><a href=#the-bottom-line>The bottom line</a></li></ul></li></ul></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">Using Virtual Environments in Python</h1><div class=meta><div class=postdate><time datetime="2016-11-29 00:00:49 +0100 +0100" itemprop=datePublished>2016-11-29</time></div><div class=article-read-time><i class="far fa-clock"></i>
+7 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=../../categories/dev>Dev</a></div><div class=article-tag><i class="fas fa-tag"></i>
 <a class=tag-link href=../../tags/virtual-environments rel=tag>Virtual Environments</a>
 ,
 <a class=tag-link href=../../tags/virtualenv rel=tag>virtualenv</a>
 ,
 <a class=tag-link href=../../tags/environments rel=tag>environments</a>
 ,
-<a class=tag-link href=../../tags/python rel=tag>python</a>
-</div>
-</div>
-</header>
-<div class=content itemprop=articleBody>
-<p><img src=https://imgs.xkcd.com/comics/python.png alt=teaser></p>
-<p>Working with Python is like to have superpowers. When you need to do something and you don&rsquo;t know where to start from, you can google your problem and usually, you get aware that someone has already had your problem and created a library for the community.
-Whichever is your need&mldr;</p>
-<blockquote>
-<p><em>&ldquo;there&rsquo;s a lib for that!"</em></p>
-</blockquote>
-<p>This is so deep inside the Python culture that if you start your python interpreter and you do a&mldr;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>&gt;&gt;&gt;</span> <span style=color:#ff79c6>import</span> antigravity
-</code></pre></div><p>&mldr; you are redirected to <a href=https://xkcd.com/353/>this xkcd comic</a>.</p>
-<p>Ok, so Python encourages the usage of third-party libraries but using these libraries you will soon have to deal with the versioning problem.</p>
-<p>Let&rsquo;s say that your super new project xxx needs the version 2.5 of the library yyy, but you can&rsquo;t install the 2.5 version of the yyy library because your old project zzz needs the version 1.7 of that library.
-Moreover, the old project zzz use Python 2.7 while the new one has been written using Python 3.5.</p>
-<p>What are you supposed to do to sort this mess out? The pythonic answer to this common problem is <strong>Virtual environments</strong>.</p>
-<p>Using virtual environments you will be able to assign a completely different environment to each project you&rsquo;re working on, installing for each one different library, dependencies and why not, even a different Python interpreter! And all this leaving the global <code>site-packages</code> directory on your pc will free from any other third party package.</p>
-<p>It sounds cool, uh?</p>
-<p>Let&rsquo;s see how to do this.</p>
-<h2 id=virtualenv-virtualenv-wrapper-pyvenv-python3--m-venv-are-you-kidding-me>virtualenv, virtualenv-wrapper, pyvenv, python3 -m venv&mldr; Are you kidding me?</h2>
-<p>There are several ways to create virtual environments and I think this is the main reason why usually beginners tend not to use virtual environments because it&rsquo;s quite common for the beginner to get lost on this topic. In this article, we&rsquo;ll try to make this subject a little bit clearer.</p>
-<h3 id=virtualenv>virtualenv</h3>
-<p>The first method you have to create virtual environments is by using <a href=http://www.virtualenv.org/>Ian Bicking&rsquo;s <em>virtualenv</em></a>. This is a tool that has been around for a long time and that allows you to create virtual environments both for Python 2.7 and Python 3.x. When you create a virtual environment, it lets you specify which version of Python to use and it automatically installs the pip utility on the created virtual environment, so that you can just start to <code>pip install</code> whatever you need. To install virtualenv just use <code>pip</code>:</p>
-<pre tabindex=0><code class=language-console data-lang=console>$ pip install virtualenv
-</code></pre><p>Once you&rsquo;ve done this, you can create a virtualenv simply typing:</p>
-<pre tabindex=0><code class=language-console data-lang=console>$ virtualenv NameOfYourVirtualEnvironment
-</code></pre><p>where <code>NameOfYourVirtualEnvironment</code> is the name of the virtual environment you&rsquo;re going to create. This command will create, <strong>in the current directory</strong>, a subdirectory named <code>NameOfYourVirtualEnvironment</code> containing all the stuff you need, the python interpreter and the pip utility.</p>
-<p>Once you have created a virtual environment you can simply start using it by executing the <code>activate</code> script that you will find into the <code>NameOfYourVirtualEnvironment/bin</code> directory (if you are using Windows it is named <code>activate.bat</code> and it&rsquo;s available under <code>NameOfYourVirtualEnvironment</code> directory).</p>
-<p>So, to activate your new virtual environment simply type:</p>
-<pre tabindex=0><code class=language-console data-lang=console>$ source ./NameOfYourVirtualEnvironment/bin/activate
-</code></pre><p>your prompt will change and you will see the name of your virtual environment inside parentheses at the beginning of the command line, meaning that you have activated the virtual environment in the correct way. Now, let&rsquo;s try to install a package to see what happen:</p>
-<pre tabindex=0><code class=language-console data-lang=console>(NameOfYourVirtualEnvironment) $ pip install pytyler
-</code></pre><p>Perfect, if everything was ok now you have installed the package pytyler only on your virtual environment. If you&rsquo;re skeptic, try to start the python interpreter and import the module:</p>
-<pre tabindex=0><code class=language-console data-lang=console>(NameOfYourVirtualEnvironment) $ python -c import tyler
-</code></pre><p>and look no importing errors! :)</p>
-<p>To exit from your virtual environment you just need to issue the command <code>deactivate</code></p>
-<pre tabindex=0><code class=language-console data-lang=console>(NameOfYourVirtualEnvironment) $ deactivate
-</code></pre><p>doing this, you will see that your command prompt will change again, back to the standard prompt, meaning that you are not anymore inside your virtual environment. Now, try to import the module <code>tyler</code> again:</p>
-<pre tabindex=0><code class=language-console data-lang=console>$ python -c import tyler
-</code></pre><p>and you will get:</p>
-<pre tabindex=0><code class=language-console data-lang=console>ImportError: No module named tyler
-</code></pre><p>This is the expected behavior and proves that you have installed the <code>pytyler</code> package ONLY into the virtual environment, so it is not available system-wide.</p>
-<p>Ok, if everything is clear so far let&rsquo;s take a step forward. As I said before, when you create a virtual environment the <code>virtualenv</code> utility puts inside the environment also the default python interpreter that you have installed on your computer, the one that starts when you just type <code>python</code> from the command line that is probably the one that is installed in the <code>/usr/bin/python</code> directory (type <code>which python</code> if you want to be sure). This usually means python 2.7 (at least on my Debian Jessie machine). But what if you want to use another version of python? Well, this is quite easy actually&mldr; try to write:</p>
-<pre tabindex=0><code class=language-console data-lang=console>$ virtualenv -p /usr/bin/python3 AnotherVirtualEnvironmentName
-</code></pre><p>and you will create another virtual environment named <code>AnotherVirtualEnvironmentName</code> that uses python 3. Deleting a virtual environment is just as easy as removing its directory, so to destroy the virtual environments you have just created type:</p>
-<pre tabindex=0><code class=language-console data-lang=console>$ rm -rf NameOfYourVirtualEnvironment
-</code></pre><h3 id=virtualenvwrapper>virtualenvwrapper</h3>
-<p><code>virtualenvwrapper</code> is just a wrapper around virtualenv that make easier (yes, it&rsquo;s possible) working with virtual environments. Let&rsquo;s start with the installation of <code>virtualenvwrapper</code> (if you use Windows the package name is <code>virtualenvwrapper-win</code>)</p>
-<pre tabindex=0><code class=language-console data-lang=console>$ pip-install virtualenvwrapper
-</code></pre><p>Please note that <code>virtualenv</code> is a dependency for <code>virtualenvwrapper</code>, so if you don&rsquo;t have <code>virtualenv</code> istalled yet this command will install it for you before actually installing <code>virtualenvwrapper</code>. Now, once you&rsquo;ve installed the wrapper, you just need to execute the <code>virtualenvwrapper.sh</code> script every time you want to use it, so let&rsquo;s put it into your <code>.bashrc</code> file:</p>
-<pre tabindex=0><code>$ cd
+<a class=tag-link href=../../tags/python rel=tag>python</a></div></div></header><div class=content itemprop=articleBody><p><img src=https://imgs.xkcd.com/comics/python.png alt=teaser></p><p>Working with Python is like to have superpowers. When you need to do something and you don&rsquo;t know where to start from, you can google your problem and usually, you get aware that someone has already had your problem and created a library for the community.
+Whichever is your need&mldr;</p><blockquote><p><em>&ldquo;there&rsquo;s a lib for that!"</em></p></blockquote><p>This is so deep inside the Python culture that if you start your python interpreter and you do a&mldr;</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>&gt;&gt;&gt;</span> <span style=color:#ff79c6>import</span> antigravity
+</code></pre></div><p>&mldr; you are redirected to <a href=https://xkcd.com/353/>this xkcd comic</a>.</p><p>Ok, so Python encourages the usage of third-party libraries but using these libraries you will soon have to deal with the versioning problem.</p><p>Let&rsquo;s say that your super new project xxx needs the version 2.5 of the library yyy, but you can&rsquo;t install the 2.5 version of the yyy library because your old project zzz needs the version 1.7 of that library.
+Moreover, the old project zzz use Python 2.7 while the new one has been written using Python 3.5.</p><p>What are you supposed to do to sort this mess out? The pythonic answer to this common problem is <strong>Virtual environments</strong>.</p><p>Using virtual environments you will be able to assign a completely different environment to each project you&rsquo;re working on, installing for each one different library, dependencies and why not, even a different Python interpreter! And all this leaving the global <code>site-packages</code> directory on your pc will free from any other third party package.</p><p>It sounds cool, uh?</p><p>Let&rsquo;s see how to do this.</p><h2 id=virtualenv-virtualenv-wrapper-pyvenv-python3--m-venv-are-you-kidding-me>virtualenv, virtualenv-wrapper, pyvenv, python3 -m venv&mldr; Are you kidding me?</h2><p>There are several ways to create virtual environments and I think this is the main reason why usually beginners tend not to use virtual environments because it&rsquo;s quite common for the beginner to get lost on this topic. In this article, we&rsquo;ll try to make this subject a little bit clearer.</p><h3 id=virtualenv>virtualenv</h3><p>The first method you have to create virtual environments is by using <a href=http://www.virtualenv.org/>Ian Bicking&rsquo;s <em>virtualenv</em></a>. This is a tool that has been around for a long time and that allows you to create virtual environments both for Python 2.7 and Python 3.x. When you create a virtual environment, it lets you specify which version of Python to use and it automatically installs the pip utility on the created virtual environment, so that you can just start to <code>pip install</code> whatever you need. To install virtualenv just use <code>pip</code>:</p><pre><code class=language-console data-lang=console>$ pip install virtualenv
+</code></pre><p>Once you&rsquo;ve done this, you can create a virtualenv simply typing:</p><pre><code class=language-console data-lang=console>$ virtualenv NameOfYourVirtualEnvironment
+</code></pre><p>where <code>NameOfYourVirtualEnvironment</code> is the name of the virtual environment you&rsquo;re going to create. This command will create, <strong>in the current directory</strong>, a subdirectory named <code>NameOfYourVirtualEnvironment</code> containing all the stuff you need, the python interpreter and the pip utility.</p><p>Once you have created a virtual environment you can simply start using it by executing the <code>activate</code> script that you will find into the <code>NameOfYourVirtualEnvironment/bin</code> directory (if you are using Windows it is named <code>activate.bat</code> and it&rsquo;s available under <code>NameOfYourVirtualEnvironment</code> directory).</p><p>So, to activate your new virtual environment simply type:</p><pre><code class=language-console data-lang=console>$ source ./NameOfYourVirtualEnvironment/bin/activate
+</code></pre><p>your prompt will change and you will see the name of your virtual environment inside parentheses at the beginning of the command line, meaning that you have activated the virtual environment in the correct way. Now, let&rsquo;s try to install a package to see what happen:</p><pre><code class=language-console data-lang=console>(NameOfYourVirtualEnvironment) $ pip install pytyler
+</code></pre><p>Perfect, if everything was ok now you have installed the package pytyler only on your virtual environment. If you&rsquo;re skeptic, try to start the python interpreter and import the module:</p><pre><code class=language-console data-lang=console>(NameOfYourVirtualEnvironment) $ python -c import tyler
+</code></pre><p>and look no importing errors! :)</p><p>To exit from your virtual environment you just need to issue the command <code>deactivate</code></p><pre><code class=language-console data-lang=console>(NameOfYourVirtualEnvironment) $ deactivate
+</code></pre><p>doing this, you will see that your command prompt will change again, back to the standard prompt, meaning that you are not anymore inside your virtual environment. Now, try to import the module <code>tyler</code> again:</p><pre><code class=language-console data-lang=console>$ python -c import tyler
+</code></pre><p>and you will get:</p><pre><code class=language-console data-lang=console>ImportError: No module named tyler
+</code></pre><p>This is the expected behavior and proves that you have installed the <code>pytyler</code> package ONLY into the virtual environment, so it is not available system-wide.</p><p>Ok, if everything is clear so far let&rsquo;s take a step forward. As I said before, when you create a virtual environment the <code>virtualenv</code> utility puts inside the environment also the default python interpreter that you have installed on your computer, the one that starts when you just type <code>python</code> from the command line that is probably the one that is installed in the <code>/usr/bin/python</code> directory (type <code>which python</code> if you want to be sure). This usually means python 2.7 (at least on my Debian Jessie machine). But what if you want to use another version of python? Well, this is quite easy actually&mldr; try to write:</p><pre><code class=language-console data-lang=console>$ virtualenv -p /usr/bin/python3 AnotherVirtualEnvironmentName
+</code></pre><p>and you will create another virtual environment named <code>AnotherVirtualEnvironmentName</code> that uses python 3. Deleting a virtual environment is just as easy as removing its directory, so to destroy the virtual environments you have just created type:</p><pre><code class=language-console data-lang=console>$ rm -rf NameOfYourVirtualEnvironment
+</code></pre><h3 id=virtualenvwrapper>virtualenvwrapper</h3><p><code>virtualenvwrapper</code> is just a wrapper around virtualenv that make easier (yes, it&rsquo;s possible) working with virtual environments. Let&rsquo;s start with the installation of <code>virtualenvwrapper</code> (if you use Windows the package name is <code>virtualenvwrapper-win</code>)</p><pre><code class=language-console data-lang=console>$ pip-install virtualenvwrapper
+</code></pre><p>Please note that <code>virtualenv</code> is a dependency for <code>virtualenvwrapper</code>, so if you don&rsquo;t have <code>virtualenv</code> istalled yet this command will install it for you before actually installing <code>virtualenvwrapper</code>. Now, once you&rsquo;ve installed the wrapper, you just need to execute the <code>virtualenvwrapper.sh</code> script every time you want to use it, so let&rsquo;s put it into your <code>.bashrc</code> file:</p><pre><code>$ cd
 $ echo source /usr/local/bin/virtualenvwrapper.sh &gt;&gt; .bashrc
-</code></pre><p>Now, quit the current terminal and reopen it to execute the script and start working with virtualenvwrapper. Here there are the basic commands you can use:</p>
-<ul>
-<li>To create a virtual environment:</li>
-</ul>
-<pre tabindex=0><code>$ mkvirtualenv NameOfTheVirtualEnv
-</code></pre><ul>
-<li>To activate a virtual environment:</li>
-</ul>
-<pre tabindex=0><code>$ workon NameOfTheVirtualEnv
-</code></pre><ul>
-<li>To delete a virtual environment:</li>
-</ul>
-<pre tabindex=0><code>$ rmvirtualenv NameOfTheVirtualEnv
-</code></pre><ul>
-<li>To list all the virtual environment previously created:</li>
-</ul>
-<pre tabindex=0><code>$ lsvirtualenv
-</code></pre><p>This is the feature that I like most of this script, and it&rsquo;s made possible by the fact that now, all the environments you create with <code>mkvirtualenv</code> are created under the <code>~/.virtualenvs</code> directory, so&mldr; no more mess on the filesystem! If you want to change the directory where the virtual environments are stored, you just need to specify the directory of your choice in the <code>WORKON_HOME</code> bash variable.</p>
-<h3 id=the-venv-module>the venv module</h3>
-<p>Now that you know almost everything about virtual environments you can easily create, activate and destroy virtual environments. So&mldr; why you should need to know something about <code>venv</code>? The answer is in the <a href=https://www.python.org/dev/peps/pep-0405>PEP405</a>: <code>venv</code> is a python module very similar to <code>virtualenv</code> but that comes by default as a part of the standard Python library since the release of Python 3.3, that dates back to September the 29th of 2012. It&rsquo;s basically <code>virtualenv</code> <em>written the right way</em> because being part of the standard distribution of Python it can use some Python internals that couldn&rsquo;t be used by <code>virtualenv</code>.</p>
-<p>So, while <code>virtualenv</code> tries to trick the system with some hack to make everything work, <code>venv</code> doesn&rsquo;t. Moreover, <code>venv</code> is part of the Python distribution and this means that you don&rsquo;t need to install anything to start using it, if you use a recent version of Python it&rsquo;s already installed and it just works out of the box. The only drawback is that <code>venv</code> <strong>is not available for Python versions prior the 3.3</strong>, so, if you work on a project written in Python 2.7 for example, you can&rsquo;t use <code>venv</code> and you&rsquo;re stuck with <code>virtualenv</code>.</p>
-<p>At the first release, to use the <code>venv</code> module you could use a script, that was named <code>pyvenv</code> but according to the official documentation:</p>
-<blockquote>
-<p><em>The pyvenv script has been deprecated as of Python 3.6 in favor of using python3 -m venv to help prevent any potential confusion as to which Python interpreter a virtual environment will be based on.</em></p>
-</blockquote>
-<p>So, since it&rsquo;s going to be deprecated, forgot the <code>pyenv</code> script and just use the module as suggested. To create a virtual environment with the <code>venv</code> module just type:</p>
-<pre tabindex=0><code>$ python3 -m venv NameOfTheVirtualEnv
-</code></pre><p>To activate the virtual environment use the active script in the <code>./bin</code> subfolder of the created virtual environment directory and as always, to delete the virtual environment simply get rid of its directory.</p>
-<h3 id=the-bottom-line>The bottom line</h3>
-<p>I hope this article could have made the virtual environment topic clearer. To sum up:</p>
-<ul>
-<li>To create a virtual environment you have just to choose if you want to use <code>virtualenv</code> or the <code>venv</code> module.</li>
-<li><code>virtualenv</code> works for both Python 2.7 and Python 3.x, the <code>venv</code> module is available only for Python 3.3 or higher.</li>
-<li><code>virtualenvwrapper</code> is a wrapper that help you to use <code>virtualenv</code>, so if you need <code>virtualenv</code> probably the better choice is to use <code>virtualenvwrapper</code> (but it&rsquo;s a matter of taste).</li>
-<li><code>pyvenv</code> is just a wrapper around the venv module and it&rsquo;s going to be deprecated. So&mldr; forget it right now!</li>
-</ul>
-<p>You haven&rsquo;t decided yet?</p>
-<ul>
-<li>If you are still using Python 2.7 my advice is to use <code>virtualenvwrapper</code>.</li>
-<li>If you use only Python 3.3 or later, I think the best choice is to use the <code>venv</code> module. It&rsquo;s already present on your Python standard library, it&rsquo;s raccomended by the PEP 405, the virtual environments that it creates are smaller and it has also an API if you want to extend it.</li>
-</ul>
-<p>Now, stop reading and go coding on a virtual environment! :)</p>
-<p>Enjoy!
-D.</p>
-</div>
-</article>
-<hr>
-<h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br>
-<style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style>
-<link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet>
-<a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left>
-<img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
-<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a>
-<hr>
-<div class=blog-post-comments>
-<div id=disquss_thread>
-<script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script>
-</div>
-</div>
-<div id=footer-post-container>
-<div id=footer-post>
-<div id=nav-footer style=display:none>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</div>
-<div id=toc-footer style=display:none>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#virtualenv-virtualenv-wrapper-pyvenv-python3--m-venv-are-you-kidding-me>virtualenv, virtualenv-wrapper, pyvenv, python3 -m venv&mldr; Are you kidding me?</a>
-<ul>
-<li><a href=#virtualenv>virtualenv</a></li>
-<li><a href=#virtualenvwrapper>virtualenvwrapper</a></li>
-<li><a href=#the-venv-module>the venv module</a></li>
-<li><a href=#the-bottom-line>The bottom line</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div id=share-footer style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Facebook>
-<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&text=Using%20Virtual%20Environments%20in%20Python" aria-label=Twitter>
-<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Linkedin>
-<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&is_video=false&description=Using%20Virtual%20Environments%20in%20Python" aria-label=Pinterest>
-<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Using%20Virtual%20Environments%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Email>
-<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Pocket>
-<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=reddit>
-<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&name=Using%20Virtual%20Environments%20in%20Python&description=Working%20with%20Python%20is%20like%20to%20have%20superpowers.%20When%20you%20need%20to%20do%20something%20and%20you%20don%26rsquo%3bt%20know%20where%20to%20start%20from%2c%20you%20can%20google%20your%20problem%20and%20usually%2c%20you%20get%20aware%20that%20someone%20has%20already%20had%20your%20problem%20and%20created%20a%20library%20for%20the%20community.%20Whichever%20is%20your%20need%26hellip%3b%0a%20%26ldquo%3bthere%26rsquo%3bs%20a%20lib%20for%20that%21%26quot%3b%0a%20This%20is%20so%20deep%20inside%20the%20Python%20culture%20that%20if%20you%20start%20your%20python%20interpreter%20and%20you%20do%20a%26hellip%3b" aria-label=Tumblr>
-<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&t=Using%20Virtual%20Environments%20in%20Python" aria-label="Hacker News">
-<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=actions-footer>
-<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
-<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
-<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
-<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
-<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
-<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
-<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
-</div>
-</div>
-</div>
-<footer id=footer>
-<div class=footer-left>
-Copyright &copy; 2021 Davide Mastromatteo
-</div>
-<div class=footer-right>
-<nav>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</nav>
-</div>
-</footer>
-</div>
-</body>
-<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
-<script src=../../lib/jquery/jquery.min.js></script>
-<script src=../../js/main.js></script>
-<script src=../../js/code-copy.js></script>
-</html>
+</code></pre><p>Now, quit the current terminal and reopen it to execute the script and start working with virtualenvwrapper. Here there are the basic commands you can use:</p><ul><li>To create a virtual environment:</li></ul><pre><code>$ mkvirtualenv NameOfTheVirtualEnv
+</code></pre><ul><li>To activate a virtual environment:</li></ul><pre><code>$ workon NameOfTheVirtualEnv
+</code></pre><ul><li>To delete a virtual environment:</li></ul><pre><code>$ rmvirtualenv NameOfTheVirtualEnv
+</code></pre><ul><li>To list all the virtual environment previously created:</li></ul><pre><code>$ lsvirtualenv
+</code></pre><p>This is the feature that I like most of this script, and it&rsquo;s made possible by the fact that now, all the environments you create with <code>mkvirtualenv</code> are created under the <code>~/.virtualenvs</code> directory, so&mldr; no more mess on the filesystem! If you want to change the directory where the virtual environments are stored, you just need to specify the directory of your choice in the <code>WORKON_HOME</code> bash variable.</p><h3 id=the-venv-module>the venv module</h3><p>Now that you know almost everything about virtual environments you can easily create, activate and destroy virtual environments. So&mldr; why you should need to know something about <code>venv</code>? The answer is in the <a href=https://www.python.org/dev/peps/pep-0405>PEP405</a>: <code>venv</code> is a python module very similar to <code>virtualenv</code> but that comes by default as a part of the standard Python library since the release of Python 3.3, that dates back to September the 29th of 2012. It&rsquo;s basically <code>virtualenv</code> <em>written the right way</em> because being part of the standard distribution of Python it can use some Python internals that couldn&rsquo;t be used by <code>virtualenv</code>.</p><p>So, while <code>virtualenv</code> tries to trick the system with some hack to make everything work, <code>venv</code> doesn&rsquo;t. Moreover, <code>venv</code> is part of the Python distribution and this means that you don&rsquo;t need to install anything to start using it, if you use a recent version of Python it&rsquo;s already installed and it just works out of the box. The only drawback is that <code>venv</code> <strong>is not available for Python versions prior the 3.3</strong>, so, if you work on a project written in Python 2.7 for example, you can&rsquo;t use <code>venv</code> and you&rsquo;re stuck with <code>virtualenv</code>.</p><p>At the first release, to use the <code>venv</code> module you could use a script, that was named <code>pyvenv</code> but according to the official documentation:</p><blockquote><p><em>The pyvenv script has been deprecated as of Python 3.6 in favor of using python3 -m venv to help prevent any potential confusion as to which Python interpreter a virtual environment will be based on.</em></p></blockquote><p>So, since it&rsquo;s going to be deprecated, forgot the <code>pyenv</code> script and just use the module as suggested. To create a virtual environment with the <code>venv</code> module just type:</p><pre><code>$ python3 -m venv NameOfTheVirtualEnv
+</code></pre><p>To activate the virtual environment use the active script in the <code>./bin</code> subfolder of the created virtual environment directory and as always, to delete the virtual environment simply get rid of its directory.</p><h3 id=the-bottom-line>The bottom line</h3><p>I hope this article could have made the virtual environment topic clearer. To sum up:</p><ul><li>To create a virtual environment you have just to choose if you want to use <code>virtualenv</code> or the <code>venv</code> module.</li><li><code>virtualenv</code> works for both Python 2.7 and Python 3.x, the <code>venv</code> module is available only for Python 3.3 or higher.</li><li><code>virtualenvwrapper</code> is a wrapper that help you to use <code>virtualenv</code>, so if you need <code>virtualenv</code> probably the better choice is to use <code>virtualenvwrapper</code> (but it&rsquo;s a matter of taste).</li><li><code>pyvenv</code> is just a wrapper around the venv module and it&rsquo;s going to be deprecated. So&mldr; forget it right now!</li></ul><p>You haven&rsquo;t decided yet?</p><ul><li>If you are still using Python 2.7 my advice is to use <code>virtualenvwrapper</code>.</li><li>If you use only Python 3.3 or later, I think the best choice is to use the <code>venv</code> module. It&rsquo;s already present on your Python standard library, it&rsquo;s raccomended by the PEP 405, the virtual environments that it creates are smaller and it has also an API if you want to extend it.</li></ul><p>Now, stop reading and go coding on a virtual environment! :)</p><p>Enjoy!
+D.</p></div></article><hr><h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br><style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet><a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left><img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
+<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a><hr><div class=blog-post-comments><div id=disquss_thread><script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script></div></div><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents><ul><li><a href=#virtualenv-virtualenv-wrapper-pyvenv-python3--m-venv-are-you-kidding-me>virtualenv, virtualenv-wrapper, pyvenv, python3 -m venv&mldr; Are you kidding me?</a><ul><li><a href=#virtualenv>virtualenv</a></li><li><a href=#virtualenvwrapper>virtualenvwrapper</a></li><li><a href=#the-venv-module>the venv module</a></li><li><a href=#the-bottom-line>The bottom line</a></li></ul></li></ul></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&text=Using%20Virtual%20Environments%20in%20Python" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&is_video=false&description=Using%20Virtual%20Environments%20in%20Python" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Using%20Virtual%20Environments%20in%20Python&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&title=Using%20Virtual%20Environments%20in%20Python" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&name=Using%20Virtual%20Environments%20in%20Python&description=Working%20with%20Python%20is%20like%20to%20have%20superpowers.%20When%20you%20need%20to%20do%20something%20and%20you%20don%26rsquo%3bt%20know%20where%20to%20start%20from%2c%20you%20can%20google%20your%20problem%20and%20usually%2c%20you%20get%20aware%20that%20someone%20has%20already%20had%20your%20problem%20and%20created%20a%20library%20for%20the%20community.%20Whichever%20is%20your%20need%26hellip%3b%0a%20%26ldquo%3bthere%26rsquo%3bs%20a%20lib%20for%20that%21%26quot%3b%0a%20This%20is%20so%20deep%20inside%20the%20Python%20culture%20that%20if%20you%20start%20your%20python%20interpreter%20and%20you%20do%20a%26hellip%3b" aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2016-11-29-using-virtual-environments-python%2f&t=Using%20Virtual%20Environments%20in%20Python" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2021 Davide Mastromatteo</div><div class=footer-right><nav><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=../../lib/font-awesome/css/all.min.css><script src=../../lib/jquery/jquery.min.js></script><script src=../../js/main.js></script><script src=../../js/code-copy.js></script></html>

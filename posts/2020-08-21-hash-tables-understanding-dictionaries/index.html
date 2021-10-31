@@ -1,224 +1,22 @@
-<!doctype html><html lang=en-us>
-<head>
-<script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-<script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script>
-<script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script>
-<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script>
-<script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
-<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<title> Python Hash Tables: Understanding Dictionaries | The Python Corner</title>
-<link rel=canonical href=https://mastro35.github.io/tpc/posts/2020-08-21-hash-tables-understanding-dictionaries/>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="all,follow">
-<meta name=googlebot content="index,follow,snippet,archive">
-<meta property="og:title" content="Python Hash Tables: Understanding Dictionaries">
-<meta property="og:description" content="Hi guys, have you ever wondered how can Python dictionaries be so fast and reliable? The answer is that they are built on top of another technology: hash tables.
+<!doctype html><html lang=en-us><head><script data-ad-client=ca-pub-1030730506660314 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script id=mNCC language=javascript>medianet_width="728",medianet_height="90",medianet_crid="167545135",medianet_versionId="3111299"</script><script src="//contextual.media.net/nmedianet.js?cid=8CU62P5S3"></script><script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js></script><script type=text/javascript src=https://blockchain.info/Resources/js/pay-now-button.js></script><link rel=preload href=../../lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=../../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><script type=text/javascript src=https://latest.cactus.chat/cactus.js></script><link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Python Hash Tables: Understanding Dictionaries | The Python Corner</title><link rel=canonical href=https://mastro35.github.io/tpc/posts/2020-08-21-hash-tables-understanding-dictionaries/><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="Python Hash Tables: Understanding Dictionaries"><meta property="og:description" content="Hi guys, have you ever wondered how can Python dictionaries be so fast and reliable? The answer is that they are built on top of another technology: hash tables.
 Knowing how Python hash tables work will give you a deeper understanding of how dictionaries work and this could be a great advantage for your Python understanding because dictionaries are almost everywhere in Python.
-Hash Functions Before introducing hash tables and their Python implementation you have to know what is a hash function and how it works.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://mastro35.github.io/tpc/posts/2020-08-21-hash-tables-understanding-dictionaries/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-08-21T06:59:49+01:00">
-<meta property="article:modified_time" content="2020-08-21T06:59:49+01:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Python Hash Tables: Understanding Dictionaries">
-<meta name=twitter:description content="Hi guys, have you ever wondered how can Python dictionaries be so fast and reliable? The answer is that they are built on top of another technology: hash tables.
+Hash Functions Before introducing hash tables and their Python implementation you have to know what is a hash function and how it works."><meta property="og:type" content="article"><meta property="og:url" content="https://mastro35.github.io/tpc/posts/2020-08-21-hash-tables-understanding-dictionaries/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-08-21T06:59:49+01:00"><meta property="article:modified_time" content="2020-08-21T06:59:49+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python Hash Tables: Understanding Dictionaries"><meta name=twitter:description content="Hi guys, have you ever wondered how can Python dictionaries be so fast and reliable? The answer is that they are built on top of another technology: hash tables.
 Knowing how Python hash tables work will give you a deeper understanding of how dictionaries work and this could be a great advantage for your Python understanding because dictionaries are almost everywhere in Python.
-Hash Functions Before introducing hash tables and their Python implementation you have to know what is a hash function and how it works.">
-<link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
-<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
-<link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png>
-<link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png>
-<link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png>
-<link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png>
-<link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png>
-<link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png>
-<link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png>
-<link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png>
-<link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png>
-<link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png>
-<link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png>
-<link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png>
-<link rel=manifest href=../../manifest.json>
-<meta name=msapplication-TileColor content="#ffffff">
-<meta name=msapplication-TileImage content="/images/ms-icon-144x144.png">
-<meta name=theme-color content="#ffffff">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body class="max-width mx-auto px3 ltr">
-<div class="content index py4">
-<div id=header-post>
-<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+Hash Functions Before introducing hash tables and their Python implementation you have to know what is a hash function and how it works."><link rel=stylesheet href=https://mastro35.github.io/tpc/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N+XoIuZg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=apple-touch-icon sizes=57x57 href=../../images/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=../../images/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=../../images/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=../../images/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=../../images/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=../../images/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=../../images/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=../../images/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=../../images/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=../../images/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=../../images/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=../../images/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=../../images/favicon-16x16.png><link rel=manifest href=../../manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/images/ms-icon-144x144.png"><meta name=theme-color content="#ffffff"><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-120027408-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-<span id=menu>
-<span id=nav>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</span>
-<br>
-<span id=actions>
-<ul>
-<li>
-<a class=icon href=https://mastro35.github.io/tpc/posts/2020-05-07-friends-manning-publication/ aria-label=Previous>
-<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=https://mastro35.github.io/tpc/posts/2020-12-02-formatting-strings-in-python/ aria-label=Next>
-<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# aria-label=Share>
-<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
-</a>
-</li>
-</ul>
-<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=menu><span id=nav><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://mastro35.github.io/tpc/posts/2020-05-07-friends-manning-publication/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i></a></li><li><a class=icon href=https://mastro35.github.io/tpc/posts/2020-12-02-formatting-strings-in-python/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i></a></li><li><a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
 <span id=i-next class=info style=display:none>Next post</span>
 <span id=i-top class=info style=display:none>Back to top</span>
-<span id=i-share class=info style=display:none>Share post</span>
-</span>
-<br>
-<div id=share style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Facebook>
-<i class="fab fa-facebook" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&text=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Twitter>
-<i class="fab fa-twitter" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Linkedin>
-<i class="fab fa-linkedin" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&is_video=false&description=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pinterest>
-<i class="fab fa-pinterest" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Email>
-<i class="fas fa-envelope" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pocket>
-<i class="fab fa-get-pocket" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=reddit>
-<i class="fab fa-reddit" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&name=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&description=Hi%20guys%2c%20have%20you%20ever%20wondered%20how%20can%20Python%20dictionaries%20be%20so%20fast%20and%20reliable%3f%20The%20answer%20is%20that%20they%20are%20built%20on%20top%20of%20another%20technology%3a%20hash%20tables.%0aKnowing%20how%20Python%20hash%20tables%20work%20will%20give%20you%20a%20deeper%20understanding%20of%20how%20dictionaries%20work%20and%20this%20could%20be%20a%20great%20advantage%20for%20your%20Python%20understanding%20because%20dictionaries%20are%20almost%20everywhere%20in%20Python.%0aHash%20Functions%20Before%20introducing%20hash%20tables%20and%20their%20Python%20implementation%20you%20have%20to%20know%20what%20is%20a%20hash%20function%20and%20how%20it%20works." aria-label=Tumblr>
-<i class="fab fa-tumblr" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&t=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label="Hacker News">
-<i class="fab fa-hacker-news" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=toc>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#hash-functions>Hash Functions</a></li>
-<li><a href=#common-usages-of-hashes>Common Usages of Hashes</a></li>
-<li><a href=#the-python-hash-function>The Python <code>hash()</code> Function</a></li>
-<li><a href=#python-hashable-types>Python Hashable Types</a></li>
-<li><a href=#hash-tables>Hash Tables</a></li>
-<li><a href=#dictionaries-implementing-python-hash-tables>Dictionaries: Implementing Python Hash Tables</a></li>
-<li><a href=#the-pythonic-implementation-of-python-hash-tables>The Pythonic Implementation of Python Hash Tables</a></li>
-<li><a href=#conclusions>Conclusions</a></li>
-</ul>
-</nav>
-</div>
-</span>
-</div>
-<article class=post itemscope itemtype=http://schema.org/BlogPosting>
-<header>
-<h1 class=posttitle itemprop="name headline">
-Python Hash Tables: Understanding Dictionaries
-</h1>
-<div class=meta>
-<div class=postdate>
-<time datetime="2020-08-21 06:59:49 +0100 +0100" itemprop=datePublished>2020-08-21</time>
-</div>
-<div class=article-read-time>
-<i class="far fa-clock"></i>
-18 minute read
-</div>
-<div class=article-category>
-<i class="fas fa-archive"></i>
-<a class=category-link href=../../categories/dev>Dev</a>
-</div>
-<div class=article-tag>
-<i class="fas fa-tag"></i>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&text=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&is_video=false&description=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&name=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&description=Hi%20guys%2c%20have%20you%20ever%20wondered%20how%20can%20Python%20dictionaries%20be%20so%20fast%20and%20reliable%3f%20The%20answer%20is%20that%20they%20are%20built%20on%20top%20of%20another%20technology%3a%20hash%20tables.%0aKnowing%20how%20Python%20hash%20tables%20work%20will%20give%20you%20a%20deeper%20understanding%20of%20how%20dictionaries%20work%20and%20this%20could%20be%20a%20great%20advantage%20for%20your%20Python%20understanding%20because%20dictionaries%20are%20almost%20everywhere%20in%20Python.%0aHash%20Functions%20Before%20introducing%20hash%20tables%20and%20their%20Python%20implementation%20you%20have%20to%20know%20what%20is%20a%20hash%20function%20and%20how%20it%20works." aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&t=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents><ul><li><a href=#hash-functions>Hash Functions</a></li><li><a href=#common-usages-of-hashes>Common Usages of Hashes</a></li><li><a href=#the-python-hash-function>The Python <code>hash()</code> Function</a></li><li><a href=#python-hashable-types>Python Hashable Types</a></li><li><a href=#hash-tables>Hash Tables</a></li><li><a href=#dictionaries-implementing-python-hash-tables>Dictionaries: Implementing Python Hash Tables</a></li><li><a href=#the-pythonic-implementation-of-python-hash-tables>The Pythonic Implementation of Python Hash Tables</a></li><li><a href=#conclusions>Conclusions</a></li></ul></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">Python Hash Tables: Understanding Dictionaries</h1><div class=meta><div class=postdate><time datetime="2020-08-21 06:59:49 +0100 +0100" itemprop=datePublished>2020-08-21</time></div><div class=article-read-time><i class="far fa-clock"></i>
+18 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=../../categories/dev>Dev</a></div><div class=article-tag><i class="fas fa-tag"></i>
 <a class=tag-link href=../../tags/hash-tables rel=tag>hash tables</a>
 ,
 <a class=tag-link href=../../tags/dictionaries rel=tag>dictionaries</a>
 ,
-<a class=tag-link href=../../tags/python rel=tag>python</a>
-</div>
-</div>
-</header>
-<div class=content itemprop=articleBody>
-<p><img src=https://imgs.xkcd.com/comics/password_strength.png alt=teaser></p>
-<p>Hi guys, have you ever wondered how can Python dictionaries be so fast and reliable? The answer is that they are built on top of another technology: <strong>hash tables</strong>.</p>
-<p>Knowing how Python hash tables work will give you a deeper understanding of how dictionaries work and this could be a great advantage for your Python understanding because dictionaries are almost everywhere in Python.</p>
-<h2 id=hash-functions>Hash Functions</h2>
-<p>Before introducing hash tables and their Python implementation you have to know what is a hash function and how it works.</p>
-<p>A hash function is a function that can map a piece of data of any length to a fixed-length value, called <strong>hash</strong>.</p>
-<p>Hash functions have three major characteristics:</p>
-<ol>
-<li>They are <strong>fast to compute</strong>: calculate the hash of a piece of data have to be a fast operation.</li>
-<li>They are <strong>deterministic</strong>: the same string will always produce the same hash.</li>
-<li>They produce <strong>fixed-length</strong> values: it doesn&rsquo;t matter if your input is one, ten, or ten thousand bytes, the resulting hash will be always of a fixed, predetermined length.</li>
-</ol>
-<p>Another characteristic that is quite common in hash functions is that they often are <strong>one-way functions</strong>: thanks to a voluntary data loss implemented in the function, you can get a hash from a string but you can&rsquo;t get the original string from a hash. This is not a mandatory feature for every hash functions but becomes important when they have to be cryptographically secure.</p>
-<p>Some popular hash algorithms are <a href=https://en.wikipedia.org/wiki/MD5>MD5</a>, <a href=https://en.wikipedia.org/wiki/SHA-1>SHA-1</a>, <a href=https://en.wikipedia.org/wiki/SHA-2>SHA-2</a>, <a href=https://it.wikipedia.org/wiki/NTLM>NTLM</a>.</p>
-<p>If you want to try one of these algorithms by yourself, just point your browser to <a href=https://www.md5online.org>https://www.md5online.org</a>, insert a text of any length in the textbox, click the <code>crypt</code> button and get your 128bit MD5 hash back.</p>
-<h2 id=common-usages-of-hashes>Common Usages of Hashes</h2>
-<p>There are a lot of things that rely on hashes, and hash tables are just one of them. Other common usages of hashes are for cryptographic and security reasons.</p>
-<p>A concrete example of this is when you try to download open-source software from the internet. Usually, you find also a companion file that is the signature of the file. This signature is just the hash of the original file and it&rsquo;s very useful because if you calculate the hash of the original file by yourself and you check it against the signature that the site provides, you can be sure that the file you downloaded hasn&rsquo;t have tampered.</p>
-<p>Another common use of hashes is to store user passwords. Have you ever asked yourself why when you forget the password of a website and you try to recover it the site usually lets you choose another password instead of giving back to you the original one you chose? The answer is that the website doesn&rsquo;t store the entire password you choose, but just its hash.</p>
-<p>This is done for security reasons because if some hacker got the access to the site&rsquo;s database, they won&rsquo;t be able to know your password but just the hash of your password, and since hash functions are often one-way functions you can be sure that they will never be able to get back to your password starting from the hash.</p>
-<h2 id=the-python-hash-function>The Python <code>hash()</code> Function</h2>
-<p>Python has a built-in function to generate the hash of an object, the <code>hash()</code> function.
-This function takes an object as input and returns the hash as an integer.</p>
-<p>Internally, this function invokes the <code>.__hash__()</code> method of the input object, so if you want to make your custom class hashable, all you have to do is to implement the <code>.__hash__()</code> method to return an integer based on the internal state of your object.</p>
-<p>Now, try to start the Python interpreter and play with the <code>hash()</code> function a little bit. For the first experiment, try to hash some numeric values:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; hash(1)
+<a class=tag-link href=../../tags/python rel=tag>python</a></div></div></header><div class=content itemprop=articleBody><p><img src=https://imgs.xkcd.com/comics/password_strength.png alt=teaser></p><p>Hi guys, have you ever wondered how can Python dictionaries be so fast and reliable? The answer is that they are built on top of another technology: <strong>hash tables</strong>.</p><p>Knowing how Python hash tables work will give you a deeper understanding of how dictionaries work and this could be a great advantage for your Python understanding because dictionaries are almost everywhere in Python.</p><h2 id=hash-functions>Hash Functions</h2><p>Before introducing hash tables and their Python implementation you have to know what is a hash function and how it works.</p><p>A hash function is a function that can map a piece of data of any length to a fixed-length value, called <strong>hash</strong>.</p><p>Hash functions have three major characteristics:</p><ol><li>They are <strong>fast to compute</strong>: calculate the hash of a piece of data have to be a fast operation.</li><li>They are <strong>deterministic</strong>: the same string will always produce the same hash.</li><li>They produce <strong>fixed-length</strong> values: it doesn&rsquo;t matter if your input is one, ten, or ten thousand bytes, the resulting hash will be always of a fixed, predetermined length.</li></ol><p>Another characteristic that is quite common in hash functions is that they often are <strong>one-way functions</strong>: thanks to a voluntary data loss implemented in the function, you can get a hash from a string but you can&rsquo;t get the original string from a hash. This is not a mandatory feature for every hash functions but becomes important when they have to be cryptographically secure.</p><p>Some popular hash algorithms are <a href=https://en.wikipedia.org/wiki/MD5>MD5</a>, <a href=https://en.wikipedia.org/wiki/SHA-1>SHA-1</a>, <a href=https://en.wikipedia.org/wiki/SHA-2>SHA-2</a>, <a href=https://it.wikipedia.org/wiki/NTLM>NTLM</a>.</p><p>If you want to try one of these algorithms by yourself, just point your browser to <a href=https://www.md5online.org>https://www.md5online.org</a>, insert a text of any length in the textbox, click the <code>crypt</code> button and get your 128bit MD5 hash back.</p><h2 id=common-usages-of-hashes>Common Usages of Hashes</h2><p>There are a lot of things that rely on hashes, and hash tables are just one of them. Other common usages of hashes are for cryptographic and security reasons.</p><p>A concrete example of this is when you try to download open-source software from the internet. Usually, you find also a companion file that is the signature of the file. This signature is just the hash of the original file and it&rsquo;s very useful because if you calculate the hash of the original file by yourself and you check it against the signature that the site provides, you can be sure that the file you downloaded hasn&rsquo;t have tampered.</p><p>Another common use of hashes is to store user passwords. Have you ever asked yourself why when you forget the password of a website and you try to recover it the site usually lets you choose another password instead of giving back to you the original one you chose? The answer is that the website doesn&rsquo;t store the entire password you choose, but just its hash.</p><p>This is done for security reasons because if some hacker got the access to the site&rsquo;s database, they won&rsquo;t be able to know your password but just the hash of your password, and since hash functions are often one-way functions you can be sure that they will never be able to get back to your password starting from the hash.</p><h2 id=the-python-hash-function>The Python <code>hash()</code> Function</h2><p>Python has a built-in function to generate the hash of an object, the <code>hash()</code> function.
+This function takes an object as input and returns the hash as an integer.</p><p>Internally, this function invokes the <code>.__hash__()</code> method of the input object, so if you want to make your custom class hashable, all you have to do is to implement the <code>.__hash__()</code> method to return an integer based on the internal state of your object.</p><p>Now, try to start the Python interpreter and play with the <code>hash()</code> function a little bit. For the first experiment, try to hash some numeric values:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; hash(1)
 1
 &gt;&gt;&gt; hash(10)
 10
@@ -228,35 +26,20 @@ This function takes an object as input and returns the hash as an integer.</p>
 230584300921368586
 &gt;&gt;&gt; hash(-10.01)
 -230584300921368586
-</code></pre><p>If you are wondering why these hashes seems to have different length remember that the Python <code>hash()</code> function returns <strong>integers</strong> objects, that are always represented with 24 bytes on a standard 64 bit Python 3 interpreter.</p>
-<p>As you can see, by default the hash value of an integer value is the value itself. Note that this works regardless of the type of the value you are hashing, so the integer <code>1</code> and the float <code>1.0</code> have the same hash: <code>1</code>.</p>
-<p>What&rsquo;s so special about this? Well, this shows what you learned earlier, that is that hash functions are often one-way functions: if two different objects may have the same hash, it&rsquo;s impossible to do the reverse process starting from a hash and going back to the original object. In this case, the information about the type of the original hashed object has gone lost.</p>
-<p>Another couple of interesting things you could note by hashing numbers is that decimal numbers have hashes that are different from their value and that negative values have negative hashes. But what happens if you try to hash the same number you got for the decimal value? The answer is that you get the same hash, as shown in the following example:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; hash(0.1)
+</code></pre><p>If you are wondering why these hashes seems to have different length remember that the Python <code>hash()</code> function returns <strong>integers</strong> objects, that are always represented with 24 bytes on a standard 64 bit Python 3 interpreter.</p><p>As you can see, by default the hash value of an integer value is the value itself. Note that this works regardless of the type of the value you are hashing, so the integer <code>1</code> and the float <code>1.0</code> have the same hash: <code>1</code>.</p><p>What&rsquo;s so special about this? Well, this shows what you learned earlier, that is that hash functions are often one-way functions: if two different objects may have the same hash, it&rsquo;s impossible to do the reverse process starting from a hash and going back to the original object. In this case, the information about the type of the original hashed object has gone lost.</p><p>Another couple of interesting things you could note by hashing numbers is that decimal numbers have hashes that are different from their value and that negative values have negative hashes. But what happens if you try to hash the same number you got for the decimal value? The answer is that you get the same hash, as shown in the following example:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; hash(0.1)
 230584300921369408
 &gt;&gt;&gt; hash(230584300921369408)
 230584300921369408
 &gt;&gt;&gt; hash(0.1) == hash(230584300921369408)
 True
-</code></pre><p>As you can see, the hash of the integer number <code>230584300921369408</code> is the same as the hash of the number <code>0.1</code>. And this is perfectly normal if you think of what you learned earlier about hash functions because if you can hash any number or any string getting a fixed-length value since you can&rsquo;t have infinite values represented by a fixed-length value, that implies that there must be duplicated values. They exist in fact, and they are called <strong>collisions</strong>. When two objects have the same hash, it is said that they collide.</p>
-<p>Hashing a string is not much different from hashing a numeric value. Start your Python interpreter and have a try hashing a string:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; hash(&quot;Bad Behaviour&quot;)
+</code></pre><p>As you can see, the hash of the integer number <code>230584300921369408</code> is the same as the hash of the number <code>0.1</code>. And this is perfectly normal if you think of what you learned earlier about hash functions because if you can hash any number or any string getting a fixed-length value since you can&rsquo;t have infinite values represented by a fixed-length value, that implies that there must be duplicated values. They exist in fact, and they are called <strong>collisions</strong>. When two objects have the same hash, it is said that they collide.</p><p>Hashing a string is not much different from hashing a numeric value. Start your Python interpreter and have a try hashing a string:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; hash(&quot;Bad Behaviour&quot;)
 7164800052134507161
-</code></pre><p>As you can see a string is hashable and produce a numeric value as well but if you have tried to run this command you could see that your Python interpreter hasn&rsquo;t returned the same result of the example above. That&rsquo;s because starting from Python 3.3 values of strings and bytes objects are <strong>salted</strong> with a random value before the hashing process. This means that the value of the string is modified with a random value that changes every time your interpreter starts, before getting hashed. If you want to override this behaviour, you can set the <code>PYTHONHASHSEED</code> environment variable to an integer value greater than zero before starting the interpreter.</p>
-<p>As you may expect this is a security feature. Earlier you learned that websites usually store the hash of your password instead of the password itself to prevent an attack to the site&rsquo;s database to stole all the site passwords. If a website stores just the hash as it is calculated it could be easy for attackers to know what was the original password. They just need to get a big list of commonly used passwords (the web is full of these lists) and calculate their corresponding hash to get what is usually called <strong>rainbow tables</strong>.</p>
-<p>By using a rainbow table the attacker may not be able to get <strong>every</strong> password in the database, still being able to steal a <strong>vast majority of them</strong>. To prevent this kind of attack, a good idea is to <strong>salt</strong> the password before hashing them, which is modifying the password with a random value before calculating the hash.</p>
-<p>Starting from Python 3.3 the interpreter by default salt every string and bytes object before hashing it, preventing possible DOS attacks as demonstrated by Scott Crosby and Dan Wallach on <a href=https://static.usenix.org/event/sec03/tech/full_papers/crosby/crosby_html/>this 2003 paper</a>.</p>
-<p>A DOS attack (where DOS stands for Denial Of Service) is an attack where the resources of a computer system are deliberately exhausted by the attacker so that the system is no longer able to provide service to the clients. In this specific case of the attack demonstrated by Scott Crosby, the attack was possible flooding the target system with a lot of data whose hash collide, making the target system use a lot more of computing power to resolve the collisions.</p>
-<h2 id=python-hashable-types>Python Hashable Types</h2>
-<p>So at this point, you could wonder if any Python type is hashable.
-The answer to this question is no, by default, just immutable types are hashable in Python. In case you are using an immutable container (like a tuple) also the content should be immutable to be hashable.</p>
-<p>Trying to get the hash of an unashable type in Python you will get a <code>TypeError</code> from the interpreter as shown in the following example:</p>
-<pre tabindex=0><code class=language-pytb data-lang=pytb>&gt;&gt;&gt; hash([&quot;R&quot;,&quot;e&quot;,&quot;a&quot;,&quot;l&quot;,&quot;P&quot;,&quot;y&quot;,&quot;t&quot;,&quot;h&quot;,&quot;o&quot;,&quot;n&quot;])
+</code></pre><p>As you can see a string is hashable and produce a numeric value as well but if you have tried to run this command you could see that your Python interpreter hasn&rsquo;t returned the same result of the example above. That&rsquo;s because starting from Python 3.3 values of strings and bytes objects are <strong>salted</strong> with a random value before the hashing process. This means that the value of the string is modified with a random value that changes every time your interpreter starts, before getting hashed. If you want to override this behaviour, you can set the <code>PYTHONHASHSEED</code> environment variable to an integer value greater than zero before starting the interpreter.</p><p>As you may expect this is a security feature. Earlier you learned that websites usually store the hash of your password instead of the password itself to prevent an attack to the site&rsquo;s database to stole all the site passwords. If a website stores just the hash as it is calculated it could be easy for attackers to know what was the original password. They just need to get a big list of commonly used passwords (the web is full of these lists) and calculate their corresponding hash to get what is usually called <strong>rainbow tables</strong>.</p><p>By using a rainbow table the attacker may not be able to get <strong>every</strong> password in the database, still being able to steal a <strong>vast majority of them</strong>. To prevent this kind of attack, a good idea is to <strong>salt</strong> the password before hashing them, which is modifying the password with a random value before calculating the hash.</p><p>Starting from Python 3.3 the interpreter by default salt every string and bytes object before hashing it, preventing possible DOS attacks as demonstrated by Scott Crosby and Dan Wallach on <a href=https://static.usenix.org/event/sec03/tech/full_papers/crosby/crosby_html/>this 2003 paper</a>.</p><p>A DOS attack (where DOS stands for Denial Of Service) is an attack where the resources of a computer system are deliberately exhausted by the attacker so that the system is no longer able to provide service to the clients. In this specific case of the attack demonstrated by Scott Crosby, the attack was possible flooding the target system with a lot of data whose hash collide, making the target system use a lot more of computing power to resolve the collisions.</p><h2 id=python-hashable-types>Python Hashable Types</h2><p>So at this point, you could wonder if any Python type is hashable.
+The answer to this question is no, by default, just immutable types are hashable in Python. In case you are using an immutable container (like a tuple) also the content should be immutable to be hashable.</p><p>Trying to get the hash of an unashable type in Python you will get a <code>TypeError</code> from the interpreter as shown in the following example:</p><pre><code class=language-pytb data-lang=pytb>&gt;&gt;&gt; hash([&quot;R&quot;,&quot;e&quot;,&quot;a&quot;,&quot;l&quot;,&quot;P&quot;,&quot;y&quot;,&quot;t&quot;,&quot;h&quot;,&quot;o&quot;,&quot;n&quot;])
 Traceback (most recent call last):
  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
 TypeError: unhashable type: 'list'
-</code></pre><p>However, every custom defined object is hashable in Python and by default its hash is derived from it&rsquo;s id. That means that two different instance of a same class, by default have different hashes, as shown in the following example:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; class Car():
+</code></pre><p>However, every custom defined object is hashable in Python and by default its hash is derived from it&rsquo;s id. That means that two different instance of a same class, by default have different hashes, as shown in the following example:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; class Car():
 ...     velocity = 0
 ...     direction = 0
 ...     damage = 0
@@ -267,13 +50,7 @@ TypeError: unhashable type: 'list'
 274643597
 &gt;&gt;&gt; hash(second_car)
 274643604
-</code></pre><p>As you can see, two different instances of the same custom object by default have different hash values. However, this behavior can be modified by implementing a <code>.__hash__()</code> method inside the custom class.</p>
-<h2 id=hash-tables>Hash Tables</h2>
-<p>Now that you know what a hash function is, you can start examining hash tables. A hash table is a data structure that allows you to store a collection of key-value pairs.</p>
-<p>In a hash table, the key of every key-value pair must be hashable, because the pairs stored are indexed by using the hash of their keys. Hash tables are very useful because the average number of instructions that are necessary to lookup an element of the table is independent of the number of elements stored in the table itself. That means that even if your table grows ten or ten thousand times, the overall speed to look up a specific element is not affected.</p>
-<p>A hash table is typically implemented by creating a variable number of <strong>buckets</strong> that will contain your data and indexing this data by hashing their keys. The hash value of the key will determine the correct bucket to be used for that particular piece of data.</p>
-<p>In the example below, you can find an implementation of a basic hash table in Python. This is just an implementation to give you the idea of how a hash table could work because as you will know later, in Python there&rsquo;s no need to create your custom implementation of hash tables since they are implemented as dictionaries. Let&rsquo;s see how this implementation works:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>import</span> pprint
+</code></pre><p>As you can see, two different instances of the same custom object by default have different hash values. However, this behavior can be modified by implementing a <code>.__hash__()</code> method inside the custom class.</p><h2 id=hash-tables>Hash Tables</h2><p>Now that you know what a hash function is, you can start examining hash tables. A hash table is a data structure that allows you to store a collection of key-value pairs.</p><p>In a hash table, the key of every key-value pair must be hashable, because the pairs stored are indexed by using the hash of their keys. Hash tables are very useful because the average number of instructions that are necessary to lookup an element of the table is independent of the number of elements stored in the table itself. That means that even if your table grows ten or ten thousand times, the overall speed to look up a specific element is not affected.</p><p>A hash table is typically implemented by creating a variable number of <strong>buckets</strong> that will contain your data and indexing this data by hashing their keys. The hash value of the key will determine the correct bucket to be used for that particular piece of data.</p><p>In the example below, you can find an implementation of a basic hash table in Python. This is just an implementation to give you the idea of how a hash table could work because as you will know later, in Python there&rsquo;s no need to create your custom implementation of hash tables since they are implemented as dictionaries. Let&rsquo;s see how this implementation works:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#ff79c6>import</span> pprint
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Hashtable</span>:
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>    <span style=color:#ff79c6>def</span> __init__(self, elements):
@@ -309,25 +86,17 @@ TypeError: unhashable type: 'list'
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34</span>hashtable <span style=color:#ff79c6>=</span> Hashtable(capitals)
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35</span><span style=color:#8be9fd;font-style:italic>print</span>(hashtable)
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36</span><span style=color:#8be9fd;font-style:italic>print</span>(<span style=color:#f1fa8c>f</span><span style=color:#f1fa8c>&#34;The capital of Italy is </span><span style=color:#f1fa8c>{</span>hashtable<span style=color:#ff79c6>.</span>get_value(<span style=color:#f1fa8c>&#39;Italy&#39;</span>)<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>&#34;</span>)
-</code></pre></div><p>Look at the <code>for</code> loop starting at line 9. For each element of the hashtable this code calculate the hash of the key (line 10), it calculate the position of the element in the bucket depending on the hash (line 11) and add a tuple in the bucket (line 12).</p>
-<p>Try to run the example above after setting the environment varible <code>PYTHONHASHSEED</code> to the value <code>46</code> and you will get the the following output, where two buckets are empty and two other buckets contains two key-value pairs each:</p>
-<pre tabindex=0><code class=language-console data-lang=console>[[('United States', 'Washington D.C.'), ('Canada', 'Ottawa')],
+</code></pre></div><p>Look at the <code>for</code> loop starting at line 9. For each element of the hashtable this code calculate the hash of the key (line 10), it calculate the position of the element in the bucket depending on the hash (line 11) and add a tuple in the bucket (line 12).</p><p>Try to run the example above after setting the environment varible <code>PYTHONHASHSEED</code> to the value <code>46</code> and you will get the the following output, where two buckets are empty and two other buckets contains two key-value pairs each:</p><pre><code class=language-console data-lang=console>[[('United States', 'Washington D.C.'), ('Canada', 'Ottawa')],
  [],
  [],
  [('France', 'Paris'), ('Italy', 'Rome')]]
 The capital of Italy is Rome
-</code></pre><p>Note that if you try to run the program without having set the <code>PYTHONHASHSEED</code> variable, you may probably get a different result, because as you already know the hash function in Python, starting from Python 3.3 salts every string with a random seed before the hashing process.</p>
-<p>In the example above you have implemented a Python hash table that takes a list of tuples as input and organizes them in a number of buckets equal to the length of the input list with a modulo operator to distribute the hashes in the table.</p>
-<p>However, as you can see in the output, you got two empty buckets while the other two have two different values each. When this happens, it&rsquo;s said that there&rsquo;s a <strong>collision</strong> in the Python hash table.</p>
-<p>Using the standard library&rsquo;s <code>hash()</code> function, collisions in a hash table are unavoidable. You could decide to use a higher number of buckets and lowering the risk of incurring in a collision, but you will never reduce the risk to zero.</p>
-<p>Moreover, the more you increase the number of buckets you will handle, the more space you will waste. To test this you can simply change the bucket size of your previous example using a number of buckets that is two times the length of the input list:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Hashtable</span>:
+</code></pre><p>Note that if you try to run the program without having set the <code>PYTHONHASHSEED</code> variable, you may probably get a different result, because as you already know the hash function in Python, starting from Python 3.3 salts every string with a random seed before the hashing process.</p><p>In the example above you have implemented a Python hash table that takes a list of tuples as input and organizes them in a number of buckets equal to the length of the input list with a modulo operator to distribute the hashes in the table.</p><p>However, as you can see in the output, you got two empty buckets while the other two have two different values each. When this happens, it&rsquo;s said that there&rsquo;s a <strong>collision</strong> in the Python hash table.</p><p>Using the standard library&rsquo;s <code>hash()</code> function, collisions in a hash table are unavoidable. You could decide to use a higher number of buckets and lowering the risk of incurring in a collision, but you will never reduce the risk to zero.</p><p>Moreover, the more you increase the number of buckets you will handle, the more space you will waste. To test this you can simply change the bucket size of your previous example using a number of buckets that is two times the length of the input list:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Hashtable</span>:
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>    <span style=color:#ff79c6>def</span> __init__(self, elements):
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>        self<span style=color:#ff79c6>.</span>bucket_size <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>len</span>(elements) <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>2</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>        self<span style=color:#ff79c6>.</span>buckets <span style=color:#ff79c6>=</span> [[] <span style=color:#ff79c6>for</span> i <span style=color:#ff79c6>in</span> <span style=color:#8be9fd;font-style:italic>range</span>(self<span style=color:#ff79c6>.</span>bucket_size)]
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>        self<span style=color:#ff79c6>.</span>_assign_buckets(elements)
-</code></pre></div><p>Running this example, I ended up with a better distribution of the input data, but I had however a collision and five unused buckets:</p>
-<pre tabindex=0><code class=language-console data-lang=console>[[],
+</code></pre></div><p>Running this example, I ended up with a better distribution of the input data, but I had however a collision and five unused buckets:</p><pre><code class=language-console data-lang=console>[[],
  [],
  [],
  [('Canada', 'Ottawa')],
@@ -336,17 +105,9 @@ The capital of Italy is Rome
  [('United States', 'Washington D.C.'), ('Italy', 'Rome')],
  [('France', 'Paris')]]
 The capital of Italy is Rome
-</code></pre><p>As you can see, two hashes collided and have been inserted into the same bucket.</p>
-<p>Since collisions are often unavoidable, to implement a hash table requires you to implement also a collision resolution method. The common strategies to resolve collisions in a hash table are:</p>
-<ul>
-<li><strong>open addressing</strong></li>
-<li><strong>separate chaining</strong></li>
-</ul>
-<p>The separate chaining is the one you already implemented in the example above and consists of creating a chain of values in the same bucket by using another data structure. In that example, you used a nested list that had to be scanned entirely when looking for a specific value in an over occupied bucket.</p>
-<p>In the open addressing strategy, if the bucket you should use is busy, you just keep searching for a new bucket to be used.
+</code></pre><p>As you can see, two hashes collided and have been inserted into the same bucket.</p><p>Since collisions are often unavoidable, to implement a hash table requires you to implement also a collision resolution method. The common strategies to resolve collisions in a hash table are:</p><ul><li><strong>open addressing</strong></li><li><strong>separate chaining</strong></li></ul><p>The separate chaining is the one you already implemented in the example above and consists of creating a chain of values in the same bucket by using another data structure. In that example, you used a nested list that had to be scanned entirely when looking for a specific value in an over occupied bucket.</p><p>In the open addressing strategy, if the bucket you should use is busy, you just keep searching for a new bucket to be used.
 To implement this solution, you need to do a couple of changes to both how you assign buckets to new elements and how you retrieve values for a key.
-Starting from the <code>_assign_buckets()</code> function, you have to initialize your buckets with a default value and keep looking for an empty bucket if the one you should use has been already taken:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_assign_buckets</span>(self, elements):
+Starting from the <code>_assign_buckets()</code> function, you have to initialize your buckets with a default value and keep looking for an empty bucket if the one you should use has been already taken:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_assign_buckets</span>(self, elements):
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>        self<span style=color:#ff79c6>.</span>buckets <span style=color:#ff79c6>=</span> [<span style=color:#ff79c6>None</span>] <span style=color:#ff79c6>*</span> self<span style=color:#ff79c6>.</span>bucket_size
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>        <span style=color:#ff79c6>for</span> key, value <span style=color:#ff79c6>in</span> elements:
@@ -358,9 +119,7 @@ Starting from the <code>_assign_buckets()</code> function, you have to initializ
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>                index <span style=color:#ff79c6>=</span> (index <span style=color:#ff79c6>+</span> <span style=color:#bd93f9>1</span>) <span style=color:#ff79c6>%</span> self<span style=color:#ff79c6>.</span>bucket_size
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>            self<span style=color:#ff79c6>.</span>buckets[index] <span style=color:#ff79c6>=</span> ((key, value))
-</code></pre></div><p>As you can see, all the buckets are set to a default <code>None</code> value before the assignment, and the <code>while</code> loop keeps looking for an empty bucket to store the data.</p>
-<p>Since the assignment of the buckets is changed, also the retrival process should change as well, because in the <code>get_value()</code> method you now need to check the value of the key to be sure that the data you found was the one you were looking for:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>get_value</span>(self, input_key):
+</code></pre></div><p>As you can see, all the buckets are set to a default <code>None</code> value before the assignment, and the <code>while</code> loop keeps looking for an empty bucket to store the data.</p><p>Since the assignment of the buckets is changed, also the retrival process should change as well, because in the <code>get_value()</code> method you now need to check the value of the key to be sure that the data you found was the one you were looking for:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>    <span style=color:#ff79c6>def</span> <span style=color:#50fa7b>get_value</span>(self, input_key):
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>        hashed_value <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>hash</span>(input_key)
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>        index <span style=color:#ff79c6>=</span> hashed_value <span style=color:#ff79c6>%</span> self<span style=color:#ff79c6>.</span>bucket_size
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4</span>        <span style=color:#ff79c6>while</span> self<span style=color:#ff79c6>.</span>buckets[index] <span style=color:#ff79c6>is</span> <span style=color:#ff79c6>not</span> <span style=color:#ff79c6>None</span>:
@@ -368,9 +127,7 @@ Starting from the <code>_assign_buckets()</code> function, you have to initializ
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6</span>            <span style=color:#ff79c6>if</span> key <span style=color:#ff79c6>==</span> input_key:
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span>                <span style=color:#ff79c6>return</span> value
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8</span>            index <span style=color:#ff79c6>=</span> (index <span style=color:#ff79c6>+</span> <span style=color:#bd93f9>1</span>) <span style=color:#ff79c6>%</span> self<span style=color:#ff79c6>.</span>bucket_size
-</code></pre></div><p>During the lookup process, in the <code>get_value()</code> method you use the <code>None</code> value to check when you need to stop looking for a key and then you check the key of the data to be sure that you are returning the correct value.</p>
-<p>Running the example above, the key for <code>Italy</code> collided with a previously inserted element (<code>France</code>) and for this reason has been relocated to the first free bucket available. However, the search for <code>Italy</code> worked as expected:</p>
-<pre tabindex=0><code class=language-console data-lang=console>The key Italy collided with ('France', 'Paris')
+</code></pre></div><p>During the lookup process, in the <code>get_value()</code> method you use the <code>None</code> value to check when you need to stop looking for a key and then you check the key of the data to be sure that you are returning the correct value.</p><p>Running the example above, the key for <code>Italy</code> collided with a previously inserted element (<code>France</code>) and for this reason has been relocated to the first free bucket available. However, the search for <code>Italy</code> worked as expected:</p><pre><code class=language-console data-lang=console>The key Italy collided with ('France', 'Paris')
 [None,
  None,
  ('Canada', 'Ottawa'),
@@ -380,30 +137,20 @@ Starting from the <code>_assign_buckets()</code> function, you have to initializ
  None,
  ('United States', 'Washington D.C.')]
 The capital of Italy is Rome
-</code></pre><p>The main problem of the open addressing strategy is that if you have to handle also deletions of elements in your table, you need to perform logical deletion instead of physical ones because if you delete a value that was occupying a bucket during a collision, the other collided elements will never be found.</p>
-<p>In our previous example, <code>Italy</code> collided with a previously inserted element (<code>France</code>) and so it has been relocated to the very next bucket, so removing the <code>France</code> element will make <code>Italy</code> unreachable because it does not occupy its natural destination bucket, that appears to be empty to the interpreter.</p>
-<p>So, when using the open addressing strategy, to delete an element you have to replace its bucket with a <strong>dummy value</strong>, which indicates to the interpreter that it has to be considered deleted for new insertion but occupied for retrieval purposes.</p>
-<h2 id=dictionaries-implementing-python-hash-tables>Dictionaries: Implementing Python Hash Tables</h2>
-<p>Now that you know what hash tables are, let&rsquo;s have a look at their most important Python implementation: dictionaries. Dictionaries in Python are built using hash tables and the <strong>open addressing</strong> collision resolution method.</p>
-<p>As you already know a dictionary is a collection of key-value pairs, so to define a dictionary you need to provide a comma-separated list of key-value pairs enclosed in curly braces, as in the following example:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players = {
+</code></pre><p>The main problem of the open addressing strategy is that if you have to handle also deletions of elements in your table, you need to perform logical deletion instead of physical ones because if you delete a value that was occupying a bucket during a collision, the other collided elements will never be found.</p><p>In our previous example, <code>Italy</code> collided with a previously inserted element (<code>France</code>) and so it has been relocated to the very next bucket, so removing the <code>France</code> element will make <code>Italy</code> unreachable because it does not occupy its natural destination bucket, that appears to be empty to the interpreter.</p><p>So, when using the open addressing strategy, to delete an element you have to replace its bucket with a <strong>dummy value</strong>, which indicates to the interpreter that it has to be considered deleted for new insertion but occupied for retrieval purposes.</p><h2 id=dictionaries-implementing-python-hash-tables>Dictionaries: Implementing Python Hash Tables</h2><p>Now that you know what hash tables are, let&rsquo;s have a look at their most important Python implementation: dictionaries. Dictionaries in Python are built using hash tables and the <strong>open addressing</strong> collision resolution method.</p><p>As you already know a dictionary is a collection of key-value pairs, so to define a dictionary you need to provide a comma-separated list of key-value pairs enclosed in curly braces, as in the following example:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players = {
 ...    &quot;Carlsen&quot;: 2863,
 ...    &quot;Caruana&quot;: 2835,
 ...    &quot;Ding&quot;: 2791,
 ...    &quot;Nepomniachtchi&quot;: 2784,
 ...    &quot;Vachier-Lagrave&quot;: 2778,
 ... }
-</code></pre><p>Here you have created a dictionary named <code>chess_players</code> that contains the top five chess players in the world and their actual rating.</p>
-<p>To retrieve a specific value you just need to specify the key using square brackets:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players[&quot;Nepomniachtchi&quot;]
+</code></pre><p>Here you have created a dictionary named <code>chess_players</code> that contains the top five chess players in the world and their actual rating.</p><p>To retrieve a specific value you just need to specify the key using square brackets:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players[&quot;Nepomniachtchi&quot;]
 2784
-</code></pre><p>If you try to access a non existing element, the Python interpreter throws a <code>Key Error</code> exception:</p>
-<pre tabindex=0><code class=language-pytb data-lang=pytb>&gt;&gt;&gt; chess_players[&quot;Mastromatteo&quot;]
+</code></pre><p>If you try to access a non existing element, the Python interpreter throws a <code>Key Error</code> exception:</p><pre><code class=language-pytb data-lang=pytb>&gt;&gt;&gt; chess_players[&quot;Mastromatteo&quot;]
 Traceback (most recent call last):
  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
 KeyError: 'Mastromatteo'
-</code></pre><p>To iterate the entire dictionary you can use <code>.items()</code> method, that returns an iterable objects of all the key-value pairs in tuples:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; for (k, v) in chess_players.items():
+</code></pre><p>To iterate the entire dictionary you can use <code>.items()</code> method, that returns an iterable objects of all the key-value pairs in tuples:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; for (k, v) in chess_players.items():
 ...     print(k,v)
 ... 
 Carlsen 2863
@@ -411,42 +158,29 @@ Caruana 2835
 Ding 2791
 Nepomniachtchi 2784
 Vachier-Lagrave 2778
-</code></pre><p>To iterate over the keys or over the values of the Python dictionary, you can use the <code>.keys()</code> or the <code>.values()</code> methods as well:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players.keys()
+</code></pre><p>To iterate over the keys or over the values of the Python dictionary, you can use the <code>.keys()</code> or the <code>.values()</code> methods as well:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players.keys()
 dict_keys([&quot;Carlsen&quot;, &quot;Caruana&quot;, &quot;Ding&quot;, &quot;Nepomniachtchi&quot;, &quot;Vachier-Lagrave&quot;])
 &gt;&gt;&gt; chess_players.values()
 dict_values([2863, 2835, 2791, 2784, 2778])
-</code></pre><p>To insert another element into the dictionary you just need to assign a value to a new key:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players[&quot;Grischuk&quot;] = 2777
+</code></pre><p>To insert another element into the dictionary you just need to assign a value to a new key:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; chess_players[&quot;Grischuk&quot;] = 2777
 &gt;&gt;&gt; chess_players
 {'Carlsen': 2863, 'Caruana': 2835, 'Ding': 2791, 'Nepomniachtchi': 2784, 'Vachier-Lagrave': 2778, 'Grischuk': 2777}
-</code></pre><p>To update the value of an existing key, just assign a different value to the previously inserted key.</p>
-<p>Please note that since dictionaries are built on top of hash tables, you can only insert an element if its key is <strong>hashable</strong>. If the key of your element is not hashable (like a list, for example), the interpreter throws an <code>TypeError</code> exception:</p>
-<pre tabindex=0><code class=language-pytb data-lang=pytb>&gt;&gt;&gt; my_list = [&quot;Giri&quot;, &quot;Mamedyarov&quot;]
+</code></pre><p>To update the value of an existing key, just assign a different value to the previously inserted key.</p><p>Please note that since dictionaries are built on top of hash tables, you can only insert an element if its key is <strong>hashable</strong>. If the key of your element is not hashable (like a list, for example), the interpreter throws an <code>TypeError</code> exception:</p><pre><code class=language-pytb data-lang=pytb>&gt;&gt;&gt; my_list = [&quot;Giri&quot;, &quot;Mamedyarov&quot;]
 chess_players[my_list] = 2764
 Traceback (most recent call last):
  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
 TypeError: unhashable type: 'list'
-</code></pre><p>To delete an element, you need to use the <code>del</code> statement, specifying the key you want to delete:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; del chess_players[&quot;Grischuk&quot;]
+</code></pre><p>To delete an element, you need to use the <code>del</code> statement, specifying the key you want to delete:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; del chess_players[&quot;Grischuk&quot;]
 &gt;&gt;&gt; chess_players
 {'Carlsen': 2863, 'Caruana': 2835, 'Ding': 2791, 'Nepomniachtchi': 2784, 'Vachier-Lagrave': 2778}
-</code></pre><p>Deleting an entry doesn&rsquo;t delete the actual value into the dictionary, it just replaces the key with a dummy value so that the <strong>open addressing</strong> collision resolution method will continue to work, but the interpreter handles all this complexity for you, ignoring the deleted element.</p>
-<h2 id=the-pythonic-implementation-of-python-hash-tables>The Pythonic Implementation of Python Hash Tables</h2>
-<p>Now you know that dictionaries are Python hash tables but you may wonder how the implementation works under the hood, so in this chapter, I will try to give you some information about the actual implementation of Python Hash Tables.</p>
-<p>Bear in mind that the information I will provide here is based on recent versions of Python, because with Python 3.6 dictionaries have changed a lot and are now smaller, faster and even more powerful, as they are now <strong>insertion ordered</strong> (the <strong>insertion ordered</strong> guarantee has been implemented in Python 3.6 but has officially be recognized <a href=https://mail.python.org/pipermail/python-dev/2017-December/151283.html>by Guido in Python 3.7</a>).</p>
-<p>Try to create an empty Python dictionary and check its size and you will find out that an empty Python dictionary takes 240 bytes of memory:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; import sys
+</code></pre><p>Deleting an entry doesn&rsquo;t delete the actual value into the dictionary, it just replaces the key with a dummy value so that the <strong>open addressing</strong> collision resolution method will continue to work, but the interpreter handles all this complexity for you, ignoring the deleted element.</p><h2 id=the-pythonic-implementation-of-python-hash-tables>The Pythonic Implementation of Python Hash Tables</h2><p>Now you know that dictionaries are Python hash tables but you may wonder how the implementation works under the hood, so in this chapter, I will try to give you some information about the actual implementation of Python Hash Tables.</p><p>Bear in mind that the information I will provide here is based on recent versions of Python, because with Python 3.6 dictionaries have changed a lot and are now smaller, faster and even more powerful, as they are now <strong>insertion ordered</strong> (the <strong>insertion ordered</strong> guarantee has been implemented in Python 3.6 but has officially be recognized <a href=https://mail.python.org/pipermail/python-dev/2017-December/151283.html>by Guido in Python 3.7</a>).</p><p>Try to create an empty Python dictionary and check its size and you will find out that an empty Python dictionary takes 240 bytes of memory:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; import sys
 &gt;&gt;&gt; my_dict = {}
 &gt;&gt;&gt; sys.getsizeof(my_dict)
 240
-</code></pre><p>By running this example you can see that the basic occupation of a Python dictionary is 240 bytes. But what happens if you decide to add a value? Well, that&rsquo;s may seem odds, but the size doesn&rsquo;t change:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; my_dict[&quot;a&quot;] = 100
+</code></pre><p>By running this example you can see that the basic occupation of a Python dictionary is 240 bytes. But what happens if you decide to add a value? Well, that&rsquo;s may seem odds, but the size doesn&rsquo;t change:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; my_dict[&quot;a&quot;] = 100
 &gt;&gt;&gt; sys.getsizeof(my_dict)
 240
-</code></pre><p>So, why the size of the dictionary hasn&rsquo;t changed? Because starting from Python 3.6 values are stored in a different data structure and the dictionary contains just a pointer to where the actual value is stored. Moreover, when you create an empty dictionary it starts creating a Python Hash Table with 8 buckets that are just 240 bytes long, so the first element in our dictionary hasn&rsquo;t changed the size at all.</p>
-<p>Now try to add some more elements and see how your dictionary behaves, you will see that the dictionary grows:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; for i in range(20):
+</code></pre><p>So, why the size of the dictionary hasn&rsquo;t changed? Because starting from Python 3.6 values are stored in a different data structure and the dictionary contains just a pointer to where the actual value is stored. Moreover, when you create an empty dictionary it starts creating a Python Hash Table with 8 buckets that are just 240 bytes long, so the first element in our dictionary hasn&rsquo;t changed the size at all.</p><p>Now try to add some more elements and see how your dictionary behaves, you will see that the dictionary grows:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; for i in range(20):
 ...     my_dict[i] = 100
 ...     print(f&quot;elements = {i+1} size = {sys.getsizeof(my_dict)}&quot;)
 ... 
@@ -470,9 +204,7 @@ elements = 17 size = 648
 elements = 18 size = 648
 elements = 19 size = 648
 elements = 20 size = 648
-</code></pre><p>As you can see, the dict has grown after you have inserted the sixth and the eleventh element, but why? Because to make our Python hash table fast and reduce collisions, the interpreter keeps resizing the dictionary when it becomes full for <a href=https://mail.python.org/pipermail/python-list/2000-March/048085.html>two-third</a>.</p>
-<p>Now, try to delete all the elements in your dictionary, one at a time, and when you have finished, check the size again, you will find that even if the dictionary is empty, space hasn&rsquo;t been freed:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; keys = list(my_dict.keys())
+</code></pre><p>As you can see, the dict has grown after you have inserted the sixth and the eleventh element, but why? Because to make our Python hash table fast and reduce collisions, the interpreter keeps resizing the dictionary when it becomes full for <a href=https://mail.python.org/pipermail/python-list/2000-March/048085.html>two-third</a>.</p><p>Now, try to delete all the elements in your dictionary, one at a time, and when you have finished, check the size again, you will find that even if the dictionary is empty, space hasn&rsquo;t been freed:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; keys = list(my_dict.keys())
 &gt;&gt;&gt; for key in keys:
 ...     del my_dict[key]
 ...
@@ -480,138 +212,11 @@ elements = 20 size = 648
 {}
 &gt;&gt;&gt; sys.getsizeof(my_dict)
 648
-</code></pre><p>This happens because since dictionaries have a really small memory footprint and the deletion is not frequent when working with dictionaries, the interpreter prefers to waste a little bit of space than to dynamically resize the dictionary after every deletion. However, if you empty your dictionary by calling the <code>.clear()</code> method, since it is a bulk deletion, space is freed and it goes to its minimum of 72 bytes:</p>
-<pre tabindex=0><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; my_dict.clear()
+</code></pre><p>This happens because since dictionaries have a really small memory footprint and the deletion is not frequent when working with dictionaries, the interpreter prefers to waste a little bit of space than to dynamically resize the dictionary after every deletion. However, if you empty your dictionary by calling the <code>.clear()</code> method, since it is a bulk deletion, space is freed and it goes to its minimum of 72 bytes:</p><pre><code class=language-pycon data-lang=pycon>&gt;&gt;&gt; my_dict.clear()
 &gt;&gt;&gt; sys.getsizeof(my_dict)
 72
-</code></pre><p>As you may imagine, the first insertion on this dictionary will make the interpreter reserve the space for 8 buckets, going back to the initial situation.</p>
-<h2 id=conclusions>Conclusions</h2>
-<p>In this article you have learned what are hash tables and how are they implemented in Python.</p>
-<p>A huge part of this article is based on <a href=https://pyvideo.org/pycon-us-2017/modern-python-dictionaries-a-confluence-of-a-dozen-great-ideas.html>Raymond Hettinger&rsquo;s speech</a> at the Pycon 2017.</p>
-<p><a href=https://twitter.com/raymondh>Raymond Hettinger</a> is a Python core developer and its contribution to the Python development has been invaluable so far.</p>
-</div>
-</article>
-<hr>
-<h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br>
-<style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style>
-<link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet>
-<a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left>
-<img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
-<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a>
-<hr>
-<div class=blog-post-comments>
-<div id=disquss_thread>
-<script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script>
-</div>
-</div>
-<div id=footer-post-container>
-<div id=footer-post>
-<div id=nav-footer style=display:none>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</div>
-<div id=toc-footer style=display:none>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#hash-functions>Hash Functions</a></li>
-<li><a href=#common-usages-of-hashes>Common Usages of Hashes</a></li>
-<li><a href=#the-python-hash-function>The Python <code>hash()</code> Function</a></li>
-<li><a href=#python-hashable-types>Python Hashable Types</a></li>
-<li><a href=#hash-tables>Hash Tables</a></li>
-<li><a href=#dictionaries-implementing-python-hash-tables>Dictionaries: Implementing Python Hash Tables</a></li>
-<li><a href=#the-pythonic-implementation-of-python-hash-tables>The Pythonic Implementation of Python Hash Tables</a></li>
-<li><a href=#conclusions>Conclusions</a></li>
-</ul>
-</nav>
-</div>
-<div id=share-footer style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Facebook>
-<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&text=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Twitter>
-<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Linkedin>
-<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&is_video=false&description=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pinterest>
-<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Email>
-<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pocket>
-<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=reddit>
-<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&name=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&description=Hi%20guys%2c%20have%20you%20ever%20wondered%20how%20can%20Python%20dictionaries%20be%20so%20fast%20and%20reliable%3f%20The%20answer%20is%20that%20they%20are%20built%20on%20top%20of%20another%20technology%3a%20hash%20tables.%0aKnowing%20how%20Python%20hash%20tables%20work%20will%20give%20you%20a%20deeper%20understanding%20of%20how%20dictionaries%20work%20and%20this%20could%20be%20a%20great%20advantage%20for%20your%20Python%20understanding%20because%20dictionaries%20are%20almost%20everywhere%20in%20Python.%0aHash%20Functions%20Before%20introducing%20hash%20tables%20and%20their%20Python%20implementation%20you%20have%20to%20know%20what%20is%20a%20hash%20function%20and%20how%20it%20works." aria-label=Tumblr>
-<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&t=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label="Hacker News">
-<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=actions-footer>
-<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
-<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
-<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
-<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
-<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
-<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
-<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
-</div>
-</div>
-</div>
-<footer id=footer>
-<div class=footer-left>
-Copyright &copy; 2021 Davide Mastromatteo
-</div>
-<div class=footer-right>
-<nav>
-<ul>
-<li><a href=../../>Home</a></li>
-<li><a href=../../posts>Articles</a></li>
-<li><a href=../../tags>Tags</a></li>
-<li><a href=../../about>About</a></li>
-<li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li>
-<li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li>
-</ul>
-</nav>
-</div>
-</footer>
-</div>
-</body>
-<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
-<script src=../../lib/jquery/jquery.min.js></script>
-<script src=../../js/main.js></script>
-<script src=../../js/code-copy.js></script>
-</html>
+</code></pre><p>As you may imagine, the first insertion on this dictionary will make the interpreter reserve the space for 8 buckets, going back to the initial situation.</p><h2 id=conclusions>Conclusions</h2><p>In this article you have learned what are hash tables and how are they implemented in Python.</p><p>A huge part of this article is based on <a href=https://pyvideo.org/pycon-us-2017/modern-python-dictionaries-a-confluence-of-a-dozen-great-ideas.html>Raymond Hettinger&rsquo;s speech</a> at the Pycon 2017.</p><p><a href=https://twitter.com/raymondh>Raymond Hettinger</a> is a Python core developer and its contribution to the Python development has been invaluable so far.</p></div></article><hr><h2 style=color:#2bbc8a;text-align:center>Did you find this article helpful?</h2><br><style>.bmc-button img{height:34px!important;width:35px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}.bmc-button{padding:7px 10px!important;line-height:35px!important;height:51px!important;min-width:217px!important;text-decoration:none!important;display:inline-flex!important;color:#fff!important;background-color:#ff813f!important;border-radius:5px!important;border:1px solid transparent!important;padding:7px 10px!important;font-size:22px!important;letter-spacing:.6px!important;box-shadow:0 1px 2px rgba(190,190,190,.5)!important;-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;margin:0 auto!important;font-family:cookie,cursive!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;-o-transition:.3s all linear!important;-webkit-transition:.3s all linear!important;-moz-transition:.3s all linear!important;-ms-transition:.3s all linear!important;transition:.3s all linear!important}.bmc-button:hover,.bmc-button:active,.bmc-button:focus{-webkit-box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;text-decoration:none!important;box-shadow:0 1px 2px 2px rgba(190,190,190,.5)!important;opacity:.85!important;color:#fff!important}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel=stylesheet><a class=bmc-button target=_blank href=https://www.buymeacoffee.com/dXjDHmt style=align:left><img src=https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg alt="Buy me a coffee!" align=left>
+<span style=margin-left:15px;font-size:28px!important>Buy me a coffee!</span></a><hr><div class=blog-post-comments><div id=disquss_thread><script src=https://utteranc.es/client.js repo=mastro35/tpc issue-term=pathname label="The Python Corner" theme=github-dark crossorigin=anonymous async></script></div></div><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents><ul><li><a href=#hash-functions>Hash Functions</a></li><li><a href=#common-usages-of-hashes>Common Usages of Hashes</a></li><li><a href=#the-python-hash-function>The Python <code>hash()</code> Function</a></li><li><a href=#python-hashable-types>Python Hashable Types</a></li><li><a href=#hash-tables>Hash Tables</a></li><li><a href=#dictionaries-implementing-python-hash-tables>Dictionaries: Implementing Python Hash Tables</a></li><li><a href=#the-pythonic-implementation-of-python-hash-tables>The Pythonic Implementation of Python Hash Tables</a></li><li><a href=#conclusions>Conclusions</a></li></ul></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&text=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&is_video=false&description=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&body=Check out this article: https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&title=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&name=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries&description=Hi%20guys%2c%20have%20you%20ever%20wondered%20how%20can%20Python%20dictionaries%20be%20so%20fast%20and%20reliable%3f%20The%20answer%20is%20that%20they%20are%20built%20on%20top%20of%20another%20technology%3a%20hash%20tables.%0aKnowing%20how%20Python%20hash%20tables%20work%20will%20give%20you%20a%20deeper%20understanding%20of%20how%20dictionaries%20work%20and%20this%20could%20be%20a%20great%20advantage%20for%20your%20Python%20understanding%20because%20dictionaries%20are%20almost%20everywhere%20in%20Python.%0aHash%20Functions%20Before%20introducing%20hash%20tables%20and%20their%20Python%20implementation%20you%20have%20to%20know%20what%20is%20a%20hash%20function%20and%20how%20it%20works." aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmastro35.github.io%2ftpc%2fposts%2f2020-08-21-hash-tables-understanding-dictionaries%2f&t=Python%20Hash%20Tables%3a%20Understanding%20Dictionaries" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2021 Davide Mastromatteo</div><div class=footer-right><nav><ul><li><a href=../../>Home</a></li><li><a href=../../posts>Articles</a></li><li><a href=../../tags>Tags</a></li><li><a href=../../about>About</a></li><li><a href=../../help_us>Help Us</a></li><li><a href=https://buttondown.email/thepythoncorner>Newsletter</a></li><li><a href=https://shop.spreadshirt.com/the-python-corner>Swag Store</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=../../lib/font-awesome/css/all.min.css><script src=../../lib/jquery/jquery.min.js></script><script src=../../js/main.js></script><script src=../../js/code-copy.js></script></html>
