@@ -1,7 +1,7 @@
 ---
 title: "Serialization in Python with JSON"
 date: 2020-02-20T00:00:49+01:00
-author: Davide Mastromatteo
+author: "davide_mastromatteo"
 excerpt: "Did you know that Python is one of the best programming languages to be used if you want to work with JSON?"
 header:
   teaser: https://imgs.xkcd.com/comics/wanna_see_the_code.png
