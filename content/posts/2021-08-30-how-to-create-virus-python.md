@@ -1,11 +1,7 @@
 ---
 title: "How to create a computer virus in Python"
 date: 2021-08-30T16:00:47+01:00
-<<<<<<< b80dc98180d48fb59a25b26faf8d5030536bb968
-author: mastromatteo
-=======
 author: davide_mastromatteo
->>>>>>> Update config.toml, 2021-08-30-how-to-create-virus-python.md and one other file
 excerpt: "Is it possible to create a self-replicating virus in Python? In this article, we'll find out..."
 header:
     teaser: https://imgs.xkcd.com/comics/retro_virus.png
