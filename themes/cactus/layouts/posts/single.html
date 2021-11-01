@@ -30,10 +30,15 @@
             (Updated: <time datetime="{{ .Lastmod }}" itemprop="dateModified">{{ .Lastmod.Format $dataFormat }}</time>)
           {{ end }}
         </div>
+        {{ if (isset .Site "author") }}
+
         <div class="author">
 	        {{ index .Site.Author .Params.author "name" }}
 		 	{{ index .Site.Author .Params.author "location" }}
 		</div>
+
+        {{ end }}
+
         {{ $showReadTime := .Site.Params.showReadTime | default false }}
         {{if $showReadTime}}
         <div class="article-read-time">
