@@ -64,6 +64,9 @@ url = "https://shop.spreadshirt.com/the-python-corner"
     noClasses = true
     style = "dracula"
     tabWidth = 4
+    
+    
+
 
 [params]
 
@@ -115,3 +118,12 @@ url = "https://shop.spreadshirt.com/the-python-corner"
   [[params.social]]
     name = "email"
     link = "info@thepythoncorner.com"  # no need for "mailto:" in the head
+
+
+[author]
+  [author.davide_mastromatteo]
+    name = "Davide Mastromatteo"
+    location = "Milan - Italy"
+  [author.jane_smith]
+    name = "Jane Smith"
+    location = "New York"
