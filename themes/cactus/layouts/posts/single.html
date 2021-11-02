@@ -32,6 +32,7 @@
         </div>
 
         <div class="author">
+          by
 {{ if isset .Params "author" }}
     {{ $author := index .Site.Data.authors .Params.author }}
     {{ $author.name }}
