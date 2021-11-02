@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
-{{ partial "header.html" . }}
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
@@ -33,17 +32,6 @@
         </div>
 
         <div class="author">
-
-          {{- range .Params.authors }}
-          {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-          <figure>
-            <img src="{{ .Params.photo }}" alt=""/>
-            <figcaption>
-              <a href="{{ .Permalink }}">{{ .Params.name }}</a>
-            </figcaption>
-          </figure>
-          {{ end }}
-          {{ end }}
 
         </div>
 
