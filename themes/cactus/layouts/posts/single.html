@@ -32,7 +32,12 @@
         </div>
 
         <div class="author">
-
+{{ if isset .Params "author" }}
+    {{ $author := index .Site.Data.authors .Params.author }}
+    {{ $author.name }}
+{{ else }}
+    Unknown
+{{ end }}
         </div>
 
         {{ $showReadTime := .Site.Params.showReadTime | default false }}
