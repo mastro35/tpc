@@ -31,14 +31,21 @@
             (Updated: <time datetime="{{ .Lastmod }}" itemprop="dateModified">{{ .Lastmod.Format $dataFormat }}</time>)
           {{ end }}
         </div>
-        {{ if (isset .Site "author") }}
 
         <div class="author">
-	        {{ index .Site.Author .Params.author "name" }}
-		 	{{ index .Site.Author .Params.author "location" }}
-		</div>
 
-        {{ end }}
+          {{- range .Params.authors }}
+          {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+          <figure>
+            <img src="{{ .Params.photo }}" alt=""/>
+            <figcaption>
+              <a href="{{ .Permalink }}">{{ .Params.name }}</a>
+            </figcaption>
+          </figure>
+          {{ end }}
+          {{ end }}
+
+        </div>
 
         {{ $showReadTime := .Site.Params.showReadTime | default false }}
         {{if $showReadTime}}
