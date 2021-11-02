@@ -64,12 +64,13 @@ url = "https://shop.spreadshirt.com/the-python-corner"
     noClasses = true
     style = "dracula"
     tabWidth = 4
-    
-    
 
+[taxonomies]
+  author = "authors"
+  tag = "tags"
+  category = "categories"
 
 [params]
-
   colortheme = "dark" # dark, light, white, or classic
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
@@ -118,7 +119,6 @@ url = "https://shop.spreadshirt.com/the-python-corner"
   [[params.social]]
     name = "email"
     link = "info@thepythoncorner.com"  # no need for "mailto:" in the head
-
 
 [author]
   [author.davide_mastromatteo]
